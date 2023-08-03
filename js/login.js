@@ -68,6 +68,7 @@ function permisosUsuario(){
     let usernavbar = document.getElementById('perfil-username');
     navbar.innerHTML = permisosNavbar;
     usernavbar.innerHTML = user.user.username;
+    Swal.fire(`¡Bienvenido ${user.user.username}!`);
 }
 
 function logOut(){
