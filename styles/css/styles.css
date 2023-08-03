@@ -16,9 +16,11 @@
     padding: 1rem;
 }
 
-.container .login label{
-    display: block;
-    text-align: center;
+
+button{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 /* .container .login input{
