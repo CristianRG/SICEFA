@@ -189,6 +189,8 @@ section{
     float: right;
     /* background: yellow; */
     padding: 1rem;
+    display: flex;
+    justify-content: center;
 }
 
 .relleno{
