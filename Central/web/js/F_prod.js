@@ -1,4 +1,4 @@
-// Variables para almacenar la información del producto registrado
+
         let productoRegistrado = null;
         let productoActivo = false;
 function registrarProducto() {
@@ -185,5 +185,96 @@ function registrarProducto() {
                 // ...
             }
         }
+ // Función para manejar el evento de clic en la fila
+        function handleRowClick(event) {
+            const clickedRow = event.target.closest('tr');
+            if (clickedRow && clickedRow.parentElement.tagName === 'TBODY') {
+                const tableRows = clickedRow.parentElement.querySelectorAll('tr');
+                tableRows.forEach(row => row.classList.remove('table-info'));
+                clickedRow.classList.add('table-info');
+
+                // Obtener el id del div correspondiente al hacer clic en la fila
+                const divId = 'producto' + clickedRow.rowIndex;
+
+                // Mostrar solo el div correspondiente y ocultar los demás
+                const allDivs = document.querySelectorAll('.producto');
+                allDivs.forEach(div => {
+                    if (div.id === divId) {
+                        div.style.display = 'block';
+                    } else {
+                        div.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        // Vincular el evento de clic al cuerpo de la tabla
+        const tableBody = document.querySelector('tbody');
+        tableBody.addEventListener('click', handleRowClick);
 
 
+
+const productos = [
+  {
+    "Nombre Sucursal": "Central",
+    "Id sucursal": 1,
+    "Nombre titular": "Alejandro",
+    "Apellido paterno titular": "Torres",
+    "Apellido materno titular": "Peréz",
+    "Titular CURP": "TOPA930518HMCLRR04",
+    "Titular RFC": "TOPA930518AB1",
+    "Telefono sucursal": "(477) 123-4567"
+  },
+  {
+    "Nombre Sucursal": "Plaza Mayor",
+    "Id sucursal": 2,
+    "Nombre titular": "Gabriela",
+    "Apellido paterno titular": "Vargas",
+    "Apellido materno titular": "Ruiz",
+    "Titular CURP": "VARC980423MMCLZB06",
+    "Titular RFC": "VARC980423VZ2",
+    "Telefono sucursal": "(477) 234-5678"
+  },
+  {
+    "Nombre Sucursal": "Centro Max",
+    "Id sucursal": 3,
+    "Nombre titular": "Rodrigo",
+    "Apellido paterno titular": "Ramos",
+    "Apellido materno titular": "García",
+    "Titular CURP": "RAGR920722HMCMSD09",
+    "Titular RFC": "RAGR920722LH9",
+    "Telefono sucursal": "(477) 234-5678"
+  },
+  {
+    "Nombre Sucursal": "Centro",
+    "Id sucursal": 4,
+    "Nombre titular": "Valentina",
+    "Apellido paterno titular": "Jiménez",
+    "Apellido materno titular": "González",
+    "Titular CURP": "JIGV010311MMCGNZ05",
+    "Titular RFC": "JIGV010311RM3",
+    "Telefono sucursal": "(477) 456-7890"
+  }
+];
+
+function consultarProducto() {
+  
+  let obtenerTabla = document.getElementById('productos');
+  let contenido = "";
+  consol.log(obtenerTabla, productos);
+  for (let i = 0; i < productos.length; i++) {
+    contenido += `<tr>
+                    <td>${productos[i]["Nombre Sucursal"]}</td>
+                    <td>${productos[i]["Id sucursal"]}</td>
+                    <td>${productos[i]["Nombre titular"]}</td>
+                    <td>${productos[i]["Apellido paterno titular"]}</td>
+                    <td>${productos[i]["Apellido materno titular"]}</td>
+                    <td>${productos[i]["Titular CURP"]}</td>
+                    <td>${productos[i]["Titular RFC"]}</td>
+                    <td>${productos[i]["Telefono sucursal"]}</td>
+                  </tr>`;
+  }
+
+  // Aquí puedes hacer algo con la variable 'contenido', como agregarla a la tabla en tu HTML.
+}
+consultarProducto();
