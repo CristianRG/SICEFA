@@ -1,0 +1,50 @@
+        .tabP{
+            width: auto;
+            height: 5rem;
+        }
+        /* Estilo para los bordes de las celdas */
+        table.table {
+            border: 2px solid #000;
+        }
+
+        table.table th, table.table td {
+            border: 1px solid #000;
+        }
+
+        /* Estilo para el borde grueso y color de fondo de los th */
+        table.table th {
+            border: 2px solid #000;
+            background-color: #d8d8d8; /* Color gris claro */
+        }
+    /* Estilo para ocultar los divs con clase "sucursal" */
+        .sucursal {
+            display: none;
+            border: 2px solid black;
+            padding: 10px; /* Ajusta este valor para cambiar el espacio entre el borde y el contenido */
+        }
+        .sucursal table {
+            width: 100%;
+        }
+        .sucursal th {
+            text-align: left;
+        }
+
+        /* Estilo para mostrar el primer div */
+        #sucursal1 {
+            display: none;
+        }
+
+    /* Estilo para cambiar el color de fondo de la fila seleccionada a azul */
+    .table-info {
+        background-color: #1F90F1; /* Color azul */
+        color: white; /* Cambiar el color del texto a blanco para mejor contraste */
+    }
+    .mi-tabla {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+    }
+    .mi-tabla th, .mi-tabla td {
+        padding: 12px;
+    }
+
