@@ -1,6 +1,6 @@
-
+        let indiceProductoActivo= null;
         let productoRegistrado = null;
-        let productoActivo = false;
+        let productoActivo = true;
 function registrarProducto() {
             // Obtener los valores del formulario
             const nombre = document.getElementById('nombre').value;
@@ -157,14 +157,22 @@ function registrarProducto() {
             }
         }
 
-        function eliminarProducto() {
-            alert();
-            if (productoActivo) {
-                // Mostrar la pantalla emergente de confirmación
-                const confirmacionEliminar = document.getElementById('confirmacionEliminar');
-                confirmacionEliminar.style.display = 'block';
-            }
+    function eliminarProducto() {
+    if (productoActivo) {
+        // Mostrar la pantalla emergente de confirmación
+        const confirmacionEliminar = document.getElementById('confirmacionEliminar');
+        confirmacionEliminar.style.display = 'block';
+    } else {
+        if (indiceProductoActivo >= 0) {
+            // Cambiar el estado del producto a "inactivo"
+            productos[indiceProductoActivo].estatus = 'inactivo';
+            
+            // Mostrar la tabla con el producto inactivo
+            mostrarTablaProducto();
         }
+        }
+    }
+
 
         function eliminarProductoConfirmado() {
     productoRegistrado.estado = 'inactivo'; // Cambiar el estado del producto a "inactivo"
