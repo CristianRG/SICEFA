@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/fontawesome.min.css">
     <link rel="stylesheet" href="styles/package/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="styles/css/styles-sistem.css">
+    <link rel="stylesheet" href="styles/css/styles-pedido.css">
 </head>
 
 <body>
@@ -46,7 +47,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Ventas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Pedidos</a>
+                            <a class="nav-link active" aria-current="page" onclick="getModuleOrder()" id="pedido">Pedidos</a>
                         </li>
                     </ul>
                 </div>
@@ -64,7 +65,7 @@
     </header>
     <section>
         <!-- SLIDER -->
-        <div class="content">
+        <div class="content" id="content">
             <div class="side-bar">
                 <div class="options">
                     <!-- Para agregar los elementos que iran en la barra lateral solo crear un div con la clase 'option'
@@ -82,18 +83,20 @@
                             <button>Eliminar</button>
                         </div> -->
 
-                </div>
+                <!-- </div>
             </div>
-            <div class="content-modulo">
+            <div class="content-modulo"> -->
                 <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
                 
 
-            </div>
+            <!-- </div> -->
         </div>
     </section>
     <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="styles/package/dist/sweetalert2.min.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/obtenerModulos.js"></script>
+    <script src="js/pedido.js"></script>
 </body>
 
 </html>
