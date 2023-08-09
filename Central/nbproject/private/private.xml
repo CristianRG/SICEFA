@@ -11,6 +11,7 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/josue/OneDrive/Documentos/Integradora/SICEFA/Central/web/consult_Producto.html</file>
             <file>file:/C:/Users/josue/OneDrive/Documentos/Integradora/SICEFA/Central/web/js/F_prod.js</file>
@@ -18,5 +19,22 @@
             <file>file:/C:/Users/josue/OneDrive/Documentos/Integradora/SICEFA/Central/web/styles/css/consProducto.css</file>
             <file>file:/C:/Users/josue/OneDrive/Documentos/Integradora/SICEFA/Central/web/productosHTML.html</file>
         </group>
+=======
+<<<<<<< HEAD
+        <group>
+<<<<<<< HEAD
+            <file>file:/D:/OneDrive/Documentos/inegradora/SICEFA/Central/web/about.html</file>
+            <file>file:/D:/OneDrive/Documentos/inegradora/SICEFA/Central/web/login.html</file>
+            <file>file:/D:/OneDrive/Documentos/inegradora/SICEFA/Central/web/index.html</file>
+            <file>file:/D:/OneDrive/Documentos/inegradora/SICEFA/Central/web/sistem.html</file>
+=======
+            <file>file:/C:/Users/josue/OneDrive/Documentos/Integradora/SICEFA/Central/web/js/F_prod.js</file>
+            <file>file:/C:/Users/josue/OneDrive/Documentos/Integradora/SICEFA/Central/web/productosHTML.html</file>
+>>>>>>> c4407693aa82912dd4f4153fb592f98900206f02
+        </group>
+=======
+        <group/>
+>>>>>>> e14d5a4f2388bb5dd3aead1ea07cff50ce6fc372
+>>>>>>> b565fc934565bfa643d1acd5afcd9a8ced6eee66
     </open-files>
 </project-private>
