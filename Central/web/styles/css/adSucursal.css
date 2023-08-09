@@ -29,10 +29,7 @@
             text-align: left;
         }
 
-        /* Estilo para mostrar el primer div */
-        #sucursal1 {
-            display: none;
-        }
+
 
     /* Estilo para cambiar el color de fondo de la fila seleccionada a azul */
     .table-info {
@@ -48,3 +45,38 @@
         padding: 12px;
     }
 
+.custom-button {
+    display: block;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+.custom-button:hover {
+    background-color: #0056b3;
+}
+/* Estilos para el botón de "Editar" */
+    .btn-editar {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    /* Estilos para el botón de "Eliminar" */
+    .btn-eliminar {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }

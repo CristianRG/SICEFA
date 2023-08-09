@@ -65,13 +65,7 @@
                 <div class="options">
                     <h3>Sucursal</h3>
                         <div class="option">
-                            <button>Agregar</button>
-                        </div>
-                        <div class="option">
-                            <button>Editar</button>
-                        </div>
-                        <div class="option">
-                            <button>Eliminar</button>
+                            <button id="botonMostrarFormulario" onclick="mostrarFormulario()">Agregar</button>
                         </div>
 
                 </div>
@@ -79,402 +73,241 @@
             
              <div class="container-fluid mt-4">
         <form class="form-inline w-100 justify-content-center">
-            <div class="form-group">
-                <p>Buscar:
-                <input type="text" class="form-control" id="searchInput" placeholder="Ingrese su búsqueda">
-                </p>
-            </div>
-            <button type="submit" class="btn btn-primary ml-2">Buscar</button>
-        </form>
- <div class="container mt-4">
+    <div class="form-group">
+        <p>Buscar:
+        <input type="text" class="form-control" id="searchInput" placeholder="Ingrese su búsqueda">
+        </p>
+    </div>
+    <button type="button" class="btn btn-primary ml-2" id="searchButton">Buscar</button>
+</form>
+<div id="tablaSucursales" class="container mt-4">
         <div class="row">
-            <div class="col-md-8">
-                <div data-bs-spy="scroll" >
-                    <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Nombre Sucursal</th>
-                    <th>Id sucursal</th>
-                    <th>Nombre titular</th>
-                    <th>Apellido paterno titular</th>
-                    <th>Apellido materno titular</th>
-                    <th>Titular CURP</th>
-                    <th>Titular RFC</th>
-                    <th>Telefono sucursal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Central</td>
-                    <td>1</td>
-                    <td>Alejandro</td>
-                    <td>Torres</td>
-                    <td>Peréz</td>
-                    <td>TOPA930518HMCLRR04</td>
-                    <td>TOPA930518AB1</td>
-                    <td>(477) 123-4567</td>
-                </tr>
-                <tr> 
-                    <td>Plaza Mayor</td>
-                    <td>2</td>
-                    <td>Gabriela</td>
-                    <td>Vargas</td>
-                    <td>Ruiz</td>
-                    <td>VARC980423MMCLZB06</td>
-                    <td>VARC980423VZ2</td>
-                    <td>(477) 234-5678</td>
-                </tr>
-                <tr>
-                    <td>Centro Max</td>
-                    <td>3</td>
-                    <td>Rodrigo</td>
-                    <td>Ramos</td>
-                    <td>García</td>
-                    <td>RAGR920722HMCMSD09</td>
-                    <td>RAGR920722LH9</td>
-                    <td>(477) 234-5678</td>
-                </tr>
-                <tr>
-                    <td>Centro</td>
-                    <td>4</td>
-                    <td>Valentina</td>
-                    <td>Jimenéz</td>
-                    <td>González</td>
-                    <td>JIGV010311MMCGNZ05</td>
-                    <td>JIGV010311RM3</td>
-                    <td>(477) 456-7890</td>
-                </tr>
-            </tbody>
-        </table>
+            <div class="col-md-9">
+                <div data-bs-spy="scroll">
+                    <table class="table table-hover " id="myTable">
+                        <thead>
+                            <tr>
+                                <th>Nombre Sucursal</th>
+                                <th>Id sucursal</th>
+                                <th>Nombre titular</th>
+                                <th>Apellido paterno titular</th>
+                                <th>Apellido materno titular</th>
+                                <th>Titular CURP</th>
+                                <th>Titular RFC</th>
+                                <th>Telefono sucursal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody1">
+                            <tr onclick="mostrarInformacion(0)">
+                                <td>Central</td>
+                                <td>1</td>
+                                <td>Alejandro</td>
+                                <td>Torres</td>
+                                <td>Peréz</td>
+                                <td>TOPA930518HMCLRR04</td>
+                                <td>TOPA930518AB1</td>
+                                <td>(477) 123-4567</td>
+                            </tr>
+                            <tr onclick="mostrarInformacion(1)">
+                                <td>Plaza Mayor</td>
+                                <td>2</td>
+                                <td>Gabriela</td>
+                                <td>Vargas</td>
+                                <td>Ruiz</td>
+                                <td>VARC980423MMCLZB06</td>
+                                <td>VARC980423VZ2</td>
+                                <td>(477) 234-5678</td>
+                            </tr>
+                            <tr onclick="mostrarInformacion(2)">
+                                <td>Centro Max</td>
+                                <td>3</td>
+                                <td>Rodrigo</td>
+                                <td>Ramos</td>
+                                <td>García</td>
+                                <td>RAGR920722HMCMSD09</td>
+                                <td>RAGR920722LH9</td>
+                                <td>(477) 234-5678</td>
+                            </tr>
+                            <tr onclick="mostrarInformacion(3)">
+                                <td>Centro</td>
+                                <td>4</td>
+                                <td>Valentina</td>
+                                <td>Jimenéz</td>
+                                <td>González</td>
+                                <td>JIGV010311MMCGNZ05</td>
+                                <td>JIGV010311RM3</td>
+                                <td>(477) 456-7890</td>
+                            </tr>
+                            <tr onclick="mostrarInformacion(4)">
+                                <td>Paseo 2000</td>
+                                <td>5</td>
+                                <td>Carlos</td>
+                                <td>López</td>
+                                <td>Hernández</td>
+                                <td>LOCH850609HMCRRN01</td>
+                                <td>LOCH850609NE9</td>
+                                <td>(664) 222-3333</td>
+                            </tr>
+                            <tr onclick="mostrarInformacion(5)">
+                                <td>Gran Plaza</td>
+                                <td>6</td>
+                                <td>María</td>
+                                <td>Gutiérrez</td>
+                                <td>Rodríguez</td>
+                                <td>MAGR900702MMCRDR08</td>
+                                <td>MAGR900702KL1</td>
+                                <td>(443) 444-5555</td>
+                            </tr>
+                            <tr onclick="mostrarInformacion(6)">
+                                <td>Sunset Mall</td>
+                                <td>7</td>
+                                <td>Luis</td>
+                                <td>Martínez</td>
+                                <td>Sánchez</td>
+                                <td>MASL880210HMCZNS07</td>
+                                <td>MASL880210XZ3</td>
+                                <td>(662) 777-8888</td>
+                            </tr>
+                            <tr onclick="mostrarInformacion(7)">
+                                <td>Centro Comercial</td>
+                                <td>8</td>
+                                <td>Laura</td>
+                                <td>López</td>
+                                <td>García</td>
+                                <td>LOGL950515MMCRRC09</td>
+                                <td>LOGL950515TQ7</td>
+                                <td>(442) 666-9999</td>
+                            </tr>
+                            <tr onclick="mostrarInformacion(8)">
+                                <td>Plaza del Sol</td>
+                                <td>9</td>
+                                <td>Fernando</td>
+                                <td>Rodríguez</td>
+                                <td>Pérez</td>
+                                <td>ROPF910728HMCNRR02</td>
+                                <td>ROPF910728KN2</td>
+                                <td>(333) 888-1111</td>
+                            </tr>
+                            <tr onclick="mostrarInformacion(9)">
+                                <td>Mall Central</td>
+                                <td>10</td>
+                                <td>Isabel</td>
+                                <td>Gómez</td>
+                                <td>Hernández</td>
+                                <td>GOHI920403MMCGZL08</td>
+                                <td>GOHI920403ZT8</td>
+                                <td>(55) 999-7777</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div>
-                    <div class="sucursal" id="sucursal1">
-    <table>
-        <thead>
-            <tr>
-                <th colspan="2">Datos Titular</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Nombre titular:</td>
-                <td>Alejandro</td>
-            </tr>
-            <tr>
-                <td>Apellido paterno titular:</td>
-                <td>Torres</td>
-            </tr>
-            <tr>
-                <td>Apellido materno titular:</td>
-                <td>Peréz</td>
-            </tr>
-            <tr>
-                <td>Titular CURP:</td>
-                <td>TOPA930518HMCLRR04</td>
-            </tr>
-            <tr>
-                <td>Titular RFC:</td>
-                <td>TOPA930518AB1</td>
-            </tr>
-            <tr>
-                <th colspan="2">Datos Sucursal</th>
-            </tr>
-            <tr>
-                <td>Id sucursal:</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>Estado:</td>
-                <td>Guanajuato</td>
-            </tr>
-            <tr>
-                <td>Ciudad:</td>
-                <td>León</td>
-            </tr>
-            <tr>
-                <td>Domicilio:</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Codigo Postal:</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Telefono sucursal:</td>
-                <td>(477) 123-4567</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-               <div class="sucursal" id="sucursal2">
-    <table>
-        <thead>
-            <tr>
-                <th colspan="2">Datos Titular</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Nombre titular:</td>
-                <td>Gabriela</td>
-            </tr>
-            <tr>
-                <td>Apellido paterno titular:</td>
-                <td>Vargas</td>
-            </tr>
-            <tr>
-                <td>Apellido materno titular:</td>
-                <td>Ruiz</td>
-            </tr>
-            <tr>
-                <td>Titular CURP:</td>
-                <td>VARC980423MMCLZB06</td>
-            </tr>
-            <tr>
-                <td>Titular RFC:</td>
-                <td>VARC980423VZ2</td>
-            </tr>
-            <tr>
-                <th colspan="2">Datos Sucursal</th>
-            </tr>
-            <tr>
-                <td>Id sucursal:</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>Estado:</td>
-                <td>Guanajuato</td>
-            </tr>
-            <tr>
-                <td>Ciudad:</td>
-                <td>León</td>
-            </tr>
-            <tr>
-                <td>Domicilio:</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Codigo Postal:</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Telefono sucursal:</td>
-                <td>(477) 234-5678</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<div class="sucursal" id="sucursal3">
-    <table>
-        <thead>
-            <tr>
-                <th colspan="2">Datos Titular</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Nombre titular:</td>
-                <td>Rodrigo</td>
-            </tr>
-            <tr>
-                <td>Apellido paterno titular:</td>
-                <td>Ramos</td>
-            </tr>
-            <tr>
-                <td>Apellido materno titular:</td>
-                <td>García</td>
-            </tr>
-            <tr>
-                <td>Titular CURP:</td>
-                <td>RAGR920722HMCMSD09</td>
-            </tr>
-            <tr>
-                <td>Titular RFC:</td>
-                <td>RAGR920722LH9</td>
-            </tr>
-            <tr>
-                <th colspan="2">Datos Sucursal</th>
-            </tr>
-            <tr>
-                <td>Id sucursal:</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>Estado:</td>
-                <td>Guanajuato</td>
-            </tr>
-            <tr>
-                <td>Ciudad:</td>
-                <td>León</td>
-            </tr>
-            <tr>
-                <td>Domicilio:</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Codigo Postal:</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Telefono sucursal:</td>
-                <td>(477) 234-5678</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<div class="sucursal" id="sucursal4">
-    <table>
-        <thead>
-            <tr>
-                <th colspan="2">Datos Titular</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Nombre titular:</td>
-                <td>Valentina</td>
-            </tr>
-            <tr>
-                <td>Apellido paterno titular:</td>
-                <td>Jimenéz</td>
-            </tr>
-            <tr>
-                <td>Apellido materno titular:</td>
-                <td>González</td>
-            </tr>
-            <tr>
-                <td>Titular CURP:</td>
-                <td>JIGV010311MMCGNZ05</td>
-            </tr>
-            <tr>
-                <td>Titular RFC:</td>
-                <td>JIGV010311RM3</td>
-            </tr>
-            <tr>
-                <th colspan="2">Datos Sucursal</th>
-            </tr>
-            <tr>
-                <td>Id sucursal:</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>Estado:</td>
-                <td>Guanajuato</td>
-            </tr>
-            <tr>
-                <td>Ciudad:</td>
-                <td>León</td>
-            </tr>
-            <tr>
-                <td>Domicilio:</td>
-                <td>Francisco I. Madero #123</td>
-            </tr>
-            <tr>
-                <td>Codigo Postal:</td>
-                <td>37000</td>
-            </tr>
-            <tr>
-                <td>Telefono sucursal:</td>
-                <td>(477) 456-7890</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-                </div>
+             <div class="col-md-3">
+        <div id="infoDiv" class="tabP">
+            <!-- Aquí se mostrará la información -->
+            <div>
+                <button class="btn-editar">Editar</button>
+                <button class="btn-eliminar">Eliminar</button>
             </div>
         </div>
+                 </div>
+            </div>
+        </div>
+        <div id="formularioRegistrar" class="container mt-4">
+            <div class="row">
+                <div id="formulario" class="col-md-6">
+        <div id="nuevoFormulario" class="mi-tabla" >
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Datos Titular</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Nombre titular:<br>
+                            <input type="text" name="nombreTitular" placeholder="Nombre titular">
+                        </td>
+                        <td>
+                            Apellido paterno titular:<br>
+                            <input type="text" name="apellidoPaternoTitular" placeholder="Apellido paterno titular">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Apellido materno titular:<br>
+                            <input type="text" name="apellidoMaternoTitular" placeholder="Apellido materno titular">
+                        </td>
+                        <td>
+                            Titular CURP:<br>
+                            <input type="text" name="curpTitular" placeholder="Titular CURP">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Titular RFC:<br>
+                            <input type="text" name="rfcTitular" placeholder="Titular RFC">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+                     </div>
+            <div class="col-md-6">
+                <table class="mi-tabla">
+                <thead>
+                    <tr>
+                        <th colspan="2">Datos Sucursal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Nombre de la sucursal:<br>
+                            <input type="text" name="nombreSucursal" placeholder="Nombre de la sucursal">
+                        </td>
+                        <td>
+                            Id sucursal:<br>
+                            <input type="text" name="idSucursal" placeholder="Id sucursal">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Estado:<br>
+                            <input type="text" name="estado" placeholder="Estado">
+                        </td>
+                        <td>
+                            Ciudad:<br>
+                            <input type="text" name="ciudad" placeholder="Ciudad">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Domicilio:<br>
+                            <input type="text" name="domicilio" placeholder="Domicilio">
+                        </td>
+                        <td>
+                            Codigo Postal:<br>
+                            <input type="text" name="codigoPostal" placeholder="Codigo Postal">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Telefono sucursal:<br>
+                            <input type="text" name="telefonoSucursal" placeholder="Telefono sucursal">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+                <button type="button" id="botonMostrarTabla" onclick="agregarNuevoRegistro()" class="custom-button">Agregar</button>
+        </div>
+            </div>
     </div>
-                 
-                 <div>
-                    <h2>Registrar Sucursal</h2>
-                    <div class="col-md-6">
-                        <table class="mi-tabla">
-        <thead>
-            <tr>
-                <th colspan="2">Datos Titular</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    Nombre titular:<br>
-                <input type="text" name="nombreTitular" placeholder="Nombre titular">
-                </td>
-                <td>
-                    Apellido paterno titular:<br>
-                    <input type="text" name="apellidoPaternoTitular" placeholder="Apellido paterno titular">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Apellido materno titular:<br>
-                    <input type="text" name="apellidoMaternoTitular" placeholder="Apellido materno titular">
-                </td>
-                <td>
-                    Titular CURP:<br>
-                    <input type="text" name="curpTitular" placeholder="Titular CURP">
-                </td>
-            <tr>
-                <td>
-                    Titular RFC:<br>
-                    <input type="text" name="rfcTitular" placeholder="Titular RFC">
-                </td>
-            </tr>
-        </tbody>
-    </table> 
-                    </div>
-                    <div class="col-md-6">
-                      <table>
-        <thead>
-            <tr>
-                <th colspan="2">Datos Sucursal</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    Nombre de la sucursal:<br>
-                    <input type="text" name="nombreSucursal" placeholder="Nombre de la sucursal">
-                </td>
-                <td>
-                    Id sucursal:<br>
-                    <input type="text" name="idSucursal" placeholder="Id sucursal">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Estado:<br>
-                    <input type="text" name="estado" placeholder="Estado">
-                </td>
-                <td>
-                    Ciudad:<br>
-                    <input type="text" name="ciudad" placeholder="Ciudad">
-                </td>
-            </tr>
-            <tr>
-                <td>Domicilio:</td>
-                <td><input type="text" name="domicilio" placeholder="Domicilio"></td>
-            </tr>
-            <tr>
-                <td>Codigo Postal:</td>
-                <td><input type="text" name="codigoPostal" placeholder="Codigo Postal"></td>
-            </tr>
-            <tr>
-                <td>Telefono sucursal:</td>
-                <td><input type="text" name="telefonoSucursal" placeholder="Telefono sucursal"></td>
-            </tr>
-        </tbody>
-    </table>  
-                    </div>
-    </div>
+</div>
                 <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
                 
-            </div>
-        </div>
+            
+        
     </section>
     <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="styles/package/dist/sweetalert2.min.js"></script>
