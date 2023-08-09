@@ -250,7 +250,7 @@ function consultarCliente() {
 }
 
 function buscarCliente(){
-    let pos;
+    
 }
 
 function GuardarCliente(){
