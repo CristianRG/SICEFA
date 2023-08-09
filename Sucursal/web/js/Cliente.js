@@ -280,20 +280,20 @@ const data = [
             </thead>
                 <tbody>
                 <tr>
-                    <td>Estado:</td>
-                    <td>${item.estado}</td>
-                </tr>
-                <tr>
-                    <td>Ciudad:</td>
-                    <td>${item.ciudad}</td>
-                </tr>
-                <tr>
                     <td>Domicilio:</td>
                     <td>${item.domicilio}</td>
                 </tr>
                 <tr>
                     <td>Codigo Postal:</td>
                     <td>${item.codigoPostal}</td>
+                </tr>
+                <tr>
+                    <td>Estado:</td>
+                    <td>${item.estado}</td>
+                </tr>
+                <tr>
+                    <td>Ciudad:</td>
+                    <td>${item.ciudad}</td>
                 </tr>
                 <tr>
                     <td>Telefono sucursal:</td>
@@ -383,24 +383,12 @@ const data = [
     const detallesAdicional=`
 
                 <tr>
-                    <td>Estado:</td>
-                    <td>${item.estado}</td>
+                    <td>Fecha de ingreso:</td>
+                    <td>${item.FechaIngreso}</td>
                 </tr>
                 <tr>
-                    <td>Ciudad:</td>
-                    <td>${item.ciudad}</td>
-                </tr>
-                <tr>
-                    <td>Domicilio:</td>
-                    <td>${item.domicilio}</td>
-                </tr>
-                <tr>
-                    <td>Codigo Postal:</td>
-                    <td>${item.codigoPostal}</td>
-                </tr>
-                <tr>
-                    <td>Telefono sucursal:</td>
-                    <td>${item.telefono}</td>
+                    <td>Correo:</td>
+                    <td>${item.correo}</td>
                 </tr>
     `;
 
@@ -421,6 +409,7 @@ function agregarRegistroATabla(registro) {
     });
 
     newRow.innerHTML = `
+    <tr>
         <td>${registro.nombreSucursal}</td>
         <td>${registro.idSucursal}</td>
         <td>${registro.nombreTitular}</td>
@@ -429,6 +418,7 @@ function agregarRegistroATabla(registro) {
         <td>${registro.curpTitular}</td>
         <td>${registro.rfcTitular}</td>
         <td>${registro.telefonoSucursal}</td>
+    <tr>
     `;
 
     tableBody.appendChild(newRow);
