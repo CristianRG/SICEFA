@@ -1,6 +1,4 @@
-let indiceProductoActivo = null;
-let productoRegistrado = null;
-let productoActivo = true;
+
 function registrarProducto() {
     // Obtener los valores del formulario
     const nombre = document.getElementById('nombre').value;
@@ -46,7 +44,7 @@ function registrarProducto() {
                     <td>${principalIndicacion}</td>
                 </tr>
                 <tr>
-                    <td>Contraindicaciones:</td>
+                 <td>Contraindicaciones:</td>
                     <td>${contraindicaciones}</td>
                 </tr>
                 <tr>
@@ -57,305 +55,50 @@ function registrarProducto() {
                     <td>Unidades en Envase:</td>
                     <td>${unidadesEnvase}</td>
                 </tr>
-                <tr>
-                    <td>Precio Unitario:</td>
-                    <td>${precioUnitario}</td>
-                </tr>
-                <tr>
-                    <td>Foto:</td>
-                    <td>${foto}</td>
-                </tr>
-                <tr>
-                    <td>Ruta de la Foto:</td>
-                    <td>${rutaFoto}</td>
-                </tr>
-                <tr>
-                    <td>Código de Barras:</td>
-                    <td>${codigoBarras}</td>
-                </tr>
-                <tr>
-                    <td>Estatus:</td>
-                    <td>${estatus}</td>
-                </tr>
-            `;
-
-    // Agregar la tabla al div de registroProducto
-    const registroProductoDiv = document.getElementById('registroProducto');
-    registroProductoDiv.appendChild(table);
-
-}
-
-
-function mostrarTablaProducto() {
-    if (productoRegistrado) {
-        // Crear la tabla con la información del producto
-        const table = document.createElement('table');
-        table.innerHTML = `
-                <tr>
-                    <td>Nombre:</td>
-                    <td>${productoRegistrado.nombre}</td>
-                </tr>
+            <tr>
+                   <td>Precio Unitario:</td>
+                  <td>${precioUnitario}</td>
+               </tr>
+               <tr>
+                  <td>Foto:</td>
+                  <td>${foto}</td>
+               </tr>
+               <tr>
+                  <td>Ruta de la Foto:</td>
+                  <td>${rutaFoto}</td>
+               </tr>
               <tr>
-                    <td>Nombre:</td>
-                    <td>${productoRegistrado.nombreGenerico}</td>
-                </tr><tr>
-                    <td>Nombre:</td>
-                    <td>${productoRegistrado.formaFarmaceutica}</td>
-                </tr><tr>
-                    <td>Nombre:</td>
-                    <td>${productoRegistrado.unidadMedida}</td>
-                </tr><tr>
-                    <td>Nombre:</td>
-                    <td>${productoRegistrado.principalIndicacion}</td>
-                </tr><tr>
-                    <td>Nombre:</td>
-                    <td>${productoRegistrado.contraindicaciones}</td>
-                </tr><tr>
-                    <td>Nombre:</td>
-                    <td>${productoRegistrado.concentracion}</td>
-                </tr><tr>
-                    <td>Nombre:</td>
-                    <td>${productoRegistrado.unidadesEnvase}</td>
-                </tr>
-                   <tr>
-                    <td>Nombre:</td>
-                    <td>${productoRegistrado.precioUnitario}</td>
-                </tr>
-                   <tr>
-                    <td>Nombre:</td>
-                    <td>${productoRegistrado.foto}</td>
-                </tr>
-                   <tr>
-                    <td>Nombre:</td>
-                    <td>${productoRegistrado.rutaFoto}</td>
-                </tr>
-                  <tr>
-                    <td>Nombre:</td>
-                    <td>${productoRegistrado.codigoBarras}</td>
-                </tr>
+                   <td>Código de Barras:</td>
+                   <td>${codigoBarras}</td>
+               </tr>
+              <tr>
+                  <td>Estatus:</td>
+                  <td>${estatus}</td>
+              </tr>
+           `;
 
-                <tr>
-                    <td>Estado:</td>
-                    <td>${productoRegistrado.estado}</td>
-                </tr>
-            `;
+   // Agregar la tabla al div de registroProducto
+   const nuevaFila = document.createElement('tr');
+    nuevaFila.onclick = function () {
+        mostrarInformacion(11);
 
-        // Agregar la tabla al div de registroProducto
-        const registroProductoDiv = document.getElementById('registroProducto');
-        registroProductoDiv.innerHTML = ''; // Limpiar el div antes de agregar la tabla
-        registroProductoDiv.appendChild(table);
-    }
-}
-function guardarProducto() {
-    if (productoActivo) {
-        // Actualizar la información del producto en la variable productoRegistrado
-        productoRegistrado.nombre = document.getElementById('nombre').value;
-        productoRegistrado.nombreGenerico = document.getElementById('nombreGenerico').value;
-        productoRegistrado.formaFarmaceutica = document.getElementById('formaFarmaceutica').value;
-        productoRegistrado.unidadMedida = document.getElementById('unidadMedida').value;
-        productoRegistrado.presentacion = document.getElementById('presentacion').value;
-        productoRegistrado.principalIndicacion = document.getElementById('principalIndicacion').value;
-        productoRegistrado.contraindicaciones = document.getElementById('contraindicaciones').value;
-        productoRegistrado.concentracion = document.getElementById('concentracion').value;
-        productoRegistrado.unidadesEnvase = document.getElementById('unidadesEnvase').value;
-        productoRegistrado.precioUnitario = document.getElementById('precioUnitario').value;
-        productoRegistrado.foto = document.getElementById('foto').value;
-        productoRegistrado.rutaFoto = document.getElementById('rutaFoto').value;
-        productoRegistrado.codigoBarras = document.getElementById('codigoBarras').value;
-        productoRegistrado.estatus = document.getElementById('estatus').value;
-
-        // Mostrar la tabla actualizada del producto
-        mostrarTablaProducto();
-    }
-}
-
-// Esta función se encarga de registrar un nuevo producto o actualizar uno existente
-function registrarProducto() {
-        // Actualizar la información del producto en la variable productoRegistrado
-    const nombre = document.getElementById('nombre').value;
-    const nombreGenerico = document.getElementById('nombreGenerico').value;
-    const formaFarmaceutica = document.getElementById('formaFarmaceutica').value;
-    const unidadMedida = document.getElementById('unidadMedida').value;
-    const presentacion = document.getElementById('presentacion').value;
-    const principalIndicacion = document.getElementById('principalIndicacion').value;
-    const contraindicaciones = document.getElementById('contraindicaciones').value;
-    const concentracion = document.getElementById('concentracion').value;
-    const unidadesEnvase = document.getElementById('unidadesEnvase').value;
-    const precioUnitario = document.getElementById('precioUnitario').value;
-    const foto = document.getElementById('foto').value;
-    const rutaFoto = document.getElementById('rutaFoto').value;
-    const codigoBarras = document.getElementById('codigoBarras').value;
-    const estatus = document.getElementById('estatus').value;
-if (productoActivo) {
-        // Update the information of the existing product in the productoRegistrado object
-        productoRegistrado.nombre = document.getElementById('nombre').value;
-        productoRegistrado.nombreGenerico = document.getElementById('nombreGenerico').value;
-        productoRegistrado.formaFarmaceutica = document.getElementById('formaFarmaceutica').value;
-        productoRegistrado.unidadMedida = document.getElementById('unidadMedida').value;
-        productoRegistrado.presentacion = document.getElementById('presentacion').value;
-        productoRegistrado.principalIndicacion = document.getElementById('principalIndicacion').value;
-        productoRegistrado.contraindicaciones = document.getElementById('contraindicaciones').value;
-        productoRegistrado.concentracion = document.getElementById('concentracion').value;
-        productoRegistrado.unidadesEnvase = document.getElementById('unidadesEnvase').value;
-        productoRegistrado.precioUnitario = document.getElementById('precioUnitario').value;
-        productoRegistrado.foto = document.getElementById('foto').value;
-        productoRegistrado.rutaFoto = document.getElementById('rutaFoto').value;
-        productoRegistrado.codigoBarras = document.getElementById('codigoBarras').value;
-        productoRegistrado.estatus = document.getElementById('estatus').value;
-        // Mostrar la tabla actualizada del producto
-        mostrarTablaProducto();
-    } else {
-        // Create a new product object
-        const newProduct = {
-            nombre: nombre,
-            nombreGenerico: nombreGenerico,
-            formaFarmaceutica: formaFarmaceutica,
-            unidadMedida: unidadMedida,
-            presentacion: presentacion,
-            principalIndicacion:  principalIndicacion,
-            contraindicaciones:   contraindicaciones,
-            concentracion:  concentracion,
-            unidadesEnvase: unidadesEnvase,
-            precioUnitario: precioUnitario,
-            foto: foto,
-            rutaFoto:  rutaFoto,
-            codigoBarras: codigoBarras,
-            estatus: estatus
-            // ... (continue adding other properties)
-        };
-
-        // Add the new product to the list of products (productos array)
-        productos.push(newProduct);
-
-        // Show the updated table with the new product
-        mostrarTablaProducto();
-    }
-}
-
-// Esta función muestra la pantalla emergente de confirmación de eliminación
-function eliminarProducto() {
-    if (productoActivo) {
-        const confirmacionEliminar = document.getElementById('confirmacionEliminar');
-        confirmacionEliminar.style.display = 'block';
-    } else if (indiceProductoActivo >= 0) {
-        productoRegistrado = productos[indiceProductoActivo]; // Obtener el producto activo
-        productoRegistrado.estatus = 'inactivo'; // Cambiar el estado del producto a "inactivo"
-        mostrarTablaProducto(); // Actualizar la tabla mostrando el producto inactivo
-    }
-}
-
-// Esta función elimina definitivamente el producto después de la confirmación
-function eliminarProductoConfirmado() {
-    if (productoRegistrado) {
-        productoRegistrado.estatus = 'eliminado'; // Cambiar el estado del producto a "eliminado"
-        const confirmacionEliminar = document.getElementById('confirmacionEliminar');
-        confirmacionEliminar.style.display = 'none'; // Ocultar la pantalla emergente
-        mostrarTablaProducto(); // Actualizar la tabla mostrando el producto eliminado
-    }
-}
-
-// Esta función cierra la pantalla emergente de confirmación de eliminación
-function cerrarConfirmacionEliminar() {
-    const confirmacionEliminar = document.getElementById('confirmacionEliminar');
-    confirmacionEliminar.style.display = 'none'; // Ocultar la pantalla emergente
-}
-
-
-function editarProducto() {
-    if (productoActivo) {
-        // Permitir editar los campos del formulario con la información del producto
-
-     nombreGenerico = document.getElementById('nombreGenerico').disabled = false;
-     formaFarmaceutica = document.getElementById('formaFarmaceutica').disabled = false;
-     unidadMedida = document.getElementById('unidadMedida').disabled = false;
-     presentacion = document.getElementById('presentacion').disabled = false;
-     principalIndicacion = document.getElementById('principalIndicacion').disabled = false;
-     contraindicaciones = document.getElementById('contraindicaciones').disabled = false;
-     concentracion = document.getElementById('concentracion').disabled = false;
-     unidadesEnvase = document.getElementById('unidadesEnvase').disabled = false;
-     precioUnitario = document.getElementById('precioUnitario').disabled = false;
-     foto = document.getElementById('foto').disabled = false;
-     rutaFoto = document.getElementById('rutaFoto').disabled = false;
-     codigoBarras = document.getElementById('codigoBarras').disabled = false;
-     estatus = document.getElementById('estatus').disabled = false;
-    }
-}
-// Función para manejar el evento de clic en la fila
-function handleRowClick(event) {
-    const clickedRow = event.target.closest('tr');
-    if (clickedRow && clickedRow.parentElement.tagName === 'TBODY') {
-        const tableRows = clickedRow.parentElement.querySelectorAll('tr');
-        tableRows.forEach(row => row.classList.remove('table-info'));
-        clickedRow.classList.add('table-info');
-
-        // Obtener el id del div correspondiente al hacer clic en la fila
-        const divId = 'producto' + clickedRow.rowIndex;
-
-        // Mostrar solo el div correspondiente y ocultar los demás
-        const allDivs = document.querySelectorAll('.producto');
-        allDivs.forEach(div => {
-            if (div.id === divId) {
-                div.style.display = 'block';
-            } else {
-                div.style.display = 'none';
-            }
-        });
-    }
-}
-
-// Vincular el evento de clic al cuerpo de la tabla
-const tableBody = document.querySelector('tbody');
-tableBody.addEventListener('click', handleRowClick);
-
-function mostrarInformacion(index) {
-    const item = data[index];
-    const infoDiv = document.getElementById("infoDiv");
-    const template = `
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="2">Datos Titular</th>
-                </tr>
-            </thead>
-                <tbody>
-                    <tr>
-                        <td>Nombre titular:</td>
-                        <td>${item.nombreGenerico}</td>
-                    </tr>
-                    <tr>
-                        <td>Apellido paterno titular:</td>
-                        <td>${item.formaFarmaceutica}</td>
-                    </tr>
-                    <tr>
-                        <td>Apellido materno titular:</td>
-                        <td>${item.medida}</td>
-                    </tr>
-                    <tr>
-                        <td>Titular CURP:</td>
-                        <td>${item.precentacion}</td>
-                    </tr>
-                    <tr>
-                        <td>Titular RFC:</td>
-                        <td>${item.concentracion}</td>
-                    </tr>
-    <tr>
-                        <td>Titular RFC:</td>
-                        <td>${item.unidadesEnvase}</td>
-                    </tr>
-    <tr>
-                        <td>Titular RFC:</td>
-                        <td>${item.precio}</td>
-                    </tr>
-                </tbody>
-       
-          
-        </table>
+};
+nuevaFila.innerHTML = `
+        <td>${nombre}</td>
+        <td>${nombreGenerico}</td>
+        <td>${formaFarmaceutica}</td>
+        <td>${unidadMedida}</td>
+        <td>${presentacion}</td>
+        <td>${concentracion}</td>
+        <td>${unidadesEnvase}</td>
+        <td>${precioUnitario}</td>
+        <td>${estatus}</td>
     `;
+const productosTabla = document.getElementById('productos');
+    productosTabla.appendChild(nuevaFila);
 
-    infoDiv.innerHTML = template;
 
-
-    const productos = [
+ const productos = [
         {
             "Nombre": "Pain Relief plus",
             "Nombre generico": "Analgesinol",
@@ -463,65 +206,3 @@ function mostrarInformacion(index) {
         },
     ];
 
-    function consultarProducto() {
-        let obtenerTabla = document.getElementById('productos');
-        let contenido = "";
-
-        let productos = [
-            {
-                "Nombre": "Pain Relief plus",
-                "Nombre generico": "Analgesinol",
-                "Forma farmaceutica": "Tabletas",
-                "Medida": "500 mg",
-                "Presentación": "Caja de 20 tabletas",
-                "Concentración": "250 mg por tableta",
-                "Unidades en envase": "20 tabletas",
-                "Precio": "$12.99"
-            },
-                    // ... (otros productos)
-        ];
-
-        for (let i = 0; i < productos.length; i++) {
-            contenido += `<tr>
-                    <td>${productos[i]["Nombre"]}</td>
-                    <td>${productos[i]["Nombre generico"]}</td>
-                    <td>${productos[i]["Forma farmaceutica"]}</td>
-                    <td>${productos[i]["Medida"]}</td>
-                    <td>${productos[i]["Presentación"]}</td>
-                    <td>${productos[i]["Concentración"]}</td>
-                    <td>${productos[i]["Unidades en envase"]}</td>
-                    <td>${productos[i]["Precio"]}</td>
-                  </tr>`;
-        }
-
-        obtenerTabla.innerHTML = contenido; // Agregar contenido a la tabla en el HTML.
-    }
-
-    consultarProducto();
-// Función para manejar el evento de clic en la fila
-
-    function handleRowClick(event) {
-        const clickedRow = event.target.closest('tr');
-        if (clickedRow && clickedRow.parentElement.tagName === 'TBODY') {
-            const tableRows = clickedRow.parentElement.querySelectorAll('tr');
-            tableRows.forEach(row => row.classList.remove('table-info'));
-            clickedRow.classList.add('table-info');
-
-            // Obtener el id del div correspondiente al hacer clic en la fila
-            const divId = 'sucursal' + clickedRow.rowIndex;
-
-            // Mostrar solo el div correspondiente y ocultar los demás
-            const allDivs = document.querySelectorAll('.sucursal');
-            allDivs.forEach(div => {
-                if (div.id === divId) {
-                    div.style.display = 'block';
-                } else {
-                    div.style.display = 'none';
-                }
-            });
-        }
-    }
-
-    // Vincular el evento de clic al cuerpo de la tabla
-    const tableBody = document.querySelector('tbody');
-    tableBody.addEventListener('click', handleRowClick);

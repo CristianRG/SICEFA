@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/fontawesome.min.css">
         <link rel="stylesheet" href="styles/package/dist/sweetalert2.min.css">
         <link rel="stylesheet" href="styles/css/styles-sistem.css">
+        <script src="js/F_prod.js" type="text/javascript"></script>
         <link href="styles/css/adProducto.css" rel="stylesheet" type="text/css"/>
     </head>
 
@@ -46,7 +47,7 @@
 
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="productosHTML.html">Productos</a>
+                                <a class="nav-link active" aria-current="page" href="producto.html">Productos</a>
                             </li>
                         </ul>
                     </div>
@@ -74,9 +75,7 @@
                             <button>Agregar</button>
                         </div>
                         <div class="option">
-                            <button ><a href="consult_Producto.html">Consultar</a></button>
-
-
+                            <button ><a href="consultProducto.html">Consultar</a></button>
                         </div>
 
                     </div>
@@ -107,6 +106,7 @@
                                                 <th>Concentración</th>
                                                 <th>Unidades en envase</th>
                                                 <th>Precio</th>
+                                                <td>Estatus</td>
                                             </tr>
                                         </thead>
                                         <tbody id="productos">
@@ -120,6 +120,7 @@
                                                 <td>250 mg por tableta</td>
                                                 <td>20 tabletas</td>
                                                 <td>$12.99</td>
+                                                <td>Activo</td>
                                             </tr>
                                             <tr onclick="mostrarInformacion(1)">
                                                 <td>AllerGuard Syrup </td>
@@ -130,6 +131,7 @@
                                                 <td>5 mg por 5 ml</td>
                                                 <td>1 botella</td>
                                                 <td>$8.49</td>
+                                                <td>Activo</td>
                                             </tr>
                                             <tr onclick="mostrarInformacion(2)">
                                                 <td>VitaC Boost</td>
@@ -140,6 +142,7 @@
                                                 <td>500 mg por cápsula</td>
                                                 <td>60 cápsulas</td>
                                                 <td>$15.75</td>
+                                                <td>Activo</td>
                                             </tr>
                                             <tr onclick="mostrarInformacion(3)">
                                                 <td>SleepEase Tablets</td>
@@ -150,6 +153,7 @@
                                                 <td> 5 mg por tableta</td>
                                                 <td>30 tabletas</td>
                                                 <td>$9.99</td>
+                                                <td>Activo</td>
                                             </tr>
                                             <tr onclick="mostrarInformacion(4)">
                                                 <td>DigestiPro Capsules</td>
@@ -160,6 +164,7 @@
                                                 <td>150 mg por cápsula</td>
                                                 <td>90 cápsulas</td>
                                                 <td>$18.50</td>
+                                                <td>Activo</td>
                                             </tr>
                                             <tr onclick="mostrarInformacion(5)">
                                                 <td>ImmunoGuard Plus</td>
@@ -170,6 +175,7 @@
                                                 <td> 250 mg por tableta</td>
                                                 <td>60 tabletas</td>
                                                 <td>$22.99</td>
+                                                  <td>Activo</td>
                                             </tr>
                                             <tr onclick="mostrarInformacion(6)">
                                                 <td>RelaxiCalm Drops</td>
@@ -180,6 +186,7 @@
                                                 <td>5 mg por ml</td>
                                                 <td>1 frasco</td>
                                                 <td>$11.25</td>
+                                                  <td>Activo</td>
                                             </tr>
                                             <tr onclick="mostrarInformacion(7)">
                                                 <td>SkinCare Cream</td>
@@ -190,6 +197,7 @@
                                                 <td>1%</td>
                                                 <td>1 tubo</td>
                                                 <td>$14.75</td>
+                                                <td>Activo</td>
                                             </tr>
                                             <tr onclick="mostrarInformacion(8)">
                                                 <td>JointFlex Gel</td>
@@ -200,6 +208,7 @@
                                                 <td>2%</td>
                                                 <td>1 tubo</td>
                                                 <td>$16.99</td>
+                                                <td>Activo</td>
                                             </tr>
                                             <tr onclick="mostrarInformacion(9)">
                                                 <td>EyeClear Drops</td>
@@ -210,6 +219,7 @@
                                                 <td>2 mg por ml</td>
                                                 <td>1 frasco</td>
                                                 <td>$9.95</td>
+                                                <td>Activo</td>
                                             </tr>
                                             <tr onclick="mostrarInformacion(10)">
                                                 <td>SleepEase Tablets</td>
@@ -220,6 +230,7 @@
                                                 <td> 5 mg por tableta</td>
                                                 <td>30 tabletas</td>
                                                 <td>$9.99</td>
+                                                <td>Activo</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -229,7 +240,7 @@
                     </div>
                 </div>
                 
-                                 <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js" type="text/javascript"></script>
 <center>
         <h3>Registro de Producto</h3>
         <form id="productForm">
@@ -295,14 +306,16 @@
                         <option value="inactivo">Inactivo</option>
                     </select><br>
                 </div>
-                <button type="button" onclick="guardarProducto();">Registrar Producto</button>
+            </div>
+                
         </form>
-
+        <div>
+<button type="button" onclick="registrarProducto();">Registrar Producto</button>
+        </div>
         <div id="registroProducto">
 
         </div>
         <div>
-    <button type="button" onclick="guardarProducto()">Guardar</button>
     <button type="button" onclick="eliminarProducto()">Eliminar</button>
     <button type="button" onclick="editarProducto()">Editar</button>
 </div>
