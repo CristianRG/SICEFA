@@ -1,7 +1,7 @@
 
         let productoRegistrado = null;
         let productoActivo = false;
-function registrarProducto() {
+        function registrarProducto() {
             // Obtener los valores del formulario
             const nombre = document.getElementById('nombre').value;
             const nombreGenerico = document.getElementById('nombreGenerico').value;
