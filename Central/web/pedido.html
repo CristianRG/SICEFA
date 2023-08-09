@@ -1,0 +1,69 @@
+<div class="side-bar">
+  <div class="options">
+    <!-- Para agregar los elementos que iran en la barra lateral solo crear un div con la clase 'option'
+        y dentro el boton con el texto que deseas agregar -->
+
+    <!-- ejemplo
+
+            <div class="option">
+                <button>Agregar</button>
+            </div>
+            <div class="option">
+                <button>Editar</button>
+            </div>
+            <div class="option">
+                <button>Eliminar</button>
+            </div> -->
+
+  </div>
+</div>
+<div class="content-modulo" id="content-modulo">
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="switchPendientes">
+    <label class="form-check-label" for="switchPendientes">Pendientes</label>
+  </div>
+  <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
+  <div class="pedido-consulta">
+    <div class="consulta" id="consulta">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">id compra</th>
+            <th scope="col">fecha</th>
+            <th scope="col">sucursal</th>
+            <th scope="col">nombre empleado</th>
+            <th scope="col">código postal</th>
+            <th scope="col">ciudad</th>
+            <th scope="col">estado</th>
+            <th scope="col">total</th>
+            <th scope="col">status</th>
+          </tr>
+        </thead>
+        <tbody id="contenido-tabla">
+        </tbody>
+      </table>
+    </div>
+    <div class="consulta-edicion" id="consulta-edicion">
+      
+    </div>
+  </div>
+  <div class="detalle-pedido" id="detalle-pedido">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Nombre generico</th>
+            <th scope="col">Medida</th>
+            <th scope="col">Presentación</th>
+            <th scope="col">Concentración</th>
+            <th scope="col">Unidades en envase</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <!-- <th scope="col">status</th> -->
+          </tr>
+        </thead>
+        <tbody id="contenido-detalle">
+        </tbody>
+      </table>
+  </div>
+  </div>
