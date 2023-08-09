@@ -315,6 +315,8 @@ const data = [
             <td>Telefono sucursal:</td>
             <td>${item.telefonoSucursal}</td>
         </tr>
+                <button class="btn-editar">Editar</button>
+                <button class="btn-eliminar">Eliminar</button>
     `;
 
     infoTables[0].innerHTML = detallesTitular;
@@ -345,22 +347,7 @@ function agregarRegistroATabla(registro) {
 
     tableBody.appendChild(newRow);
 
-document.addEventListener("DOMContentLoaded", function () {
-    const tableRows = document.querySelectorAll("#myTable tbody tr");
 
-    tableRows.forEach((row, index) => {
-        row.addEventListener("click", function () {
-            // Elimina la clase "selected-row" de todas las filas
-            tableRows.forEach(row => row.classList.remove("table-info"));
-
-            // Agrega la clase "selected-row" a la fila seleccionada
-            row.classList.add("table-info");
-
-            // Muestra la información del registro correspondiente
-            mostrarInformacion(index);
-        });
-    });
-});
     // Limpiar el formulario después de agregar el registro
     limpiarFormulario();
 }
