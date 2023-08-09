@@ -73,3 +73,40 @@
                     color: white; /* Cambiar el color del texto a blanco para mejor contraste */
                 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px; /* Ajustar el ancho máximo según tus necesidades */
+  margin: 0 auto; /* Centrar el formulario horizontalmente */
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  margin-bottom: 5px;
+}
+
+.form-row input,
+.form-row textarea,
+.form-row select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.form-row textarea {
+  resize: vertical; /* Permitir ajuste vertical del textarea */
+}
+
+.form-row input[type="number"] {
+  width: 100px; /* Ajustar el ancho según tus necesidades */
+}
+
+.form-row select {
+  width: 100%; /* Ajustar el ancho según tus necesidades */
+}
