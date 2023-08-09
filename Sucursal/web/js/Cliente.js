@@ -1,9 +1,9 @@
-
+//cliente sisefa
 
 var cliente=[];
-function crearEmpleado() {
+function crearCliente() {
     let cliente1 = {
-        "idCliente": 2301,
+        "idCliente": 1,
         "nombre": "Miguel",
         "apellidoPaterno": "Lopez",
         "apellidoMaterno": "Gaeta",
@@ -15,7 +15,7 @@ function crearEmpleado() {
         "codigoPostal": "32145",
         "ciudad": "Leon",
         "estado": "Guanajuato",
-        "telefono": "4771234567",
+        "telefono": 4771234567,
         "foto": "",
         "adicional":{
             "FechaIngreso": "02/07/2018",
@@ -24,7 +24,7 @@ function crearEmpleado() {
     };
     
     let cliente2 = {
-        "idCliente": 2302,
+        "idCliente": 2,
         "nombre": "Esmeralda",
         "apellidoPaterno": "García",
         "apellidoMaterno": "Rodríguez",
@@ -45,7 +45,7 @@ function crearEmpleado() {
     };
     
     let cliente3 = {
-        "idCliente": 2303,
+        "idCliente": 3,
         "nombre": "Marta",
         "apellidoPaterno": "López",
         "apellidoMaterno": "Ramírez",
@@ -66,7 +66,7 @@ function crearEmpleado() {
     };
     
     let cliente4 = {
-        "idCliente": 2304,
+        "idCliente": 4,
         "nombre": "Sofia",
         "apellidoPaterno": "Mendoza",
         "apellidoMaterno": "Martínez",
@@ -87,7 +87,7 @@ function crearEmpleado() {
     };
     
     let cliente5 = {
-        "idCliente": 2305,
+        "idCliente": 5,
         "nombre": "Carlos",
         "apellidoPaterno": "Torres",
         "apellidoMaterno": "Gómez",
@@ -108,7 +108,7 @@ function crearEmpleado() {
     };
     
     let cliente6 = {
-        "idCliente": 2306,
+        "idCliente": 6,
         "nombre": "Isabella",
         "apellidoPaterno": "Hernández",
         "apellidoMaterno": "González",
@@ -129,7 +129,7 @@ function crearEmpleado() {
     };
     
     let cliente7 = {
-        "idCliente": 2307,
+        "idCliente": 7,
         "nombre": "Alejandro",
         "apellidoPaterno": "Rodríguez",
         "apellidoMaterno": "Sánchez",
@@ -150,7 +150,7 @@ function crearEmpleado() {
     };
     
     let cliente8 = {
-        "idCliente": 2308,
+        "idCliente": 8,
         "nombre": "Valentina",
         "apellidoPaterno": "Vargas",
         "apellidoMaterno": "Rivera",
@@ -171,7 +171,7 @@ function crearEmpleado() {
     };
     
     let cliente9 = {
-        "idCliente": 2309,
+        "idCliente": 9,
         "nombre": "Diego",
         "apellidoPaterno": "Silva",
         "apellidoMaterno": "Paredes",
@@ -224,8 +224,8 @@ function crearEmpleado() {
     cliente[8] = cliente9;
     cliente[9] = cliente10;
     
-    consultarCliente();
 }
+
 
 function consultarCliente() {
     let datosTabla = "";
@@ -246,31 +246,22 @@ function consultarCliente() {
     }
     
     document.getElementById("Tabla_Cliente").innerHTML = datosTabla;
-
-}
-
-
-
-
-function agregarCliente(){
-    
-}
-function buscar(){
     
 }
 
-function limpiarFromCliente(){
+function buscarCliente(){
+    let pos;
+}
+
+function GuardarCliente(){
     
 }
 
-function modificarCliente(){
+function ModificarCliente(){
     
 }
 
-function eliminarCliente(){
+function EliminarCliente(){
     
 }
 
-function tablaClienteEliminado(){
-    
-}

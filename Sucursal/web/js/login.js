@@ -1,10 +1,14 @@
 const users = {
     'admin': {
+        id_user: '10293',
+        name: 'Maria',
         password: 'admin',
         rol: 'ADMS',
         puesto: 'Gerente'
     },
     'user1': {
+        id_user: '22323',
+        name: 'Mario',
         password: 'user1',
         rol: 'EMP',
         puesto: 'Atencion clientes'
@@ -19,10 +23,14 @@ function validarUsuario() {
         if (password == users[username].password) {
             let user = {
                 'user': {
+                    id_user :users[username].id_user,
                     username: username,
                     password: password,
+                    name: users[username].name,
                     rol: users[username].rol,
                     puesto: users[username].puesto,
+                    sucursal: 'Centro Max',
+                    cp: '2800'
                 }
             }
             localStorage.setItem('user', JSON.stringify(user));
@@ -35,7 +43,12 @@ function validarUsuario() {
         alert ("El usuario no existe");
     }
 
-    //permisosUsuario();
+    informacionUsuario();
+}
+
+function informacionUsuario() {
+    let user = JSON.parse(localStorage.getItem('user'));
+    document.getElementById('perfil-username').innerHTML = user.user.name;
 }
 
 // function permisosUsuario(){

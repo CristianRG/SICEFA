@@ -1,82 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SICEFA CENTRAL - HOME</title>
-        <link rel="stylesheet" href="styles/bootstrap-5.3.0/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/brands.min.css">
-        <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/solid.min.css">
-        <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/fontawesome.min.css">
-        <link rel="stylesheet" href="styles/package/dist/sweetalert2.min.css">
-        <link rel="stylesheet" href="styles/css/styles-sistem.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SICEFA CENTRAL - HOME</title>
+    <link rel="stylesheet" href="styles/bootstrap-5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/brands.min.css">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/solid.min.css">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="styles/package/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="styles/css/styles-sistem.css">
+    
 
-    </head>
+</head>
 
-    <body>
-        <header>
-            <div class="logo-vision">
-                <div class="logo">
-                    <img src="img/SICEFA_LOGO.png" alt="SICEFA_LOGO">
-                </div>
-                <div class="vision">
-                    <div class="elements">
-                        <a href="">Misión</a>
-                        <a href="">Visión</a>
-                        <a href="">Valores</a>
-                    </div>
+<body>
+    <header>
+        <div class="logo-vision">
+            <div class="logo">
+                <img src="img/SICEFA_LOGO.png" alt="SICEFA_LOGO">
+            </div>
+            <div class="vision">
+                <div class="elements">
+                    <a href="">Misión</a>
+                    <a href="">Visión</a>
+                    <a href="">Valores</a>
                 </div>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-light ">
-                <div class="container-fluid">
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav" id="navbar-elements">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="sucursal.html">Sucursales</a>
-
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="productosHTML.html">Productos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <div class="perfil">
-                <div class="icon-perfil">
-                    <i class="fa-solid fa-user fa-sm"></i>
-                </div>
-                <div class="info-perfil">
-                    <p id="perfil-username">name user</p>
-                    <button onclick="logOut()">Log out</button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav" id="navbar-elements">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="sucursal.html">Sucursales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="productosHTML.html">Productos</a>
+                           
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </header>
-        <section>
-            <!-- SLIDER -->
-            <div class="content">
+        </nav>
+        <div class="perfil">
+            <div class="icon-perfil">
+                <i class="fa-solid fa-user fa-sm"></i>
+            </div>
+            <div class="info-perfil">
+                <p id="perfil-username">name user</p>
+                <button onclick="logOut()">Log out</button>
+            </div>
+        </div>
+    </header>
+    <section>
+        <!-- SLIDER -->
+        <div class="content">
+             
 
                 <div class="side-bar">
                     <div class="options">
-                        <h3>Sucursal</h3>
+                        <h3>Producto</h3>
                         <div class="option">
                             <button>Agregar</button>
                         </div>
                         <div class="option">
-                            <button>Editar</button>
+                            <button>Consultar</button>
                         </div>
-                        <div class="option">
-                            <button>Eliminar</button>
-                        </div>
-
-                    </div>
+                        
                 </div>
+                </div>
+                <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
 
                 <div class="container-fluid mt-4">
                     <form class="form-inline w-100 justify-content-center">
@@ -104,52 +104,10 @@
                                                 <th>Telefono sucursal</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Central</td>
-                                                <td>1</td>
-                                                <td>Alejandro</td>
-                                                <td>Torres</td>
-                                                <td>Peréz</td>
-                                                <td>TOPA930518HMCLRR04</td>
-                                                <td>TOPA930518AB1</td>
-                                                <td>(477) 123-4567</td>
-                                            </tr>
-                                            <tr> 
-                                                <td>Plaza Mayor</td>
-                                                <td>2</td>
-                                                <td>Gabriela</td>
-                                                <td>Vargas</td>
-                                                <td>Ruiz</td>
-                                                <td>VARC980423MMCLZB06</td>
-                                                <td>VARC980423VZ2</td>
-                                                <td>(477) 234-5678</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Centro Max</td>
-                                                <td>3</td>
-                                                <td>Rodrigo</td>
-                                                <td>Ramos</td>
-                                                <td>García</td>
-                                                <td>RAGR920722HMCMSD09</td>
-                                                <td>RAGR920722LH9</td>
-                                                <td>(477) 234-5678</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Centro</td>
-                                                <td>4</td>
-                                                <td>Valentina</td>
-                                                <td>Jimenéz</td>
-                                                <td>González</td>
-                                                <td>JIGV010311MMCGNZ05</td>
-                                                <td>JIGV010311RM3</td>
-                                                <td>(477) 456-7890</td>
-                                            </tr>
+                                        <tbody id="productos">
+                                            
                                         </tbody>
                                     </table>
-                                    
-                                    
-                                    
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -392,100 +350,124 @@
                             </div>
                         </div>
                     </div>
+            <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js" type="text/javascript"></script>
+            <h1>Registro de Producto</h1>
+            <form id="productForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required><br>
 
-                    <div>
-                        <h2>Registrar Sucursal</h2>
-                        <div class="col-md-6">
-                            <table class="mi-tabla">
-                                <thead>
-                                    <tr>
-                                        <th colspan="2">Datos Titular</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            Nombre titular:<br>
-                                            <input type="text" name="nombreTitular" placeholder="Nombre titular">
-                                        </td>
-                                        <td>
-                                            Apellido paterno titular:<br>
-                                            <input type="text" name="apellidoPaternoTitular" placeholder="Apellido paterno titular">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Apellido materno titular:<br>
-                                            <input type="text" name="apellidoMaternoTitular" placeholder="Apellido materno titular">
-                                        </td>
-                                        <td>
-                                            Titular CURP:<br>
-                                            <input type="text" name="curpTitular" placeholder="Titular CURP">
-                                        </td>
-                                    <tr>
-                                        <td>
-                                            Titular RFC:<br>
-                                            <input type="text" name="rfcTitular" placeholder="Titular RFC">
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table> 
-                        </div>
-                        <div class="col-md-6">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2">Datos Sucursal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            Nombre de la sucursal:<br>
-                                            <input type="text" name="nombreSucursal" placeholder="Nombre de la sucursal">
-                                        </td>
-                                        <td>
-                                            Id sucursal:<br>
-                                            <input type="text" name="idSucursal" placeholder="Id sucursal">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Estado:<br>
-                                            <input type="text" name="estado" placeholder="Estado">
-                                        </td>
-                                        <td>
-                                            Ciudad:<br>
-                                            <input type="text" name="ciudad" placeholder="Ciudad">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Domicilio:</td>
-                                        <td><input type="text" name="domicilio" placeholder="Domicilio"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Codigo Postal:</td>
-                                        <td><input type="text" name="codigoPostal" placeholder="Codigo Postal"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Telefono sucursal:</td>
-                                        <td><input type="text" name="telefonoSucursal" placeholder="Telefono sucursal"></td>
-                                    </tr>
-                                </tbody>
-                            </table>  
-                        </div>
-                    </div>
-                    <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
+                <label for="nombreGenerico">Nombre Genérico:</label>
+                <input type="text" id="nombreGenerico" required><br>
 
-                </div>
+                <label for="formaFarmaceutica">Forma Farmacéutica:</label>
+                <input type="text" id="formaFarmaceutica" required><br>
+
+                <label for="unidadMedida">Unidad de Medida:</label>
+                <input type="text" id="unidadMedida" required><br>
+
+                <label for="presentacion">Presentación:</label>
+                <input type="text" id="presentacion" required><br>
+
+                <label for="principalIndicacion">Principal Indicación:</label>
+                <textarea id="principalIndicacion" rows="4" required></textarea><br>
+
+                <label for="contraindicaciones">Contraindicaciones:</label>
+                <textarea id="contraindicaciones" rows="4" required></textarea><br>
+
+                <label for="concentracion">Concentración:</label>
+                <input type="text" id="concentracion" required><br>
+
+                <label for="unidadesEnvase">Unidades en Envase:</label>
+                <input type="number" id="unidadesEnvase" required><br>
+
+                <label for="precioUnitario">Precio Unitario:</label>
+                <input type="number" step="0.01" id="precioUnitario" required><br>
+
+                <label for="foto">Foto:</label>
+                <input type="file" id="foto" accept="image/*" required><br>
+
+                <label for="rutaFoto">Ruta de la Foto:</label>
+                <input type="text" id="rutaFoto" required><br>
+
+                <label for="codigoBarras">Código de Barras:</label>
+                <input type="text" id="codigoBarras" required><br>
+
+                <label for="estatus">Estatus:</label>
+                <select id="estatus" required>
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                </select><br>
+
+                <button type="button" onclick="registrarProducto()">Registrar Producto</button>
+            </form>
+
+            <div id="registroProducto">
+
             </div>
-        </section>
-        <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js"></script>
-        <script src="styles/package/dist/sweetalert2.min.js"></script>
-        <script src="js/login.js"></script>
-        <script src="js/changeModule.js"></script>
-        <script src="js/adSucursal.js" type="text/javascript"></script>
-        <link href="styles/css/adSucursal.css" rel="stylesheet" type="text/css"/>
-    </body>
+            <div>
+                <button type="button" onclick="registrarProducto()">Guardar</button>
+                <button type="button" onclick="eliminarProducto()">Eliminar</button>
+                <button type="button" onclick="editarProducto()">Editar</button>
+            </div>
 
+            <div id="confirmacionEliminar" style="display: none;">
+                <p>¿Seguro que quieres eliminar el producto?</p>
+                <button type="button" onclick="eliminarProductoConfirmado()">Sí</button>
+                <button type="button" onclick="cerrarConfirmacionEliminar()">No</button>
+            </div>
+            </div>
+        </div>
+    </section>
+    <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="styles/package/dist/sweetalert2.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/changeModule.js"></script>
+    <script src="js/adSucursal.js" type="text/javascript"></script>
+    <link href="styles/css/adSucursal.css" rel="stylesheet" type="text/css"/>
+</body>
+</html>
+
+
+            <style>
+                /* Estilo para los bordes de las celdas */
+                table.table {
+                    border: 2px solid #000;
+                }
+
+                table.table th, table.table td {
+                    border: 1px solid #000;
+                }
+
+                /* Estilo para el borde grueso y color de fondo de los th */
+                table.table th {
+                    border: 2px solid #000;
+                    background-color: #d8d8d8; /* Color gris claro */
+                }
+                /* Estilo para ocultar los divs con clase "sucursal" */
+                .sucursal {
+                    display: none;
+                    border: 2px solid black;
+                    padding: 10px; /* Ajusta este valor para cambiar el espacio entre el borde y el contenido */
+                }
+                .sucursal table {
+                    width: 100%;
+                }
+                .sucursal th {
+                    text-align: left;
+                }
+
+                /* Estilo para mostrar el primer div */
+                #sucursal1 {
+                    display: none;
+                }
+
+                /* Estilo para cambiar el color de fondo de la fila seleccionada a azul */
+                .table-info {
+                    background-color: #1F90F1; /* Color azul */
+                    color: white; /* Cambiar el color del texto a blanco para mejor contraste */
+                } </style>
+            
+                <script src="js/F_prod.js" type="text/javascript"></script>
+
+    </body>
 </html>
