@@ -60,4 +60,5 @@ table.table th {
     padding: 10px;
     box-shadow: -1px 0px 26px 0px rgba(0,0,0,0.75);
     display: none;
+    overflow-y: scroll;
 }

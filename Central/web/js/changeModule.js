@@ -10,6 +10,5 @@ async function chargeProductModule(){
 
 async function chargeOrderModule(){
     let content = await fetch('./pedido.html');
-    console.log(content)
     document.getElementById('content').innerHTML = await content.text();
 }
