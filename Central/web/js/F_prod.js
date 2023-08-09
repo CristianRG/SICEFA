@@ -219,70 +219,196 @@ function registrarProducto() {
         // Vincular el evento de clic al cuerpo de la tabla
         const tableBody = document.querySelector('tbody');
         tableBody.addEventListener('click', handleRowClick);
+        
+function mostrarInformacion(index) {
+    const item = data[index];
+    const infoDiv = document.getElementById("infoDiv");
+ const template = `
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Datos Titular</th>
+                </tr>
+            </thead>
+                <tbody>
+                    <tr>
+                        <td>Nombre titular:</td>
+                        <td>${item.nombreGenerico}</td>
+                    </tr>
+                    <tr>
+                        <td>Apellido paterno titular:</td>
+                        <td>${item.formaFarmaceutica}</td>
+                    </tr>
+                    <tr>
+                        <td>Apellido materno titular:</td>
+                        <td>${item.medida}</td>
+                    </tr>
+                    <tr>
+                        <td>Titular CURP:</td>
+                        <td>${item.precentacion}</td>
+                    </tr>
+                    <tr>
+                        <td>Titular RFC:</td>
+                        <td>${item.concentracion}</td>
+                    </tr>
+    <tr>
+                        <td>Titular RFC:</td>
+                        <td>${item.unidadesEnvase}</td>
+                    </tr>
+    <tr>
+                        <td>Titular RFC:</td>
+                        <td>${item.precio}</td>
+                    </tr>
+                </tbody>
+       
+          
+        </table>
+    `;
 
+    infoDiv.innerHTML = template;
 
 
 const productos = [
   {
-    "Nombre Sucursal": "Central",
-    "Id sucursal": 1,
-    "Nombre titular": "Alejandro",
-    "Apellido paterno titular": "Torres",
-    "Apellido materno titular": "Peréz",
-    "Titular CURP": "TOPA930518HMCLRR04",
-    "Titular RFC": "TOPA930518AB1",
-    "Telefono sucursal": "(477) 123-4567"
-  },
+    "Nombre": "Pain Relief plus",
+    "Nombre generico": "Analgesinol",
+    "Forma farmaceutica": "Tabletas",
+    "Medida": "500 mg",
+    "Presentación": "Caja de 20 tabletas",
+    "Concentración": "250 mg por tableta",
+    "Unidades en envase": "20 tabletas",
+    "Precio": "$12.99"
+},
+
+ {
+    "Nombre": "AllerGuard Syrup",
+    "Nombre generico": "Antihistaminol",
+    "Forma farmaceutica": "Jarabe",
+    "Medida": "120 ml",
+    "Presentación": "Botella de 120 ml",
+    "Concentración": "5 mg por 5 ml",
+    "Unidades en envase": "1 botella",
+    "Precio": "$8.49"
+},
+
   {
-    "Nombre Sucursal": "Plaza Mayor",
-    "Id sucursal": 2,
-    "Nombre titular": "Gabriela",
-    "Apellido paterno titular": "Vargas",
-    "Apellido materno titular": "Ruiz",
-    "Titular CURP": "VARC980423MMCLZB06",
-    "Titular RFC": "VARC980423VZ2",
-    "Telefono sucursal": "(477) 234-5678"
-  },
+    "Nombre": "VitaC Boost",
+    "Nombre generico": "Vitamina C",
+    "Forma farmaceutica": "Cápsulas",
+    "Medida": "1000 mg",
+    "Presentación": "Frasco de 60 cápsulas",
+    "Concentración": "500 mg por cápsula",
+    "Unidades en envase": "60 cápsulas",
+    "Precio": "$15.75"
+},
+
   {
-    "Nombre Sucursal": "Centro Max",
-    "Id sucursal": 3,
-    "Nombre titular": "Rodrigo",
-    "Apellido paterno titular": "Ramos",
-    "Apellido materno titular": "García",
-    "Titular CURP": "RAGR920722HMCMSD09",
-    "Titular RFC": "RAGR920722LH9",
-    "Telefono sucursal": "(477) 234-5678"
-  },
-  {
-    "Nombre Sucursal": "Centro",
-    "Id sucursal": 4,
-    "Nombre titular": "Valentina",
-    "Apellido paterno titular": "Jiménez",
-    "Apellido materno titular": "González",
-    "Titular CURP": "JIGV010311MMCGNZ05",
-    "Titular RFC": "JIGV010311RM3",
-    "Telefono sucursal": "(477) 456-7890"
-  }
+    "Nombre": "SleepEase Tablets",
+    "Nombre generico": "Somniol",
+    "Forma farmaceutica": "Tabletas",
+    "Medida": "5 mg",
+    "Presentación": "Caja de 30 tabletas",
+    "Concentración": "5 mg por tableta",
+    "Unidades en envase": "30 tabletas",
+    "Precio": "$9.99"
+},
+{
+    "Nombre": "DigestiPro Capsules",
+    "Nombre generico": "Digestinol",
+    "Forma farmaceutica": "Cápsulas",
+    "Medida": "300 mg",
+    "Presentación": "Frasco de 90 cápsulas",
+    "Concentración": "150 mg por cápsula",
+    "Unidades en envase": "90 cápsulas",
+    "Precio": "$18.50"
+},
+
+{
+    "Nombre": "ImmunoGuard Plus",
+    "Nombre generico": "Inmunol",
+    "Forma farmaceutica": "Tabletas",
+    "Medida": "750 mg",
+    "Presentación": "Caja de 60 tabletas",
+    "Concentración": "250 mg por tableta",
+    "Unidades en envase": "60 tabletas",
+    "Precio": "$22.99"
+},
+{
+    "Nombre": "RelaxiCalm Drops",
+    "Nombre generico": "Calmex",
+    "Forma farmaceutica": "Gotas",
+    "Medida": "10 ml",
+    "Presentación": "Frasco de 10 ml",
+    "Concentración": "5 mg por ml",
+    "Unidades en envase": "1 frasco",
+    "Precio": "$11.25"
+},
+{
+    "Nombre": "SkinCare Cream",
+    "Nombre generico": "Dermatol",
+    "Forma farmaceutica": "Crema",
+    "Medida": "30 g",
+    "Presentación": "Tubo de 30 g",
+    "Concentración": "1%",
+    "Unidades en envase": "1 tubo",
+    "Precio": "$14.75"
+},
+
+{
+    "Nombre": "JointFlex Gel",
+    "Nombre generico": "Flexijoint",
+    "Forma farmaceutica": "Gel",
+    "Medida": "50 g",
+    "Presentación": "Tubo de 50 g",
+    "Concentración": "2%",
+    "Unidades en envase": "1 tubo",
+    "Precio": "$16.99"
+},
+{
+    "Nombre": "EyeClear Drops",
+    "Nombre generico": "VisiClear",
+    "Forma farmaceutica": "Gotas",
+    "Medida": "15 ml",
+    "Presentación": "Frasco de 15 ml",
+    "Concentración": "2 mg por ml",
+    "Unidades en envase": "1 frasco",
+    "Precio": "$9.95"
+},
+
 ];
 
 function consultarProducto() {
-  
   let obtenerTabla = document.getElementById('productos');
   let contenido = "";
-  consol.log(obtenerTabla, productos);
+
+  let productos = [
+    {
+      "Nombre": "Pain Relief plus",
+      "Nombre generico": "Analgesinol",
+      "Forma farmaceutica": "Tabletas",
+      "Medida": "500 mg",
+      "Presentación": "Caja de 20 tabletas",
+      "Concentración": "250 mg por tableta",
+      "Unidades en envase": "20 tabletas",
+      "Precio": "$12.99"
+    },
+    // ... (otros productos)
+  ];
+
   for (let i = 0; i < productos.length; i++) {
     contenido += `<tr>
-                    <td>${productos[i]["Nombre Sucursal"]}</td>
-                    <td>${productos[i]["Id sucursal"]}</td>
-                    <td>${productos[i]["Nombre titular"]}</td>
-                    <td>${productos[i]["Apellido paterno titular"]}</td>
-                    <td>${productos[i]["Apellido materno titular"]}</td>
-                    <td>${productos[i]["Titular CURP"]}</td>
-                    <td>${productos[i]["Titular RFC"]}</td>
-                    <td>${productos[i]["Telefono sucursal"]}</td>
+                    <td>${productos[i]["Nombre"]}</td>
+                    <td>${productos[i]["Nombre generico"]}</td>
+                    <td>${productos[i]["Forma farmaceutica"]}</td>
+                    <td>${productos[i]["Medida"]}</td>
+                    <td>${productos[i]["Presentación"]}</td>
+                    <td>${productos[i]["Concentración"]}</td>
+                    <td>${productos[i]["Unidades en envase"]}</td>
+                    <td>${productos[i]["Precio"]}</td>
                   </tr>`;
   }
 
-  // Aquí puedes hacer algo con la variable 'contenido', como agregarla a la tabla en tu HTML.
+  obtenerTabla.innerHTML = contenido; // Agregar contenido a la tabla en el HTML.
 }
+
 consultarProducto();
