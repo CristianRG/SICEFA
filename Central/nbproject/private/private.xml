@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+<<<<<<< HEAD
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
         <file>
             <url>web/productosHTML.html</url>
@@ -15,6 +16,14 @@
             <file>file:/C:/Users/josue/OneDrive/Documentos/Integradora/SICEFA/Central/web/js/F_prod.js</file>
             <file>file:/C:/Users/josue/OneDrive/Documentos/Integradora/SICEFA/Central/web/producto.html</file>
             <file>file:/C:/Users/josue/OneDrive/Documentos/Integradora/SICEFA/Central/web/consultProducto.html</file>
+=======
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/OneDrive/Documentos/inegradora/SICEFA/Central/web/about.html</file>
+            <file>file:/D:/OneDrive/Documentos/inegradora/SICEFA/Central/web/login.html</file>
+            <file>file:/D:/OneDrive/Documentos/inegradora/SICEFA/Central/web/index.html</file>
+            <file>file:/D:/OneDrive/Documentos/inegradora/SICEFA/Central/web/sistem.html</file>
+>>>>>>> 19be64a9548a36a8828c51725dc3c50c38074eee
         </group>
     </open-files>
 </project-private>

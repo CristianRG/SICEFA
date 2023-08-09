@@ -1,5 +1,4 @@
 let user = JSON.parse(localStorage.getItem('user'));
-console.log(user)
 
 let pedidos = {
     Pedidos: [
@@ -205,10 +204,16 @@ function finalizarPedido() {
 function consultarPedido() {
     document.getElementById('consulta').style.display = 'block';
     document.getElementById('registrar').style.display = 'none';
+    let status = document.getElementById('switchPendientes');
+    status.addEventListener('change', () => {
+        consultarPedido();
+    })
     let consulta = document.getElementById('contenido-tabla');
     let tabla = '';
     for (i = 0; i < pedidos['Pedidos'].length; ++i) {
-        tabla += `<tr>
+        if (status.checked) {
+            if (pedidos.Pedidos[i].status == 'PENDIENTE') {
+                tabla += `<tr>
                         <th scope="row">${pedidos.Pedidos[i].id_compra}</th>
                         <td>${pedidos.Pedidos[i].fecha}</td>
                         <td>${pedidos.Pedidos[i].sucursal}</td>
@@ -219,7 +224,70 @@ function consultarPedido() {
                         <td>${pedidos.Pedidos[i].total}</td>
                         <td>${pedidos.Pedidos[i].status}</td>
                     </tr>`
+            }
+        } else if (!status.checked) {
+            if (!(pedidos.Pedidos[i].status == 'PENDIENTE')) {
+                tabla += `<tr>
+                        <th scope="row">${pedidos.Pedidos[i].id_compra}</th>
+                        <td>${pedidos.Pedidos[i].fecha}</td>
+                        <td>${pedidos.Pedidos[i].sucursal}</td>
+                        <td>${pedidos.Pedidos[i].nombre_empleado}</td>
+                        <td>${pedidos.Pedidos[i].codigo_postal}</td>
+                        <td>${pedidos.Pedidos[i].ciudad}</td>
+                        <td>${pedidos.Pedidos[i].estado}</td>
+                        <td>${pedidos.Pedidos[i].total}</td>
+                        <td>${pedidos.Pedidos[i].status}</td>
+                    </tr>`
+            }
+        }
     }
     consulta.innerHTML = tabla;
 }
 
+document.getElementById('search').addEventListener('keyup', () => {
+    const value = document.getElementById("search").value;
+    if(document.getElementById('content-modulo')){
+        if(value.length == 0){
+            consultarPedido();
+        }else{
+            buscarPedido();
+        }
+    }
+})
+
+function buscarPedido() {
+    if(document.getElementById('content-modulo')){
+        const value = document.getElementById("search").value;
+    let resultado = pedidos.Pedidos.filter(object => {
+        let id_compra = object.id_pedido;
+        let fecha = object.fecha;
+        let sucursal = object.sucursal.toLowerCase();
+        let nombre_empleado = object.nombre_empleado.toLowerCase();
+        let codigo_postal = object.codigo_postal;
+        let ciudad = object.ciudad.toLowerCase();
+        let estado = object.estado.toLowerCase();
+        let status = object.status.toLowerCase();
+
+        return fecha.includes(value) || sucursal.includes(value) || nombre_empleado.includes(value) || ciudad.includes(value) || estado.includes(value) || status.includes(value);
+    });
+    let consulta = document.getElementById('contenido-tabla');
+    let tabla = '';
+    resultado.forEach(element => {
+        tabla += `<tr>
+                        <th scope="row">${element.id_compra}</th>
+                        <td>${element.fecha}</td>
+                        <td>${element.sucursal}</td>
+                        <td>${element.nombre_empleado}</td>
+                        <td>${element.codigo_postal}</td>
+                        <td>${element.codigo_postal}</td>
+                        <td>${element.estado}</td>
+                        <td>${element.total}</td>
+                        <td>${element.status}</td>
+                    </tr>`
+    });
+    consulta.innerHTML= tabla;
+    }
+    else{
+        
+    }
+}

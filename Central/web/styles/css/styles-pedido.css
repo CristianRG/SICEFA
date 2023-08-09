@@ -1,0 +1,64 @@
+.pedido-consulta{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.content-modulo .consulta {
+    width: 75%;
+    height: 90%;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+.content-modulo .consulta table {
+    width: 100%;
+}
+
+table.table {
+    border: 2px solid #000;
+}
+
+table.table th,
+table.table td {
+    border: 1px solid #000;
+}
+
+/* Estilo para el borde grueso y color de fondo de los th */
+table.table th {
+    border: 2px solid #000;
+    background-color: #d8d8d8;
+    /* Color gris claro */
+}
+
+.consulta-edicion{
+    width: 20%;
+    height: 90%;
+    margin-left: 1rem;
+    /* background: red; */
+    padding: 5px;
+}
+
+.datos-generales{
+    width: 100%;
+    height: auto;
+    /* background: green; */
+}
+
+/* .datos-generales p{
+    display: inline;
+} */
+
+.detalle-pedido{
+    width: 70vw;
+    height: 75vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 10px;
+    box-shadow: -1px 0px 26px 0px rgba(0,0,0,0.75);
+    display: none;
+    overflow-y: scroll;
+}

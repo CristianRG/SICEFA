@@ -35,7 +35,12 @@ function validarUsuario() {
         alert ("El usuario no existe");
     }
 
-    //permisosUsuario();
+}
+
+function userInformation(){
+    let user = JSON.parse(localStorage.getItem('user'));
+    let usernavbar = document.getElementById('perfil-username');
+    usernavbar.innerHTML = user.user.username;
 }
 
 // function permisosUsuario(){
