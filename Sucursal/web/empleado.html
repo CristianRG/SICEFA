@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles\css\empleado.css">
 </head>
 
-<body>
+<body onload="loadTabla()">
     <header>
         <div class="logo-vision">
             <div class="logo">
@@ -70,7 +70,7 @@
     <section>
         <!-- SLIDER -->
         <div class="content">
-
+            
             <div class="side-bar">
                 <div class="options">
                     <h3>Empleados</h3>
@@ -222,10 +222,6 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="salario">Salario Mensual:</label>
-                                        <input type="number" id="salario" name="salario" class="form-control small-form-control" placeholder="Salario">
-                                    </div>
-                                    <div class="form-group">
                                         <label for="fechaIngreso">Fecha de Ingreso:</label><br>
                                         <input type="date" id="fechaIngreso" name="fechaIngreso" class="form-control small-input">
                                     </div><br>
@@ -238,7 +234,9 @@
                                     </div><br>
                                     <div class="form-group">
                                         <button class="btn btn-success m-3" onclick="addEmpleado()" id="btnAdd">Registrar</button>
-                                        <button class="btn btn-secondary m-3" onclick="clean()" id="btnClean">Limpiar</button>                                    
+                                        <button class="btn btn-secondary m-3" onclick="clean()" id="btnClean">Limpiar</button>
+                                        <button class="btn btn-danger" onclick="deleteEmpleado()" id="btnDelete">Eliminar</button>        
+                                        <button class="btn btn-warning" onclick="updateEmpleado()" id="btnUpdate">Actualizar</button>                                    
                                     </div>
                                 </div>
                             </div>                            
