@@ -1,191 +1,232 @@
 let indexEmpleadoSeleccionado;
-let empleados = [{
-    "codigo": 1,
-    "nombre": "Alejandro", 
-    "apellidos": "Lapida Hernández", 
+let empleados = [
+    {
+    "noEmpleado": 1,
+    "nombre": "Alejandro",
+    "apellidoPaterno": "Lapida",
+    "apellidoMaterno": "Hernández",
     "fecha_nacimiento": "2001-02-04",
-    "curp": "LAHA010204HCSPRLI2", 
+    "curp": "LAHA010204HCSPRLI2",
     "genero": "Masculino",
-    "direccion": "Suárez #13c,Berlin. León", 
-    "telefono": "4771636991", 
-    "correo_electronico": "AleHer547@hotmail.com", 
+    "estado": "Guanajuato",
+    "ciudad": "León",
+    "domicilio": "Suárez #13c,Berlin",
+    "codigo_postal": "37250",
+    "telefono": "4771636991",
+    "correo_electronico": "AleHer547@hotmail.com",
     "rfc": "LAHA010204V29",
-    "sucursal": "Centro Max",
-    "fecha": "2022-10-24",
+    "fechaIngreso": "2022-10-24",
     "puesto": "Administrador",
     "estatus": "Activo"
-},
-{
-    "codigo": 2,
-    "nombre": "Damian", 
-    "apellidos": "Rojas Villareal", 
-    "fecha_nacimiento": "1992-05-14",
-    "curp": "ROVD920514HGTJLM51", 
-    "genero": "Masculino",
-    "direccion": "Narvarte #03,Centro. León", 
-    "telefono": "4775589319", 
-    "correo_electronico": "VillarealDARO@gmail.com", 
-    "rfc": "ROVD920514187",
-    "sucursal": "Futurama Monterrey",
-    "fecha": "2018-08-03",
-    "puesto": "Administrador",
-    "estatus": "Activo"
-},
-{
-    "codigo": 3,
-    "nombre": "Erika", 
-    "apellidos": "Yepéz Molina", 
-    "fecha_nacimiento": "1989-06-03",
-    "curp": "YEME890603MDFPLR15", 
-    "genero": "Femenino",
-    "direccion": "Lluvia #235,Cervantes. León", 
-    "telefono": "4763821678", 
-    "correo_electronico": "E1989YM@gmail.com", 
-    "rfc": "YEME890603FCA",
-    "sucursal": "Plaza Mayor",
-    "fecha": "2020-05-01",
-    "puesto": "Administrador",
-    "estatus": "Activo"
-},
-{
-    "codigo": 4,
-    "nombre": "Fernanda", 
-    "apellidos": "Juárez Rosas", 
-    "fecha_nacimiento": "2003-08-23",
-    "curp": "JURF030823MGTRSRH0", 
-    "genero": "Femenino",
-    "direccion": "Aldama #415,Centro. León", 
-    "telefono": "4773870624", 
-    "correo_electronico": "fer2003JuRo@gmail.com", 
-    "rfc": "JURF030823F80",
-    "sucursal": "Centro",
-    "fecha": "2023-08-23",
-    "puesto": "Administrador",
-    "estatus": "Activo"
-},
-{
-    "codigo": 5,
-    "nombre": "José Gustavo", 
-    "apellidos": "Dominguez Solis", 
-    "fecha_nacimiento": "1995-03-10",
-    "curp": "DOSG950310HGTMLS60", 
-    "genero": "Masculino",
-    "direccion": "Coral #23b,Flores. León", 
-    "telefono": "4772800604", 
-    "correo_electronico": "GusG4D1098@gmail.com", 
-    "rfc": "DOSG950310458",
-    "sucursal": "Futurama Monterrey",
-    "fecha": "2022-04-20",
-    "puesto": "Vendedor",
-    "estatus": "Activo"
-},
-{
-    "codigo": 6,
-    "nombre": "Josue Alejandro", 
-    "apellidos": "Nuñez Padilla", 
-    "fecha_nacimiento": "1986-07-25",
-    "curp": "NUPJ860725HSPXDS77", 
-    "genero": "Masculino",
-    "direccion": "Salinas #106,Tulipanes. León", 
-    "telefono": "4774713211", 
-    "correo_electronico": "JA12546@gmail.com", 
-    "rfc": "NUPJ860725895",
-    "sucursal": "Centro",
-    "fecha": "2019-08-24",
-    "puesto": "Vendedor",
-    "estatus": "Activo"
-},
-{
-    "codigo": 7,
-    "nombre": "Maria del Rosario", 
-    "apellidos": "Beltran Aranda", 
-    "fecha_nacimiento": "2000-11-09",
-    "curp": "BEAM001109MGTLRRQ2", 
-    "genero": "Femenino",
-    "direccion": "Silvestre #196, Rios. León", 
-    "telefono": "4773357100", 
-    "correo_electronico": "Mara198@outlook.com", 
-    "rfc": "BEAM001109LKA",
-    "sucursal": "Centro",
-    "fecha": "2018-12-05",
-    "puesto": "Vendedor",
-    "estatus": "Activo"
-},
-{
-    "codigo": 8,
-    "nombre": "Miriam Lucia", 
-    "apellidos": "Mejia Cortéz", 
-    "fecha_nacimiento": "2003-01-15",
-    "curp": "MECM030115MGTJRRW5", 
-    "genero": "Femenino",
-    "direccion": "Diamante #11d, Colonias. León", 
-    "telefono": "4774261003", 
-    "correo_electronico": "MejiaLucia12@outlook.com", 
-    "rfc": "MECM0301156T7",
-    "sucursal": "Centro Max",
-    "fecha": "2022-01-02",
-    "puesto": "Vendedor",
-    "estatus": "Activo"
-},
-{
-    "codigo": 9,
-    "nombre": "Tadeo Ismael", 
-    "apellidos": "López Castro", 
-    "fecha_nacimiento": "1999-04-30",
-    "curp": "LECT990430HGTOSD25", 
-    "genero": "Masculino",
-    "direccion": "Perla #232, Cuevas. León", 
-    "telefono": "4772261277", 
-    "correo_electronico": "Tadeoasdfg@hotmail.com", 
-    "rfc": "LOCT990430QP1",
-    "sucursal": "Centro Max",
-    "fecha": "2021-11-04",
-    "puesto": "Vendedor",
-    "estatus": "Activo"
-},
-{
-    "codigo": 10,
-    "nombre": "Victoria", 
-    "apellidos": "Fuentes Durán", 
-    "fecha_nacimiento": "1992-07-07",
-    "curp": "FUDV920707MGTNRC93", 
-    "genero": "Femenino",
-    "direccion": "El rubi #100, Centro. León", 
-    "telefono": "4779514428", 
-    "correo_electronico": "FuentesVic@gmail.com", 
-    "rfc": "FUDV920707UP0",
-    "sucursal": "Plaza Mayor",
-    "fecha": "2020-07-13",
-    "puesto": "Vendedor",
-    "estatus": "Activo"
-}];
-
-// Función para manejar el evento de clic en la fila
-function handleRowClick(event) {
-    const clickedRow = event.target.closest('tr');
-    if (clickedRow && clickedRow.parentElement.tagName === 'TBODY') {
-        const tableRows = clickedRow.parentElement.querySelectorAll('tr');
-        tableRows.forEach(row => row.classList.remove('table-info'));
-        clickedRow.classList.add('table-info');
-
-        // Obtener el id del div correspondiente al hacer clic en la fila
-        const divId = 'sucursal' + clickedRow.rowIndex;
-
-        // Mostrar solo el div correspondiente y ocultar los demás
-        const allDivs = document.querySelectorAll('.sucursal');
-        allDivs.forEach(div => {
-            if (div.id === divId) {
-                div.style.display = 'block';
-            } else {
-                div.style.display = 'none';
-            }
-        });
-    }
 }
+,
+{
+    "noEmpleado": 2,
+    "nombre": "María",
+    "apellidoPaterno": "González",
+    "apellidoMaterno": "López",
+    "fecha_nacimiento": "1995-06-15",
+    "curp": "GOLM950615MSPNZR07",
+    "genero": "Femenino",
+    "estado": "Guanajuato",
+    "ciudad": "León",
+    "domicilio": "Avenida Juárez #45",
+    "codigo_postal": "44100",
+    "telefono": "3318579245",
+    "correo_electronico": "maria.gonzalez@gmail.com",
+    "rfc": "GOLM9506155A1",
+    "fechaIngreso": "2021-08-10",
+    "puesto": "Vendedor",
+    "estatus": "Activo"
+}
+,
+{
+    "noEmpleado": 3,
+    "nombre": "Carlos",
+    "apellidoPaterno": "Martínez",
+    "apellidoMaterno": "Sánchez",
+    "fecha_nacimiento": "1988-11-23",
+    "curp": "MASC881123HDFNRL09",
+    "genero": "Masculino",
+    "estado": "Guanajuato",
+    "ciudad": "León",
+    "domicilio": "Reforma #1002",
+    "codigo_postal": "06000",
+    "telefono": "5552187496",
+    "correo_electronico": "carlos.martinez@gmail.com",
+    "rfc": "MASC8811236B2",
+    "fechaIngreso": "2015-04-05",
+    "puesto": "Vendedor",
+    "estatus": "Activo"
+}
+,
+{
+    "noEmpleado": 4,
+    "nombre": "Laura",
+    "apellidoPaterno": "Ramírez",
+    "apellidoMaterno": "Pérez",
+    "fecha_nacimiento": "1990-09-18",
+    "curp": "RAPL900918MDFMRL08",
+    "genero": "Femenino",
+    "estado": "Guanajuato",
+    "ciudad": "León",
+    "domicilio": "Calle Hidalgo #25",
+    "codigo_postal": "50050",
+    "telefono": "7223658120",
+    "correo_electronico": "laura.ramirez@hotmail.com",
+    "rfc": "RAPL900918V40",
+    "fechaIngreso": "2018-06-20",
+    "puesto": "Vendedor",
+    "estatus": "Activo"
+}
+,
+{
+    "noEmpleado": 5,
+    "nombre": "José",
+    "apellidoPaterno": "García",
+    "apellidoMaterno": "Martínez",
+    "fecha_nacimiento": "1985-04-30",
+    "curp": "GAMJ850430HDFRCR03",
+    "genero": "Masculino",
+    "estado": "Guanajuato",
+    "ciudad": "León",
+    "domicilio": "Colonia Centenario #70",
+    "codigo_postal": "58030",
+    "telefono": "4437896541",
+    "correo_electronico": "jose.garcia@gmail.com",
+    "rfc": "GAMJ8504305B3",
+    "fechaIngreso": "2010-02-15",
+    "puesto": "Vendedor",
+    "estatus": "Activo"
+}
+,
+{
+    "noEmpleado": 6,
+    "nombre": "Ana",
+    "apellidoPaterno": "Rodríguez",
+    "apellidoMaterno": "López",
+    "fecha_nacimiento": "1998-07-12",
+    "curp": "ROLA980712MDFDNP02",
+    "genero": "Femenino",
+    "estado": "Guanajuato",
+    "ciudad": "León",
+    "domicilio": "Zaragoza #150",
+    "codigo_postal": "37000",
+    "telefono": "4771234567",
+    "correo_electronico": "ana.rodriguez@example.com",
+    "rfc": "ROLA9807125A0",
+    "fechaIngreso": "2020-01-15",
+    "puesto": "Vendedor",
+    "estatus": "Activo"
+}
+,
+{
+    "noEmpleado": 7,
+    "nombre": "Pedro",
+    "apellidoPaterno": "Hernández",
+    "apellidoMaterno": "García",
+    "fecha_nacimiento": "1992-03-20",
+    "curp": "HEGP920320HDFRRC09",
+    "genero": "Masculino",
+    "estado": "Guanajuato",
+    "ciudad": "León",
+    "domicilio": "Paseo de los Insurgentes #123",
+    "codigo_postal": "37040",
+    "telefono": "4779876543",
+    "correo_electronico": "pedro.hernandez@example.com",
+    "rfc": "HEGP920320A1",
+    "fechaIngreso": "2017-05-10",
+    "puesto": "Vendedor",
+    "estatus": "Activo"
+}
+,
+{
+    "noEmpleado": 8,
+    "nombre": "Elena",
+    "apellidoPaterno": "Gómez",
+    "apellidoMaterno": "López",
+    "fecha_nacimiento": "1989-10-15",
+    "curp": "GOEL891015MDFPNN03",
+    "genero": "Femenino",
+    "estado": "Guanajuato",
+    "ciudad": "León",
+    "domicilio": "Calle Reforma #456",
+    "codigo_postal": "37210",
+    "telefono": "4774567890",
+    "correo_electronico": "elena.gomez@example.com",
+    "rfc": "GOEL8910155B2",
+    "fechaIngreso": "2015-11-28",
+    "puesto": "Vendedor",
+    "estatus": "Activo"
+}
+,
+{
+    "noEmpleado": 9,
+    "nombre": "Miguel",
+    "apellidoPaterno": "López",
+    "apellidoMaterno": "Rodríguez",
+    "fecha_nacimiento": "1996-09-28",
+    "curp": "LORM960928HDFGZL08",
+    "genero": "Masculino",
+    "estado": "Guanajuato",
+    "ciudad": "León",
+    "domicilio": "Avenida Revolución #789",
+    "codigo_postal": "37230",
+    "telefono": "4772345678",
+    "correo_electronico": "miguel.lopez@example.com",
+    "rfc": "LORM9609284A1",
+    "fechaIngreso": "2020-07-03",
+    "puesto": "Vendedor",
+    "estatus": "Activo"
+}
+,
+{
+    "noEmpleado": 10,
+    "nombre": "Isabel",
+    "apellidoPaterno": "Hernández",
+    "apellidoMaterno": "González",
+    "fecha_nacimiento": "1994-05-10",
+    "curp": "HEGI940510MDFRZB07",
+    "genero": "Femenino",
+    "estado": "Guanajuato",
+    "ciudad": "León",
+    "domicilio": "Calle Hidalgo #567",
+    "codigo_postal": "37100",
+    "telefono": "4773456789",
+    "correo_electronico": "isabel.hernandez@example.com",
+    "rfc": "HEGI9405105A0",
+    "fechaIngreso": "2018-04-15",
+    "puesto": "Vendedor",
+    "estatus": "Activo"
+}
+];
 
-    // Vincular el evento de clic al cuerpo de la tabla
-    const tableBody = document.querySelector('tbody');
-    tableBody.addEventListener('click', handleRowClick);
+// // Función para manejar el evento de clic en la fila
+// function handleRowClick(event) {
+//     const clickedRow = event.target.closest('tr');
+//     if (clickedRow && clickedRow.parentElement.tagName === 'TBODY') {
+//         const tableRows = clickedRow.parentElement.querySelectorAll('tr');
+//         tableRows.forEach(row => row.classList.remove('table-info'));
+//         clickedRow.classList.add('table-info');
+
+//         // Obtener el id del div correspondiente al hacer clic en la fila
+//         const divId = 'sucursal' + clickedRow.rowIndex;
+
+//         // Mostrar solo el div correspondiente y ocultar los demás
+//         const allDivs = document.querySelectorAll('.sucursal');
+//         allDivs.forEach(div => {
+//             if (div.id === divId) {
+//                 div.style.display = 'block';
+//             } else {
+//                 div.style.display = 'none';
+//             }
+//         });
+//     }
+// }
+
+//     // Vincular el evento de clic al cuerpo de la tabla
+//     const tableBody = document.querySelector('tbody');
+//     tableBody.addEventListener('click', handleRowClick);
 
     document.getElementById('fotoInput').addEventListener('change', function(event) {
         const preview = document.getElementById('fotoPreview');
@@ -297,7 +338,7 @@ function addEmpleado() {
     empleado.genero = genero;
     empleado.estado = estado;
     empleado.ciudad = ciudad;
-    empleado.domicilo = domicilo;
+    empleado.domicilio = domicilo;
     empleado.codigoPostal = codigoPostal;
     empleado.telefono = telefono;
     empleado.correo_electronico = correo_electronico;
@@ -316,12 +357,11 @@ function loadTabla() {
     let cuerpo = "";
     empleados.forEach(function (empleado) {
         let registro =
-                '<tr onclick="moduloLogin1.selectEmpleado(' + empleados.indexOf(empleado) + ');">' +
-                '<td>' + empleado.codigo + '</td>' +
+                '<tr onclick="selectEmpleado(' + empleados.indexOf(empleado) + ');">' +
+                '<td>' + empleado.noEmpleado + '</td>' +
                 '<td>' + empleado.nombre + '</td>' +
                 '<td>' + empleado.apellidoPaterno + '</td>' +
                 '<td>' + empleado.apellidoMaterno + '</td>' +
-                '<td>' + empleado.sucursal + '</td>' +
                 '<td>' + empleado.puesto + '</td>' +
                 '<td>' + empleado.estatus + '</td></tr>';
         cuerpo += registro;
@@ -341,7 +381,8 @@ function selectEmpleado(index) {
     document.getElementById("genero").value = empleados[index].genero;
     document.getElementById("estado").value = empleados[index].estado;
     document.getElementById("ciudad").value = empleados[index].ciudad;
-    document.getElementById("domicilo").value = empleados[index].domicilo;
+    document.getElementById("domicilio").value = empleados[index].domicilo;
+    document.getElementById("codigoPostal").value = empleados[index].codigoPostal;
     document.getElementById("telefono").value = empleados[index].telefono;
     document.getElementById("email").value = empleados[index].correo_electronico;
     // document.getElementById("estado").value = empleados[index].sucursal;
@@ -365,7 +406,8 @@ function clean() {
     document.getElementById("genero").value = "";
     document.getElementById("estado").value = "";
     document.getElementById("ciudad").value = "";
-    document.getElementById("domicilo").value = "";
+    document.getElementById("domicilio").value = "";
+    document.getElementById("codigoPostal").value = "";
     document.getElementById("telefono").value = "";
     document.getElementById("email").value = "";
     // document.getElementById("estado").value = "";
@@ -373,14 +415,15 @@ function clean() {
     document.getElementById("puesto").value = "";
     document.getElementById("noEmp").value = "";
     document.getElementById("nombreEmpleado").focus();
-    document.getElementById("btnUpdate").classList.add("disabled");
-    document.getElementById("btnDelete").classList.add("disabled");
+    // document.getElementById("btnUpdate").classList.add("disabled");
+    // document.getElementById("btnDelete").classList.add("disabled");
     document.getElementById("btnAdd").classList.remove("disabled");
     indexEmpleadoSeleccionado = 0;
 }
 
 function updateEmpleado() {
-    let     nombre,
+    let     
+    nombre,
     apellidoPaterno,
     apellidoMaterno,
     fecha_nacimiento,
@@ -476,7 +519,7 @@ function updateEmpleado() {
     empleado.fechaIngreso = fechaIngreso;
     empleado.puesto = puesto;
     empleado.estatus = "Activo";
-    empleado.codigo = codigo;
+    empleado.codigo = noEmpleado;
     empleados[indexEmpleadoSeleccionado] = empleado;
     clean();
     loadTabla();
@@ -500,8 +543,7 @@ function searchEmpleado() {
                 empleado.apellidoMaterno.toLowerCase().includes(searchEmp) ||
                 // empleado.sucursal.toLowerCase().includes(searchEmp) ||
                 empleado.puesto.toLowerCase().includes(searchEmp) ||
-                empleado.estatus.toLowerCase().includes(searchEmp)
-    );
+                empleado.estatus.toLowerCase().includes(searchEmp)    );
 
     loadTablas(filteredEmployees);
 }
@@ -512,8 +554,8 @@ function loadTablas(empleadosData) {
 
     empleadosData.forEach((empleado, index) => {
         const registro = `
-            <tr onclick="moduloLogin1.selectEmpleado(${index});">
-                <td>${empleado.codigo}</td>
+            <tr onclick="selectEmpleado(${index});">
+                <td>${empleado.noEmpleado}</td>
                 <td>${empleado.nombre}</td>
                 <td>${empleado.apellidoPaterno}</td>
                 <td>${empleado.apellidoMaterno}</td>
