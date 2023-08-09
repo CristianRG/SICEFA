@@ -67,8 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
     botonMostrarTabla.addEventListener("click", mostrarTabla);
 });
 
-
-
 const data = [
             {
                 nombreSucursal: "Central",
@@ -211,7 +209,31 @@ const data = [
                 telefonoSucursal: "(443) 444-5555"
             }
         ];
+        
+        
+function loadTabla() {
+    let cuerpo = "";
+    data.forEach(function (registro, index) {
+        let row =
+            `<tr onclick="mostrarInformacion(${index})">
+                <td>${registro.nombreSucursal}</td>
+                <td>${registro.idSucursal}</td>
+                <td>${registro.nombreTitular}</td>
+                <td>${registro.apellidoPaternoTitular}</td>
+                <td>${registro.apellidoMaternoTitular}</td>
+                <td>${registro.curpTitular}</td>
+                <td>${registro.rfcTitular}</td>
+                <td>${registro.telefonoSucursal}</td>
+                <td><button class="btn-eliminar" onclick="moveRow(this)">Eliminar</button></td>
+            </tr>`;
+        cuerpo += row; // Corregido aquí
+    });
+    console.log(cuerpo);
+    document.getElementById("tableBody1").innerHTML = cuerpo; // Usar "tableBody1" en lugar de "tblEmpleados"
 
+    // Opcionalmente, puedes mover el código para limpiar el formulario aquí
+    limpiarFormulario();
+}
         function mostrarInformacion(index) {
     const item = data[index];
     const infoDiv = document.getElementById("infoDiv");
@@ -349,7 +371,7 @@ const data = [
     infoTables[1].innerHTML = detallesSucursal;
 }
         
-        
+
    document.addEventListener("DOMContentLoaded", function () {
     // ...
 
@@ -360,27 +382,52 @@ const data = [
 function agregarRegistroATabla(registro) {
     const tableBody = document.getElementById("tableBody1");
     
-    // Generar el atributo data-index para identificar la fila
-    //newRow.setAttribute("data-index", tableBody.children.length);
-
-    tableBody.innerHTML +=
-    `<tr onclick="mostrarInformacion(${data.length-1})">
-        <td>${registro.nombreSucursal}</td>
-        <td>${registro.idSucursal}</td>
-        <td>${registro.nombreTitular}</td>
-        <td>${registro.apellidoPaternoTitular}</td>
-        <td>${registro.apellidoMaternoTitular}</td>
-        <td>${registro.curpTitular}</td>
-        <td>${registro.rfcTitular}</td>
-        <td>${registro.telefonoSucursal}</td>
-    </tr>
-    `;  
+    const nombreSucursal = document.getElementById('nombreSucursal').value;
+    const idSucursal = parseInt(document.getElementById('idSucursal').value);
+    const nombreTitular = document.getElementById('nombreTitular').value;
+    const apellidoPaternoTitular = document.getElementById('apellidoPaternoTitular').value;
+    const apellidoMaternoTitular = document.getElementById('apellidoMaternoTitular').value;
+    const curpTitular = document.getElementById('curpTitular').value;
+    const rfcTitular = document.getElementById('rfcTitular').value;
+    const estado = document.getElementById('estado').value;
+    const ciudad = document.getElementById('ciudad').value;
+    const domicilio = document.getElementById('domicilio').value;
+    const codigoPostal = document.getElementById('codigoPostal').value;
+    const telefonoSucursal = document.getElementById('telefonoSucursal').value;
+    
+    // Crear un objeto de registro con los valores obtenidos
+const nuevoRegistro = {
+    nombreSucursal:nombreSucursal,
+    idSucursal:idSucursal ,
+    nombreTitular:nombreTitular ,
+    apellidoPaternoTitular:apellidoPaternoTitular ,
+    apellidoMaternoTitular:curpTitular ,
+    curpTitular:rfcTitular ,
+    rfcTitular:rfcTitular ,
+    estado:estado ,
+    ciudad:ciudad ,
+    domicilio:domicilio ,
+    codigoPostal:codigoPostal ,
+    telefonoSucursal: telefonoSucursal
+};
+    data.push(nuevoRegistro);
+    loadTabla();
+   // tableBody.innerHTML +=
+   // `<tr onclick="mostrarInformacion(${data.length-1})">
+    //    <td>${registro.nombreSucursal}</td>
+    //    <td>${registro.idSucursal}</td>
+     //   <td>${registro.nombreTitular}</td>
+     //   <td>${registro.apellidoPaternoTitular}</td>
+     //   <td>${registro.apellidoMaternoTitular}</td>
+     //   <td>${registro.curpTitular}</td>
+     //   <td>${registro.rfcTitular}</td>
+     //   <td>${registro.telefonoSucursal}</td>
+    //</tr>
+    //`;  
     
     // Limpiar el formulario después de agregar el registro
     limpiarFormulario();
 }
-
-
 
 
 document.addEventListener("DOMContentLoaded", function () {
