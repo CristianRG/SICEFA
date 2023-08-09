@@ -1,70 +1,28 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const tableRows = document.querySelectorAll("#myTable tbody tr");
+let user = JSON.parse(localStorage.getItem('user'));
 
-    tableRows.forEach((row, index) => {
-        row.addEventListener("click", function () {
-            // Elimina la clase "selected-row" de todas las filas
-            tableRows.forEach(row => row.classList.remove("table-info"));
-
-            // Agrega la clase "selected-row" a la fila seleccionada
-            row.classList.add("table-info");
-
-            // Muestra la información del registro correspondiente
-            mostrarInformacion(index);
-        });
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const contenedorFormulario = document.getElementById("formulario");
-    const contenedorTabla = document.getElementById("tablaSucursales");
-    const botonMostrarTabla = document.getElementById("botonMostrarTabla");
-
-    contenedorFormulario.style.display = "none"; // Ocultar el formulario
-    botonMostrarTabla.style.display = "none"; // Ocultar el botón
-
-    // Función para mostrar el formulario y ocultar la tabla
-    function mostrarFormulario() {
-        contenedorFormulario.style.display = "block"; // Mostrar el formulario
-        contenedorTabla.style.display = "none"; // Ocultar la tabla
-        botonMostrarTabla.style.display = "block"; // Mostrar el botón
-    }
-
-    // Función para mostrar la tabla y ocultar el formulario
-    function mostrarTabla() {
-        contenedorFormulario.style.display = "none"; // Ocultar el formulario
-        contenedorTabla.style.display = "block"; // Mostrar la tabla
-        botonMostrarTabla.style.display = "none"; // Ocultar el botón
-    }
-
-    // Asignar los eventos a los botones
-    const botonMostrarFormulario = document.getElementById("botonMostrarFormulario");
-    botonMostrarFormulario.addEventListener("click", mostrarFormulario);
-    botonMostrarTabla.addEventListener("click", mostrarTabla);
-});
-
-const data = [
-            {
-                idCliente: 1,
-                nombre: "Miguel",
-                apellidoPaterno: "López",
-                apellidoMaterno: "Gaeta",
-                genero: "M",
-                fechaNacimiento: "12/09/2001",
-                rfc: "bdiwbiude131816",
-                curp: "HIEDUDENDEO56",
-                domicilio: "Calle 123, Colonia Reforma",
-                codigoPostal: "32145",
-                ciudad: "León",
-                estado: "Guanajuato",
-                telefono: 4771234567,
-                foto: "",
-                FechaIngreso: "02/07/2018",
-                correo: "MiguelLG@gmail.com"
-        
-            },
-            {
-                idCliente: 2,
+let clientes = {
+    Clientes: [
+        {
+            idCliente: 1,
+            nombre: "Miguel",
+            apellidoPaterno: "López",
+            apellidoMaterno: "Gaeta",
+            genero: "M",
+            fechaNacimiento: "12/09/2001",
+            rfc: "bdiwbiude131816",
+            curp: "HIEDUDENDEO56",
+            domicilio: "Calle 123, Colonia Reforma",
+            codigoPostal: "32145",
+            ciudad: "León",
+            estado: "Guanajuato",
+            telefono: 4771234567,
+            foto: "",
+            FechaIngreso: "02/07/2018",
+            correo: "MiguelLG@gmail.com",
+            status: 'ELIMINADO'
+        },
+        {
+            idCliente: 2,
                 nombre: "Esmeralda",
                 apellidoPaterno: "García",
                 apellidoMaterno: "Rodríguez",
@@ -79,10 +37,11 @@ const data = [
                 telefono: 5512345678,
                 foto: "",
                 FechaIngreso: "12/05/2016",
-                correo: "EsmeraldaGR@gmail.com"
-            },
-            {
-                idCliente: 3,
+                correo: "EsmeraldaGR@gmail.com",
+            status: 'ACTUAL'
+        },
+        {
+            idCliente: 3,
                 nombre: "Marta",
                 apellidoPaterno: "López",
                 apellidoMaterno: "Ramírez",
@@ -97,9 +56,11 @@ const data = [
                 telefono: 61498765432,
                 foto: "",
                 FechaIngreso: "15/11/2006",
-                correo: "MartaLR@gmail.com"            },
-            {
-                idCliente: 4,
+                correo: "MartaLR@gmail.com",
+            status: 'ACTUAL'
+        },
+        {
+            idCliente: 4,
                 nombre: "Sofia",
                 apellidoPaterno: "Mendoza",
                 apellidoMaterno: "Martínez",
@@ -114,8 +75,10 @@ const data = [
                 telefono: 5587654321,
                 foto: "",
                 FechaIngreso: "10/03/2016",
-                correo: "SofiaMM@gmail.com"            },
-            {
+                correo: "SofiaMM@gmail.com",
+            status: 'ACTUAL'
+        },
+        {
                 idCliente: 5,
                 nombre: "Carlos",
                 apellidoPaterno: "Torres",
@@ -131,10 +94,11 @@ const data = [
                 telefono: 3354321098,
                 foto: "",
                 FechaIngreso: "12/01/2006",
-                correo: "CarlosTG@gmail.com"
-            },
-            {
-                idCliente: 6,
+                correo: "CarlosTG@gmail.com",
+            status: 'ACTUAL'
+        },
+        {
+            idCliente: 6,
                 nombre: "Isabella",
                 apellidoPaterno: "Hernández",
                 apellidoMaterno: "González",
@@ -149,10 +113,11 @@ const data = [
                 telefono: 72265437890,
                 foto: "",
                 FechaIngreso: "19/09/2021",
-                correo: "IsabellaHG@gmail.com"
-            },
-            {
-                idCliente: 7,
+                correo: "IsabellaHG@gmail.com",
+            status: 'ELIMINADO'
+        },
+        {
+            idCliente: 7,
                 nombre: "Alejandro",
                 apellidoPaterno: "Rodríguez",
                 apellidoMaterno: "Sánchez",
@@ -167,10 +132,11 @@ const data = [
                 telefono: "77778904321",
                 foto: "",
                 FechaIngreso: "28/09/2022",
-                correo: "AlejandroRS@gmail.com"
-            },
-            {
-                idCliente: 8,
+                correo: "AlejandroRS@gmail.com",
+            status: 'ACTUAL'
+        },
+        {
+            idCliente: 8,
                 nombre: "Valentina",
                 apellidoPaterno: "Vargas",
                 apellidoMaterno: "Rivera",
@@ -185,10 +151,11 @@ const data = [
                 telefono: 66756789012,
                 foto: "",
                 FechaIngreso: "30/02/2018",
-                correo: "ValentinaVR@gmail.com"            
-            },
-            {
-                idCliente: 9,
+                correo: "ValentinaVR@gmail.com",
+            status: 'ACTUAL'
+        },
+        {
+            idCliente: 9,
                 nombre: "Diego",
                 apellidoPaterno: "Silva",
                 apellidoMaterno: "Paredes",
@@ -203,10 +170,11 @@ const data = [
                 telefono: 554321876,
                 foto: "",
                 FechaIngreso: "29/07/2019",
-                correo: "DiegoSP@gmail.com"            
-            },
-            {
-                idCliente: 10,
+                correo: "DiegoSP@gmail.com",
+            status: 'ACTUAL'
+        },
+        {
+            idCliente: 10,
                 nombre: "Mariana",
                 apellidoPaterno: "Reyes",
                 apellidoMaterno: "Jiménez",
@@ -221,209 +189,175 @@ const data = [
                 telefono: 47754321098,
                 foto: "",
                 FechaIngreso: "05/04/2015",
-                correo: "MarianaRJ@gmail.com"            
-            }
-        ];
+                correo: "MarianaRJ@gmail.com",
+            status: 'ACTUAL'
+        }
+    ]
+};
 
-        function mostrarInformacion(index) {
-    const item = data[index];
-    const infoDiv = document.getElementById("infoDiv");
+let buttonPedido = document.getElementById('pedido').addEventListener('click', () => {
+    setTimeout(function () {
+        consultarPedido();
+    }, 100);
+});
 
-    const template = `
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="2">Datos Cliente</th>
-                </tr>
-            </thead>
-                <tbody>
-                    <tr>
-                        <td>ID cliente:</td>
-                        <td>${item.idCliente}</td>
-                    </tr>
-                    <tr>
-                        <td>Nombre cliente:</td>
-                        <td>${item.nombre}</td>
-                    </tr>
-                    <tr>
-                        <td>Apellido paterno:</td>
-                        <td>${item.apellidoPaterno}</td>
-                    </tr>
-                    <tr>
-                        <td>Apellido materno:</td>
-                        <td>${item.apellidoMaterno}</td>
-                    </tr>
-                    <tr>
-                        <td>Genero:</td>
-                        <td>${item.genero}</td>
-                    </tr>
-                    <tr>
-                        <td>Fecha de nacimiento:</td>
-                        <td>${item.fechaNacimiento}</td>
-                    </tr>
-                    <tr>
-                        <td>CURP:</td>
-                        <td>${item.curp}</td>
-                    </tr>
-                    <tr>
-                        <td>Titular RFC:</td>
-                        <td>${item.rfc}</td>
-                    </tr>
-                </tbody>
-        </table>
+function getDate() {
+    // Obtiene la fecha actual
+    const currentDate = new Date();
 
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="2">Datos de contacto</th>
-                </tr>
-            </thead>
-                <tbody>
-                <tr>
-                    <td>Domicilio:</td>
-                    <td>${item.domicilio}</td>
-                </tr>
-                <tr>
-                    <td>Codigo Postal:</td>
-                    <td>${item.codigoPostal}</td>
-                </tr>
-                <tr>
-                    <td>Estado:</td>
-                    <td>${item.estado}</td>
-                </tr>
-                <tr>
-                    <td>Ciudad:</td>
-                    <td>${item.ciudad}</td>
-                </tr>
-                <tr>
-                    <td>Telefono sucursal:</td>
-                    <td>${item.telefono}</td>
-                </tr>
-            </tbody>
-        </table>
-            
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="2">Datos adicionales</th>
-                </tr>
-            </thead>
-                <tbody>
-                <tr>
-                    <td>Fecha de ingreso:</td>
-                    <td>${item.FechaIngreso}</td>
-                </tr>
-                <tr>
-                    <td>Correo:</td>
-                    <td>${item.correo}</td>
-                </tr>
-            </tbody>
-        </table>
-    `;
+    // Obtiene el día, mes y año de la fecha actual
+    const day = currentDate.getDate();
+    const month = currentDate.getMonth() + 1; // Los meses en JavaScript van de 0 a 11
+    const year = currentDate.getFullYear();
 
-    infoDiv.innerHTML = template;
+    // Formatea el día, mes y año para que tengan dos dígitos si es necesario
+    const formattedDay = (day < 10 ? '0' : '') + day;
+    const formattedMonth = (month < 10 ? '0' : '') + month;
+    const formattedYear = year; // Obtiene los últimos dos dígitos del año
 
-    // Llena los detalles del titular y la sucursal en el template
-    const infoTables = infoDiv.querySelectorAll("table tbody");
-    const detallesCliente = `
-        <tr>
-            <td>Nombre:</td>
-            <td>${item.nombre}</td>
-        </tr>
-        <tr>
-            <td>Apellido paterno:</td>
-            <td>${item.apellidoPaterno}</td>
-        </tr>
-        <tr>
-            <td>Apellido materno:</td>
-            <td>${item.apellidoMaterno}</td>
-        </tr>
-        <tr>
-            <td>Genero:</td>
-            <td>${item.genero}</td>
-        </tr>
-        <tr>
-            <td>Fecha de nacimiento:</td>
-            <td>${item.fechaNacimiento}</td>
-        </tr>
-        <tr>
-            <td>CURP:</td>
-            <td>${item.curp}</td>
-        </tr>
-        <tr>
-            <td>Titular RFC:</td>
-            <td>${item.rfc}</td>
-        </tr>
-    `;
-    const detallesContacto = `
-        
-                <tr>
-                    <td>Estado:</td>
-                    <td>${item.estado}</td>
-                </tr>
-                <tr>
-                    <td>Ciudad:</td>
-                    <td>${item.ciudad}</td>
-                </tr>
-                <tr>
-                    <td>Domicilio:</td>
-                    <td>${item.domicilio}</td>
-                </tr>
-                <tr>
-                    <td>Codigo Postal:</td>
-                    <td>${item.codigoPostal}</td>
-                </tr>
-                <tr>
-                    <td>Telefono sucursal:</td>
-                    <td>${item.telefono}</td>
-                </tr>
-                <button class="btn-editar">Editar</button>
-                <button class="btn-eliminar">Eliminar</button>
-    `;
-    const detallesAdicional=`
+    // Crea la cadena de fecha en el formato dd-mm-yy
+    const formattedDate = `${formattedYear}-${formattedMonth}-${formattedDay}`;
 
-                <tr>
-                    <td>Fecha de ingreso:</td>
-                    <td>${item.FechaIngreso}</td>
-                </tr>
-                <tr>
-                    <td>Correo:</td>
-                    <td>${item.correo}</td>
-                </tr>
-    `;
+    return formattedDate; // Imprime la fecha en formato dd-mm-yy
 
-    infoTables[0].innerHTML = detallesCliente;
-    infoTables[1].innerHTML = detallesContacto;
-    infoTables[2].innerHTML = detallesAdicional;
 }
-        
-        
-        
-        
-function agregarRegistroATabla(registro) {
-    const tableBody = document.getElementById("tableBody1");
-    
-    const newRow = document.createElement("tr");
-    newRow.addEventListener("click", function () {
-        // Tu código para manejar el clic en la fila aquí
+
+function agregarCliente() {
+    document.getElementById('consulta').style.display = 'none';
+    document.getElementById('registrar').style.display = 'grid';
+    document.getElementById('cliente').value = user.user.id_user;
+}
+
+let total = 0;
+
+function agregarListaCliente() {
+    let genero = document.getElementById('genero').value;
+    let cantidad = document.getElementById("cantidad").value;
+    let precio = 40;
+    total += cantidad * precio;
+
+    let tabla = '';
+    tabla += `<tr>
+                    <th scope="row">${genero}</th>
+                    <td>${cantidad}</td>
+                    <td>${precio}</td>
+                    <td>${total}</td>
+                </tr>`;
+    document.getElementById('contenido-pedido').innerHTML += tabla;
+    document.getElementById('total-pedido').innerHTML = `Total  $${total}`
+}
+
+function finalizarPedido() {
+
+    document.getElementById('contenido-pedido').innerHTML = '';
+    document.getElementById('total-pedido').innerHTML = `Total  $0`
+
+    let id_compra = clientes.Clientes[clientes.Clientes.length - 1].id_compra + 1;
+    let fecha = getDate();
+    let cliente = {
+    id_pedido: clientes.Clientes.length,
+    id_compra: id_compra,
+    fecha: fecha,
+    sucursal: user.user.sucursal,
+    nombre_empleado: user.user.name,
+    codigo_postal: user.user.cp,
+    ciudad: 'León',
+    estado: 'Guanajuato',
+    total: 400,
+    status: 'PENDIENTE'
+    };
+
+    clientes.Clientes.push(cliente);
+    consultarPedido();
+}
+
+function consultarPedido() {
+    document.getElementById('consulta').style.display = 'block';
+    document.getElementById('registrar').style.display = 'none';
+    let status = document.getElementById('switchPendientes');
+    status.addEventListener('change', () => {
+        consultarPedido();
     });
+    let consulta = document.getElementById('contenido-tabla');
+    let tabla = '';
+    for (i = 0; i < clientes['Pedidos'].length; ++i) {
+        if (status.checked) {
+            if (clientes.Clientes[i].status == 'PENDIENTE') {
+                tabla += `<tr>
+                        <th scope="row">${clientes.Clientes[i].id_compra}</th>
+                        <td>${clientes.Clientes[i].fecha}</td>
+                        <td>${clientes.Clientes[i].sucursal}</td>
+                        <td>${clientes.Clientes[i].nombre_empleado}</td>
+                        <td>${clientes.Clientes[i].codigo_postal}</td>
+                        <td>${clientes.Clientes[i].ciudad}</td>
+                        <td>${clientes.Clientes[i].estado}</td>
+                        <td>${clientes.Clientes[i].total}</td>
+                        <td>${clientes.Clientes[i].status}</td>
+                    </tr>`;
+            }
+        } else if (!status.checked) {
+            if (!(clientes.Clientes[i].status == 'PENDIENTE')) {
+                tabla += `<tr>
+                        <th scope="row">${clientes.Clientes[i].id_compra}</th>
+                        <td>${clientes.Clientes[i].fecha}</td>
+                        <td>${clientes.Clientes[i].sucursal}</td>
+                        <td>${clientes.Clientes[i].nombre_empleado}</td>
+                        <td>${clientes.Clientes[i].codigo_postal}</td>
+                        <td>${clientes.Clientes[i].ciudad}</td>
+                        <td>${clientes.Clientes[i].estado}</td>
+                        <td>${clientes.Clientes[i].total}</td>
+                        <td>${clientes.Clientes[i].status}</td>
+                    </tr>`;
+            }
+        }
+    }
+    consulta.innerHTML = tabla;
+}
 
-    newRow.innerHTML = `
-    <tr>
-        <td>${registro.nombreSucursal}</td>
-        <td>${registro.idSucursal}</td>
-        <td>${registro.nombreTitular}</td>
-        <td>${registro.apellidoPaternoTitular}</td>
-        <td>${registro.apellidoMaternoTitular}</td>
-        <td>${registro.curpTitular}</td>
-        <td>${registro.rfcTitular}</td>
-        <td>${registro.telefonoSucursal}</td>
-    <tr>
-    `;
+document.getElementById('search').addEventListener('keyup', () => {
+    const value = document.getElementById("search").value;
+    if(document.getElementById('content-modulo')){
+        if(value.length == 0){
+            consultarPedido();
+        }else{
+            buscarPedido();
+        }
+    }
+})
 
-    tableBody.appendChild(newRow);
+function buscarPedido() {
+    if(document.getElementById('content-modulo')){
+        const value = document.getElementById("search").value;
+    let resultado = clientes.Clientes.filter(object => {
+        let id_compra = object.id_pedido;
+        let fecha = object.fecha;
+        let sucursal = object.sucursal.toLowerCase();
+        let nombre_empleado = object.nombre_empleado.toLowerCase();
+        let codigo_postal = object.codigo_postal;
+        let ciudad = object.ciudad.toLowerCase();
+        let estado = object.estado.toLowerCase();
+        let status = object.status.toLowerCase();
 
-
-    // Limpiar el formulario después de agregar el registro
-    limpiarFormulario();
+        return fecha.includes(value) || sucursal.includes(value) || nombre_empleado.includes(value) || ciudad.includes(value) || estado.includes(value) || status.includes(value);
+    });
+    let consulta = document.getElementById('contenido-tabla');
+    let tabla = '';
+    resultado.forEach(element => {
+        tabla += `<tr>
+                        <th scope="row">${element.id_compra}</th>
+                        <td>${element.fecha}</td>
+                        <td>${element.sucursal}</td>
+                        <td>${element.nombre_empleado}</td>
+                        <td>${element.codigo_postal}</td>
+                        <td>${element.codigo_postal}</td>
+                        <td>${element.estado}</td>
+                        <td>${element.total}</td>
+                        <td>${element.status}</td>
+                    </tr>`
+    });
+    consulta.innerHTML= tabla;
+    }
+    else{
+        
+    }
 }

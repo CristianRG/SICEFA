@@ -1,82 +1,74 @@
-        .tabP{
-            width: auto;
-            height: 5rem;
-        }
-        /* Estilo para los bordes de las celdas */
-        table.table {
-            border: 2px solid #000;
-        }
+.content-modulo .consulta {
+    width: 90%;
+    height: 90%;
+    padding: 5px;
+    overflow-y: scroll;
+}
 
-        table.table th, table.table td {
-            border: 1px solid #000;
-        }
+.content-modulo .consulta table {
+    width: 100%;
+}
 
-        /* Estilo para el borde grueso y color de fondo de los th */
-        table.table th {
-            border: 2px solid #000;
-            background-color: #d8d8d8; /* Color gris claro */
-        }
-    /* Estilo para ocultar los divs con clase "sucursal" */
-        .cliente {
-            display: none;
-            border: 2px solid black;
-            padding: 10px; /* Ajusta este valor para cambiar el espacio entre el borde y el contenido */
-        }
-        .cliente table {
-            width: 100%;
-        }
-        .cliente th {
-            text-align: left;
-        }
+table.table {
+    border: 2px solid #000;
+}
 
+table.table th,
+table.table td {
+    border: 1px solid #000;
+}
 
+/* Estilo para el borde grueso y color de fondo de los th */
+table.table th {
+    border: 2px solid #000;
+    background-color: #d8d8d8;
+    /* Color gris claro */
+}
 
-    /* Estilo para cambiar el color de fondo de la fila seleccionada a azul */
-    .table-info {
-        background-color: #1F90F1; /* Color azul */
-        color: white; /* Cambiar el color del texto a blanco para mejor contraste */
-    }
-    .mi-tabla {
-        width: 100%;
-        border-collapse: collapse;
-        text-align: left;
-    }
-    .mi-tabla th, .mi-tabla td {
-        padding: 12px;
-    }
+.registrar {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
 
-.custom-button {
+.formulario{
+    grid-column: 1;
+    width: 100%;
+    height: auto;
+}
+
+.formulario h3{
+    margin-bottom: 1rem;
+}
+
+.formulario label{
     display: block;
-    width: auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    
 }
-.custom-button:hover {
-    background-color: #0056b3;
-}
-/* Estilos para el botón de "Editar" */
-    .btn-editar {
-        background-color: #3498db;
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
 
-    /* Estilos para el botón de "Eliminar" */
-    .btn-eliminar {
-        background-color: #e74c3c;
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+.formulario select {
+    width: 9rem;
+}
+
+.formulario #cantidad {
+    width: 2rem;
+}
+
+#agregar{
+    width: 5rem;
+    display: block;
+    border: none;
+    background: green;
+    padding: 3px;
+    position: relative;
+    left: 20%;
+    transform: translate(-20%);
+    margin-top: 1rem;
+}
+
+.consulta-pedido{
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+}
+

@@ -174,7 +174,7 @@ function agregarListaPedido() {
                     <td>${total}</td>
                 </tr>`;
     document.getElementById('contenido-pedido').innerHTML += tabla;
-    document.getElementById('total-pedido').innerHTML = `Total  $${total}`
+    document.getElementById('total-pedido').innerHTML = `Total  $${total}`;
 }
 
 function finalizarPedido() {
