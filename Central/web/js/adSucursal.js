@@ -1,24 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const tableRows = document.querySelectorAll("#myTable tbody tr");
+const tableRows = document.querySelectorAll("#myTable tbody tr");
 
-    tableRows.forEach((row, index) => {
-        row.addEventListener("click", function () {
-            // Elimina la clase "selected-row" de todas las filas
-            tableRows.forEach(row => row.classList.remove("table-info"));
+tableRows.forEach((row, index) => {
+    row.addEventListener("click", function () {
+        // Elimina la clase "selected-row" de todas las filas
+        tableRows.forEach(row => row.classList.remove("table-info"));
 
-            // Agrega la clase "selected-row" a la fila seleccionada
-            row.classList.add("table-info");
+        // Agrega la clase "selected-row" a la fila seleccionada
+        row.classList.add("table-info");
 
-            // Muestra la información del registro correspondiente
-            mostrarInformacion(index);
-        });
+        
     });
 });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+        const botonMostrarActivas = document.getElementById("botonMostrarActivas");
+        const botonMostrarInactivas = document.getElementById("botonMostrarInactivas");
+        const tablaActivas = document.getElementById("tablaSucursales");
+        const tablaInactivas = document.getElementById("tablaSucursales2");
+        const contenedorFormulario = document.getElementById("formulario");
+        const botonMostrarTabla = document.getElementById("botonMostrarTabla");
+
+        botonMostrarActivas.addEventListener("click", function() {
+            tablaActivas.style.display = "block";
+            tablaInactivas.style.display = "none";
+            contenedorFormulario.style.display = "none"; // Ocultar el formulario
+            botonMostrarTabla.style.display = "none"; // Ocultar el botón
+        });
+
+        botonMostrarInactivas.addEventListener("click", function() {
+            tablaActivas.style.display = "none";
+            tablaInactivas.style.display = "block";
+            contenedorFormulario.style.display = "none"; // Ocultar el formulario
+            botonMostrarTabla.style.display = "none"; // Ocultar el botón
+        });
+    });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const contenedorFormulario = document.getElementById("formulario");
     const contenedorTabla = document.getElementById("tablaSucursales");
     const botonMostrarTabla = document.getElementById("botonMostrarTabla");
+    const tablaInactivas = document.getElementById("tablaSucursales2");
+
 
     contenedorFormulario.style.display = "none"; // Ocultar el formulario
     botonMostrarTabla.style.display = "none"; // Ocultar el botón
@@ -28,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         contenedorFormulario.style.display = "block"; // Mostrar el formulario
         contenedorTabla.style.display = "none"; // Ocultar la tabla
         botonMostrarTabla.style.display = "block"; // Mostrar el botón
+        tablaInactivas.style.display = "none";
     }
 
     // Función para mostrar la tabla y ocultar el formulario
@@ -186,168 +212,285 @@ const data = [
             }
         ];
 
-        function mostrarInformacion(index) {
-    const item = data[index];
-    const infoDiv = document.getElementById("infoDiv");
 
-    const template = `
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="2">Datos Titular</th>
-                </tr>
-            </thead>
+
+        function mostrarFormulario1(index) {
+            const formularioContainer = document.getElementById("formularioContainer");
+        // Obtén la información correspondiente de la fila seleccionada
+        const registro = data[index];
+
+        // Genera el contenido del formulario con los valores de la fila seleccionada
+        const contenidoFormulario = `
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Datos Titular</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
-                        <td>Nombre titular:</td>
-                        <td>${item.nombreTitular}</td>
+                        <td>
+                            Nombre titular:<br>
+                            <input type="text" id="nombreTitularEditar" value="${registro.nombreTitular}">
+                        </td>
+                        <td>
+                            Apellido paterno titular:<br>
+                            <input type="text" id="apellidoPaternoTitularEditar" value="${registro.apellidoPaternoTitular}">
+                        </td>
                     </tr>
                     <tr>
-                        <td>Apellido paterno titular:</td>
-                        <td>${item.apellidoPaternoTitular}</td>
+                        <td>
+                            Apellido materno titular:<br>
+                            <input type="text" id="apellidoMaternoTitularEditar" value="${registro.apellidoMaternoTitular}">
+                        </td>
+                        <td>
+                            Titular CURP:<br>
+                            <input type="text" id="curpTitularEditar" value="${registro.curpTitular}">
+                        </td>
                     </tr>
                     <tr>
-                        <td>Apellido materno titular:</td>
-                        <td>${item.apellidoMaternoTitular}</td>
-                    </tr>
-                    <tr>
-                        <td>Titular CURP:</td>
-                        <td>${item.curpTitular}</td>
-                    </tr>
-                    <tr>
-                        <td>Titular RFC:</td>
-                        <td>${item.rfcTitular}</td>
+                        <td>
+                            Titular RFC:<br>
+                            <input type="text" id="rfcTitularEditar" value="${registro.rfcTitular}">
+                        </td>
                     </tr>
                 </tbody>
-        </table>
-
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="2">Datos Sucursal</th>
-                </tr>
-            </thead>
+            </table>
+            <table class="mi-tabla">
+                <thead>
+                    <tr>
+                        <th colspan="2">Datos Sucursal</th>
+                    </tr>
+                </thead>
                 <tbody>
-                <tr>
-                    <td>Id sucursal:</td>
-                    <td>${item.idSucursal}</td>
-                </tr>
-                <tr>
-                    <td>Nombre de la sucursal:</td>
-                    <td>${item.nombreSucursal}</td>
-                </tr>
-                <tr>
-                    <td>Estado:</td>
-                    <td>${item.estado}</td>
-                </tr>
-                <tr>
-                    <td>Ciudad:</td>
-                    <td>${item.ciudad}</td>
-                </tr>
-                <tr>
-                    <td>Domicilio:</td>
-                    <td>${item.domicilio}</td>
-                </tr>
-                <tr>
-                    <td>Codigo Postal:</td>
-                    <td>${item.codigoPostal}</td>
-                </tr>
-                <tr>
-                    <td>Telefono sucursal:</td>
-                    <td>${item.telefonoSucursal}</td>
-                </tr>
-            </tbody>
-        </table>
-    `;
+                    <tr>
+                        <td>
+                            Nombre de la sucursal:<br>
+                            <input type="text" id="nombreSucursalEditar" value="${registro.nombreSucursal}">
+                        </td>
+                        <td>
+                            Id sucursal:<br>
+                            <input type="text" id="idSucursalEditar" value="${registro.idSucursal}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Estado:<br>
+                            <input type="text" id="estadoEditar" value="${registro.estado}">
+                        </td>
+                        <td>
+                            Ciudad:<br>
+                            <input type="text" id="ciudadEditar" value="${registro.ciudad}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Domicilio:<br>
+                            <input type="text" id="domicilioEditar" value="${registro.domicilio}">
+                        </td>
+                        <td>
+                            Codigo Postal:<br>
+                            <input type="text" id="codigoPostalEditar" value="${registro.codigoPostal}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Telefono sucursal:<br>
+                           <input type="text" id="telefonoSucursalEditar" value="${registro.telefonoSucursal}">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" id="botonMostrarTabla" class="custom-button" onclick="actualizarFilaEnTabla()">Modificar</button>
+        `;
 
-    infoDiv.innerHTML = template;
+        // Inserta el contenido del formulario en el contenedor
+        formularioContainer.innerHTML = contenidoFormulario;
+        }  
 
-    // Llena los detalles del titular y la sucursal en el template
-    const infoTables = infoDiv.querySelectorAll("table tbody");
-    const detallesTitular = `
-        <tr>
-            <td>Nombre titular:</td>
-            <td>${item.nombreTitular}</td>
-        </tr>
-        <tr>
-            <td>Apellido paterno titular:</td>
-            <td>${item.apellidoPaternoTitular}</td>
-        </tr>
-        <tr>
-            <td>Apellido materno titular:</td>
-            <td>${item.apellidoMaternoTitular}</td>
-        </tr>
-        <tr>
-            <td>Titular CURP:</td>
-            <td>${item.curpTitular}</td>
-        </tr>
-        <tr>
-            <td>Titular RFC:</td>
-            <td>${item.rfcTitular}</td>
-        </tr>
-    `;
-    const detallesSucursal = `
-        <tr>
-            <td>Id sucursal:</td>
-            <td>${item.idSucursal}</td>
-        </tr>
-        <tr>
-            <td>Nombre de la sucursal:</td>
-            <td>${item.nombreSucursal}</td>
-        </tr>
-        <tr>
-            <td>Estado:</td>
-            <td>${item.estado}</td>
-        </tr>
-        <tr>
-            <td>Ciudad:</td>
-            <td>${item.ciudad}</td>
-        </tr>
-        <tr>
-            <td>Domicilio:</td>
-            <td>${item.domicilio}</td>
-        </tr>
-        <tr>
-            <td>Codigo Postal:</td>
-            <td>${item.codigoPostal}</td>
-        </tr>
-        <tr>
-            <td>Telefono sucursal:</td>
-            <td>${item.telefonoSucursal}</td>
-        </tr>
-                <button class="btn-editar">Editar</button>
-                <button class="btn-eliminar">Eliminar</button>
-    `;
 
-    infoTables[0].innerHTML = detallesTitular;
-    infoTables[1].innerHTML = detallesSucursal;
+
+function loadTabla() {
+    let cuerpo = "";
+    data.forEach(function (registro, index) {
+        let row =
+            `<tr onclick="mostrarFormulario1(${index})">
+                <td>${registro.nombreSucursal}</td>
+                <td>${registro.idSucursal}</td>
+                <td>${registro.estado}</td>
+                <td>${registro.ciudad}</td>
+                <td>${registro.domicilio}</td>
+                <td>${registro.codigoPostal}</td>
+                <td>${registro.telefonoSucursal}</td>
+                <td>${registro.nombreTitular}</td>
+                <td>${registro.apellidoPaternoTitular}</td>
+                <td>${registro.apellidoMaternoTitular}</td>
+                <td>${registro.curpTitular}</td>
+                <td>${registro.rfcTitular}</td>
+                <td><button class="btn-eliminar" onclick="moveRow(this)">Eliminar</button></td>
+            </tr>`;
+        cuerpo += row; // Corregido aquí
+    });
+    console.log(cuerpo);
+    document.getElementById("tableBody1").innerHTML = cuerpo; // Usar "tableBody1" en lugar de "tblEmpleados"
+
+    // Opcionalmente, puedes mover el código para limpiar el formulario aquí
+//    limpiarFormulario();
 }
-        
-        
-        
-        
+
+   document.addEventListener("DOMContentLoaded", function () {
+    // ...
+
+    const agregarBtn = document.getElementById("botonMostrarTabla");
+    agregarBtn.addEventListener("click", agregarRegistroATabla);
+}); 
+
+let lastId= 11;
+     
 function agregarRegistroATabla(registro) {
     const tableBody = document.getElementById("tableBody1");
     
-    const newRow = document.createElement("tr");
-    newRow.addEventListener("click", function () {
-        // Tu código para manejar el clic en la fila aquí
-    });
-
-    newRow.innerHTML = `
-        <td>${registro.nombreSucursal}</td>
-        <td>${registro.idSucursal}</td>
-        <td>${registro.nombreTitular}</td>
-        <td>${registro.apellidoPaternoTitular}</td>
-        <td>${registro.apellidoMaternoTitular}</td>
-        <td>${registro.curpTitular}</td>
-        <td>${registro.rfcTitular}</td>
-        <td>${registro.telefonoSucursal}</td>
-    `;
-
-    tableBody.appendChild(newRow);
-
-
+    const nombreSucursal = document.getElementById('nombreSucursalAgregar').value;
+    const idSucursal = parseInt(document.getElementById('idSucursalAgregar').value);
+    const nombreTitular = document.getElementById('nombreTitularAgregar').value;
+    const apellidoPaternoTitular = document.getElementById('apellidoPaternoTitularAgregar').value;
+    const apellidoMaternoTitular = document.getElementById('apellidoMaternoTitularAgregar').value;
+    const curpTitular = document.getElementById('curpTitularAgregar').value;
+    const rfcTitular = document.getElementById('rfcTitularAgregar').value;
+    const estado = document.getElementById('estadoAgregar').value;
+    const ciudad = document.getElementById('ciudadAgregar').value;
+    const domicilio = document.getElementById('domicilioAgregar').value;
+    const codigoPostal = document.getElementById('codigoPostalAgregar').value;
+    const telefonoSucursal = document.getElementById('telefonoSucursalAgregar').value;
+    function generateNewId() {
+    return lastId++;
+    }   
+    
+    // Crear un objeto de registro con los valores obtenidos
+const nuevoRegistro = {
+    nombreSucursal:nombreSucursal,
+    idSucursal: generateNewId(),
+    nombreTitular:nombreTitular ,
+    apellidoPaternoTitular:apellidoPaternoTitular ,
+    apellidoMaternoTitular:curpTitular ,
+    curpTitular:rfcTitular ,
+    rfcTitular:rfcTitular ,
+    estado: estado ,
+    ciudad: ciudad ,
+    domicilio:domicilio ,
+    codigoPostal:codigoPostal ,
+    telefonoSucursal: telefonoSucursal
+};
+    data.push(nuevoRegistro);
+    loadTabla(); 
+    
     // Limpiar el formulario después de agregar el registro
-    limpiarFormulario();
+//    limpiarFormulario();
 }
+
+// Obtén una referencia al elemento input
+const miInput = document.getElementById("idSucursal");
+
+// Deshabilitar el input
+miInput.disabled = true;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchButton = document.getElementById("searchButton");
+    searchButton.addEventListener("click", buscarEnTabla);
+});
+
+function buscarEnTabla() {
+    const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    const tableRows = document.querySelectorAll("#tableBody1 tr");
+
+    tableRows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        if (rowText.includes(searchInput)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchButton = document.getElementById("searchButton2");
+    searchButton.addEventListener("click", buscarEnTabla2);
+});
+function buscarEnTabla2() {
+    const searchInput = document.getElementById("searchInput2").value.toLowerCase();
+    const tableRows = document.querySelectorAll("#tableBody2 tr");
+
+    tableRows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        if (rowText.includes(searchInput)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
+
+function actualizarFilaEnTabla() {
+    // Obtener los valores de los campos del formulario de edición
+    var nombreTitular = document.getElementById("nombreTitularEditar").value;
+    var apellidoPaternoTitular = document.getElementById("apellidoPaternoTitularEditar").value;
+    var apellidoMaternoTitular = document.getElementById("apellidoMaternoTitularEditar").value;
+    var curpTitular = document.getElementById("curpTitularEditar").value;
+    var rfcTitular = document.getElementById("rfcTitularEditar").value;
+    // ... (obtener otros campos) ...
+    var nombreSucursal = document.getElementById("nombreSucursalEditar").value;
+    var idSucursal = document.getElementById("idSucursalEditar").value;
+    var estado = document.getElementById("estadoEditar").value;
+    var ciudad = document.getElementById("ciudadEditar").value;
+    var domicilio = document.getElementById("domicilioEditar").value;
+    var codigoPostal = document.getElementById("codigoPostalEditar").value;
+    var telefonoSucursal = document.getElementById("telefonoSucursalEditar").value;
+    
+    // Aquí debes buscar y actualizar la fila correspondiente en la tabla de edición
+    // Puedes utilizar métodos para encontrar la fila, como querySelector, parentNode, etc.
+    // Supongamos que la fila que deseas actualizar tiene un atributo 'data-id' con el valor del idSucursal
+    var fila = document.querySelector("[data-id='" + idSucursal + "']");
+    if (fila) {
+        // Actualizar las celdas de la fila con los nuevos valores
+        fila.cells[0].textContent = nombreSucursal;
+        fila.cells[1].textContent = idSucursal;
+        // ... (actualizar otras celdas) ...
+        fila.cells[7].textContent = nombreTitular;
+        fila.cells[8].textContent = apellidoPaternoTitular;
+        fila.cells[9].textContent = apellidoMaternoTitular;
+        fila.cells[10].textContent = curpTitular;
+        fila.cells[11].textContent = rfcTitular;
+        
+        // Limpiar los campos del formulario de edición
+        document.getElementById("nombreTitularEditar").value = "";
+        document.getElementById("apellidoPaternoTitularEditar").value = "";
+        document.getElementById("apellidoMaternoTitularEditar").value = "";
+        document.getElementById("curpTitularEditar").value = "";
+        document.getElementById("rfcTitularEditar").value = "";
+        // ... (limpiar otros campos) ...
+        document.getElementById("nombreSucursalEditar").value = "";
+        document.getElementById("idSucursalEditar").value = "";
+        document.getElementById("estadoEditar").value = "";
+        document.getElementById("ciudadEditar").value = "";
+        document.getElementById("domicilioEditar").value = "";
+        document.getElementById("codigoPostalEditar").value = "";
+        document.getElementById("telefonoSucursalEditar").value = "";
+    } else {
+        alert("No se encontró la fila a actualizar.");
+    }
+}
+
+
+function moveRow(button) {
+            const row = button.parentNode.parentNode;
+            const table1 = document.getElementById('myTable');
+            const table2 = document.getElementById('myTable2');
+
+            // Remove row from table1
+            table1.querySelector('tbody').removeChild(row);
+
+            // Add row to table2
+            table2.querySelector('tbody').appendChild(row);
+        }

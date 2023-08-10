@@ -347,6 +347,7 @@ function buscarPedido() {
 
         return fecha.includes(value) || sucursal.includes(value) || nombre_empleado.includes(value) || ciudad.includes(value) || estado.includes(value) || status.includes(value);
     });
+    document.getElementById('consulta-edicion').style.display = 'none';
     let consulta = document.getElementById('contenido-tabla');
     let tabla = '';
     resultado.forEach(element => {
@@ -388,7 +389,7 @@ function selectItem(index) {
         <h5>Total</h5>
         <p>Total: $${item.total}</p>
     </div>`
-
+    document.getElementById('consulta-edicion').style.display = 'block';
     document.getElementById('consulta-edicion').innerHTML = contenido;
 }
 

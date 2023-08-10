@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+<<<<<<< HEAD
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Dell/Documents/Integradora/SICEFA/Sucursal/web/pedido.html</file>
@@ -10,6 +11,15 @@
             <file>file:/C:/Users/Dell/Documents/Integradora/SICEFA/Sucursal/web/styles/css/style-Cliente.css</file>
             <file>file:/C:/Users/Dell/Documents/Integradora/SICEFA/Sucursal/web/empleado.html</file>
             <file>file:/C:/Users/Dell/Documents/Integradora/SICEFA/Sucursal/web/js/pedido.js</file>
+=======
+<<<<<<< HEAD
+=======
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Pc/OneDrive/Escritorio/Freelance/Universidad/GithubIntegradora/SICEFA/Sucursal/web/index.html</file>
+            <file>file:/C:/Users/Pc/OneDrive/Escritorio/Freelance/Universidad/GithubIntegradora/SICEFA/Sucursal/web/js/login.js</file>
+>>>>>>> 9f2b0b11e6526d02d7d837969352b565958715a0
         </group>
     </open-files>
+>>>>>>> 011e4d9c880440fefa707c2a0db1ff7bc2730d8e
 </project-private>
