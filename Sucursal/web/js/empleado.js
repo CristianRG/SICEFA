@@ -396,7 +396,7 @@ function selectEmpleado(index) {
 function clean() {
     document.getElementById("nombreEmpleado").value = "";
     document.getElementById("apellidoPaterno").value = "";
-    document.getElementById("apellidoPaterno").value = "";
+    document.getElementById("apellidoMaterno").value = "";
     document.getElementById("fechaNacimiento").value = "";
     document.getElementById("curp").value = "";
     document.getElementById("rfc").value = "";
@@ -560,5 +560,14 @@ function loadTablas(empleadosData) {
 
     tablaBody.innerHTML = cuerpo;
 }
+
+function alternarFormulario() {
+    let formulario = document.getElementById("formularioGestion");
+    if (formulario.style.display === "none") {
+      formulario.style.display = "block";
+    } else {
+      formulario.style.display = "none";
+    }
+  }
 
 
