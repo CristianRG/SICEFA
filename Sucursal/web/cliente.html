@@ -1,7 +1,7 @@
 <section>
         <!-- SLIDER -->
         <div class="content">
-
+<!--
             <div class="side-bar">
                 <div class="options">
                     <h3>Clientes</h3>
@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-
+-->
             <div class="container-fluid mt-4">
                 <form class="d-flex" role="search">
                     <input id="buscarCliente" class="form-control me-2" type="search" placeholder="Buscar Cliente" aria-label="Search">
@@ -67,9 +67,9 @@
                                         <label for="genero">Genero:</label>
                                         <select id="genero" name="genero"><br>
                                             <option value="" disabled selected>Selecciona genero</option>
-                                            <option value="masculino"> Masculino
-                                            <option value="femenino"> Femenino
-                                            <option value="otro"> Otro
+                                            <option value="M"> Masculino
+                                            <option value="F"> Femenino
+                                            <option value="O"> Otro
                                         </select>    
                                     </div><br>
                                     <div class="form-group" id="fechaNacimientoGroup">
@@ -157,6 +157,8 @@
                                     
                                     <div class="form-group">
                                         <button class="btn btn-success m-3" onclick="addEmpleado()" id="btnAdd">Registrar</button>
+                                        <button class="btn btn-success m-3" onclick="deleteEmpleado()" id="btnAdd">Eliminar</button>
+                                        <button class="btn btn-success m-3" onclick="updateEmpleado()" id="btnAdd">Modificar</button>
                                         <button class="btn btn-secondary m-3" onclick="clean()" id="btnClean">Limpiar</button>
                                         
                                     </div>
@@ -166,7 +168,7 @@
                         </div>
                 </div>
                 <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
-
+                <script src="js/Cliente.js" type="text/javascript"></script>
             </div>
         </div>
     </section>

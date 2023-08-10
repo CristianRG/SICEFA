@@ -1,4 +1,6 @@
 let indexClienteSeleccionado;
+
+
 let clientes = [
   {
     "idCliente": 1,
@@ -266,7 +268,7 @@ function addEmpleado() {
     
     
     
-    nombre = document.getElementById("nombre").value;
+    nombre = document.getElementById("nombre");
     apellidoPaterno = document.getElementById("apellidoPaterno").value;
      apellidoMaterno = document.getElementById("apellidoMaterno").value;
      fechaNacimiento = document.getElementById("fechaNacimiento").value;
@@ -288,10 +290,10 @@ function addEmpleado() {
      domicilio = document.getElementById("domicilio").value;
      codigo_postal = document.getElementById("codigoPostal").value;
      telefono = document.getElementById("telefono").value;
-     correo = document.getElementById("email").value;
+     correo = document.getElementById("email");
      FechaIngreso = document.getElementById("fechaIngreso").value;
-     puesto = document.getElementById("puesto").value;
-     idCliente = empleados.length + 1;
+     puesto = document.getElementById("puesto");
+     idCliente = clientes.length + 1;
 
     
 
@@ -523,19 +525,57 @@ function loadTablas(empleadosData) {
     const tablaBody = document.getElementById("tblClientes");
     let cuerpo = "";
 
-    empleadosData.forEach((cliente, index) => {
+    empleadosData.forEach((clientes, index) => {
         const registro = `
             <tr onclick="selectEmpleado(${index});">
-                <td>${cliente.idCliente}</td>
-                <td>${cliente.nombre}</td>
-                <td>${cliente.apellidoPaterno}</td>
-                <td>${cliente.apellidoMaterno}</td>
-                <td>${cliente.genero}</td>
-                <td>${cliente.correo}</td>
+                <td>${clientes.idCliente}</td>
+                <td>${clientes.nombre}</td>
+                <td>${clientes.apellidoPaterno}</td>
+                <td>${clientes.apellidoMaterno}</td>
+                <td>${clientes.genero}</td>
+                <td>${clientes.correo}</td>
             </tr>`;
         cuerpo += registro;
     });
 
     tablaBody.innerHTML = cuerpo;
 }
+/*
+function buscarPedido() {
+    if(document.getElementById('content-modulo')){
+        const value = document.getElementById("search").value;
+    let resultado = clientes.filter(object => {
+        let id_compra = object.id_pedido;
+        let fecha = object.fecha;
+        let sucursal = object.sucursal.toLowerCase();
+        let nombre_empleado = object.nombre_empleado.toLowerCase();
+        let codigo_postal = object.codigo_postal;
+        let ciudad = object.ciudad.toLowerCase();
+        let estado = object.estado.toLowerCase();
+        let status = object.status.toLowerCase();
 
+        return fecha.includes(value) || sucursal.includes(value) || nombre_empleado.includes(value) || ciudad.includes(value) || estado.includes(value) || status.includes(value);
+    });
+    let consulta = document.getElementById('contenido-tabla');
+    let tabla = '';
+    resultado.forEach(element => {
+        tabla += `<tr>
+                        <th scope="row">${element.id_compra}</th>
+                        <td>${element.fecha}</td>
+                        <td>${element.sucursal}</td>
+                        <td>${element.nombre_empleado}</td>
+                        <td>${element.codigo_postal}</td>
+                        <td>${element.codigo_postal}</td>
+                        <td>${element.estado}</td>
+                        <td>${element.total}</td>
+                        <td>${element.status}</td>
+                    </tr>`;
+    });
+    consulta.innerHTML= tabla;
+    }
+    else{
+        
+    }
+}
+ * 
+ */
