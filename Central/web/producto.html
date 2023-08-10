@@ -14,7 +14,7 @@
         <script src="js/adProducto.js" type="text/javascript"></script>
     </head>
 
-    <body>
+    <body onload="loadTabla()">
         <header>
             <div class="logo-vision">
                 <div class="logo">
@@ -38,7 +38,7 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    
+
                                     <li class="nav-item">
                                         <a class="nav-link" href="sucursal.html">Sucursal</a>
                                     </li>
@@ -83,12 +83,12 @@
 
                 <div class="container-fluid mt-4">
                     <form class="d-flex" role="search">
-                        <input id="buscarProductos" class="form-control me-2" type="search" placeholder="Buscar Producto" aria-label="Search">
+                        <input id="buscarProducto" class="form-control me-2" type="search" placeholder="Buscar Producto" aria-label="Search">
                         <button id=btnBuscar class="btn btn-outline-success" type="submit">Buscar</button>
                     </form><br>
                     <div class="d-flex justify-content-start">
                         <div class="justify-content-center align-content-center pt-4">
-                            <h2>Consultar Productos</h2>
+                            <h2>Consultar Producto</h2>
                             <table class="table table-hover ">
                                 <thead class="text-black text-center">
                                     <tr>
@@ -129,7 +129,7 @@
                                             <label for="apellidoMaterno">Forma farmaceutica:</label>
                                             <input type="text" id="formaFarmaceutica" name="apellidoMaterno" class="form-control">
                                         </div>
-                                        
+
                                         <div class="col">
                                             <label for="apellidoMaterno">Presentación:</label>
                                             <input type="text" id="presentacion" name="apellidoMaterno" class="form-control" >
@@ -172,19 +172,25 @@
                             <input type="file" id="fotoInput" name="foto" class="form-control-file">
                         </div><br>
                         <div class="form-group">
-                            <button class="btn btn-success m-3" onclick="addProducto();" id="btnAdd">Registrar</button>
-                            <button class="btn btn-secondary m-3" onclick="clean();" id="btnClean">Limpiar</button>                                    
+                          <button class="btn btn-success m-3" onclick="addProducto()"
+                                                id="btnAdd">Registrar</button>
+                                        <button class="btn btn-secondary m-3" onclick="clean()"
+                                                id="btnClean">Limpiar</button>
+                                        <button class="btn btn-danger m-3" onclick="deleteProducto()"
+                                                id="btnDelete">Eliminar</button>
+                                        <button class="btn btn-warning m-3" onclick="updateProducto()"
+                                                id="btnUpdate">Actualizar</button>       
                         </div>
                     </div>
                 </div>                            
             </div>
-        
-    <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
-</section>
-<script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js"></script>
-<script src="styles/package/dist/sweetalert2.min.js"></script>
-<script src="js/login.js"></script>
-<script src="js/adProducto.js" type="text/javascript"></script>
-</body>
+
+            <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
+        </section>
+        <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js"></script>
+        <script src="styles/package/dist/sweetalert2.min.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/adProducto.js" type="text/javascript"></script>
+    </body>
 
 </html>
