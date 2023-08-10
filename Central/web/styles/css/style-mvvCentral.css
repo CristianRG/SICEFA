@@ -1,0 +1,107 @@
+header nav{
+    width: 100%;
+    height: 3rem;
+    /* background: green; */
+    display: flex;
+    position: absolute;
+}
+
+header nav ul{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+header nav ul li a{
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login{
+    width: 3rem;
+    height: 2rem;
+    background: black;
+    position: absolute;
+    right: 1rem;
+    top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.login a{
+    text-decoration: none;
+    color: white;
+}
+
+.container-custom{
+    
+    height: 100vh;
+    /* background-color:red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-custom img{
+    width: 70%;
+    height: 50%;
+}
+
+
+/*  */
+.mission-vision-values {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .values {
+    flex: 1;
+    padding: 0 20px;
+    text-align: left;
+  }
+  
+  
+  /* Estilos para el contenido */
+  .about-content {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+  }
+
+ /* Estilos para la sección "Acerca de nosotros" */
+.mvyv {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif; /* Ejemplo de fuente */
+  }
+  
+  .mvyv img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .mvyv h1 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  
+  .mvyv p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+  }

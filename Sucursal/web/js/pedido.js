@@ -155,26 +155,36 @@ function getDate() {
 function agregarPedido() {
     document.getElementById('consulta').style.display = 'none';
     document.getElementById('registrar').style.display = 'grid';
+    document.getElementById('switch').style.display = 'none';
     document.getElementById('empleado').value = user.user.id_user;
+    document.getElementById('agregar').addEventListener('click', function(){
+        agregarListaPedido();
+    })
 }
 
 let total = 0;
 
+
 function agregarListaPedido() {
     let producto = document.getElementById('producto').value;
     let cantidad = document.getElementById("cantidad").value;
-    let precio = 40;
-    total += cantidad * precio;
+    if (cantidad < 1) {
+        document.getElementById('agregar').disable = 'true';
+    } else {
+        document.getElementById('agregar').disable = 'false';
+        let precio = 40;
+        total += cantidad * precio;
 
-    let tabla = '';
-    tabla += `<tr>
+        let tabla = '';
+        tabla += `<tr>
                     <th scope="row">${producto}</th>
                     <td>${cantidad}</td>
                     <td>${precio}</td>
                     <td>${total}</td>
                 </tr>`;
-    document.getElementById('contenido-pedido').innerHTML += tabla;
-    document.getElementById('total-pedido').innerHTML = `Total  $${total}`
+        document.getElementById('contenido-pedido').innerHTML += tabla;
+        document.getElementById('total-pedido').innerHTML = `Total  $${total}`
+    }
 }
 
 function finalizarPedido() {
@@ -185,24 +195,47 @@ function finalizarPedido() {
     let id_compra = pedidos.Pedidos[pedidos.Pedidos.length - 1].id_compra + 1;
     let fecha = getDate();
     let pedido = {
-    id_pedido: pedidos.Pedidos.length,
-    id_compra: id_compra,
-    fecha: fecha,
-    sucursal: user.user.sucursal,
-    nombre_empleado: user.user.name,
-    codigo_postal: user.user.cp,
-    ciudad: 'León',
-    estado: 'Guanajuato',
-    total: 400,
-    status: 'PENDIENTE'
+        id_pedido: pedidos.Pedidos.length,
+        id_compra: id_compra,
+        fecha: fecha,
+        sucursal: user.user.sucursal,
+        nombre_empleado: user.user.name,
+        codigo_postal: user.user.cp,
+        ciudad: 'León',
+        estado: 'Guanajuato',
+        total: 400,
+        status: 'PENDIENTE'
     }
 
     pedidos.Pedidos.push(pedido);
     consultarPedido();
 }
 
+function selectItem(index) {
+    let item = pedidos.Pedidos[index];
+    let contenido = `
+    <div class="datos-generales">
+        <h5>Información del pedido</h5>
+        <p><strong>Sucursal:</strong> ${item.sucursal}</p>
+        <p><strong>Codigo postal:</strong> ${item.codigo_postal}</p>
+        <p><strong>Empleado:</strong> ${item.nombre_empleado}</p>
+        <p><strong>Ciudad:</strong> ${item.ciudad}</p>
+        <p><strong>Estado:</strong> ${item.estado}</p>
+        <p><strong>Estatus:</strong> ${item.status}</p>
+    </div>
+    <div class="productos">
+        <button onclick="detallePedido(${index})" class="btn btn-info">Detalle pedido</button>
+        <button type="button" class="btn btn-warning" onclick='eliminarPedido(${index})'>Cancelar</button>
+        <h5>Total</h5>
+        <p>Total: $${item.total}</p>
+    </div>`
+    document.getElementById('consulta-edicion').style.display = 'block';
+    document.getElementById('consulta-edicion').innerHTML = contenido;
+}
+
 function consultarPedido() {
-    document.getElementById('consulta').style.display = 'block';
+    document.getElementById('consulta-pedido').style.display = 'block';
+    document.getElementById('switch').style.display = 'block';
     document.getElementById('registrar').style.display = 'none';
     let status = document.getElementById('switchPendientes');
     status.addEventListener('change', () => {
@@ -242,38 +275,50 @@ function consultarPedido() {
         }
     }
     consulta.innerHTML = tabla;
+
+    document.querySelectorAll('tbody tr').forEach((e, index) => {
+        e.addEventListener('click', () => {
+            let element = document.querySelectorAll('tbody tr');
+            element.forEach((item) => {
+                item.classList.remove('table-info');
+            })
+            e.setAttribute('id', index)
+            e.classList.add('table-info');
+            selectItem(index);
+        })})
 }
 
 document.getElementById('search').addEventListener('keyup', () => {
     const value = document.getElementById("search").value;
-    if(document.getElementById('content-modulo')){
-        if(value.length == 0){
+    if (document.getElementById('content-modulo')) {
+        if (value.length == 0) {
             consultarPedido();
-        }else{
+        } else {
             buscarPedido();
         }
     }
 })
 
 function buscarPedido() {
-    if(document.getElementById('content-modulo')){
+    if (document.getElementById('content-modulo')) {
         const value = document.getElementById("search").value;
-    let resultado = pedidos.Pedidos.filter(object => {
-        let id_compra = object.id_pedido;
-        let fecha = object.fecha;
-        let sucursal = object.sucursal.toLowerCase();
-        let nombre_empleado = object.nombre_empleado.toLowerCase();
-        let codigo_postal = object.codigo_postal;
-        let ciudad = object.ciudad.toLowerCase();
-        let estado = object.estado.toLowerCase();
-        let status = object.status.toLowerCase();
+        let resultado = pedidos.Pedidos.filter(object => {
+            let id_compra = object.id_pedido;
+            let fecha = object.fecha;
+            let sucursal = object.sucursal.toLowerCase();
+            let nombre_empleado = object.nombre_empleado.toLowerCase();
+            let codigo_postal = object.codigo_postal;
+            let ciudad = object.ciudad.toLowerCase();
+            let estado = object.estado.toLowerCase();
+            let status = object.status.toLowerCase();
 
-        return fecha.includes(value) || sucursal.includes(value) || nombre_empleado.includes(value) || ciudad.includes(value) || estado.includes(value) || status.includes(value);
-    });
-    let consulta = document.getElementById('contenido-tabla');
-    let tabla = '';
-    resultado.forEach(element => {
-        tabla += `<tr>
+            return fecha.includes(value) || sucursal.includes(value) || nombre_empleado.includes(value) || ciudad.includes(value) || estado.includes(value) || status.includes(value);
+        });
+        document.getElementById('consulta-edicion').style.display = 'none';
+        let consulta = document.getElementById('contenido-tabla');
+        let tabla = '';
+        resultado.forEach(element => {
+            tabla += `<tr>
                         <th scope="row">${element.id_compra}</th>
                         <td>${element.fecha}</td>
                         <td>${element.sucursal}</td>
@@ -284,10 +329,10 @@ function buscarPedido() {
                         <td>${element.total}</td>
                         <td>${element.status}</td>
                     </tr>`
-    });
-    consulta.innerHTML= tabla;
+        });
+        consulta.innerHTML = tabla;
     }
-    else{
-        
+    else {
+
     }
 }

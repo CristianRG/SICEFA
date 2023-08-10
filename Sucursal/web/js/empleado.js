@@ -2,16 +2,16 @@ let indexEmpleadoSeleccionado;
 let empleados = [
     {
     "noEmpleado": 1,
-    "nombre": "Alejandro",
-    "apellidoPaterno": "Lapida",
-    "apellidoMaterno": "Hernández",
+    "nombre": "Homero",
+    "apellidoPaterno": "Simpson",
+    "apellidoMaterno": "Ramirez",
     "fecha_nacimiento": "2001-02-04",
     "curp": "LAHA010204HCSPRLI2",
     "genero": "Masculino",
     "estado": "Guanajuato",
     "ciudad": "León",
     "domicilio": "Suárez #13c,Berlin",
-    "codigo_postal": "37250",
+    "codigoPostal": "37250",
     "telefono": "4771636991",
     "correo_electronico": "AleHer547@hotmail.com",
     "rfc": "LAHA010204V29",
@@ -22,16 +22,16 @@ let empleados = [
 ,
 {
     "noEmpleado": 2,
-    "nombre": "María",
-    "apellidoPaterno": "González",
-    "apellidoMaterno": "López",
+    "nombre": "Anahi",
+    "apellidoPaterno": "Mojica",
+    "apellidoMaterno": "Fernandez",
     "fecha_nacimiento": "1995-06-15",
     "curp": "GOLM950615MSPNZR07",
     "genero": "Femenino",
     "estado": "Guanajuato",
     "ciudad": "León",
     "domicilio": "Avenida Juárez #45",
-    "codigo_postal": "44100",
+    "codigoPostal": "44100",
     "telefono": "3318579245",
     "correo_electronico": "maria.gonzalez@gmail.com",
     "rfc": "GOLM9506155A1",
@@ -42,7 +42,7 @@ let empleados = [
 ,
 {
     "noEmpleado": 3,
-    "nombre": "Carlos",
+    "nombre": "Naruto",
     "apellidoPaterno": "Martínez",
     "apellidoMaterno": "Sánchez",
     "fecha_nacimiento": "1988-11-23",
@@ -51,7 +51,7 @@ let empleados = [
     "estado": "Guanajuato",
     "ciudad": "León",
     "domicilio": "Reforma #1002",
-    "codigo_postal": "06000",
+    "codigoPostal": "06000",
     "telefono": "5552187496",
     "correo_electronico": "carlos.martinez@gmail.com",
     "rfc": "MASC8811236B2",
@@ -71,7 +71,7 @@ let empleados = [
     "estado": "Guanajuato",
     "ciudad": "León",
     "domicilio": "Calle Hidalgo #25",
-    "codigo_postal": "50050",
+    "codigoPostal": "50050",
     "telefono": "7223658120",
     "correo_electronico": "laura.ramirez@hotmail.com",
     "rfc": "RAPL900918V40",
@@ -91,7 +91,7 @@ let empleados = [
     "estado": "Guanajuato",
     "ciudad": "León",
     "domicilio": "Colonia Centenario #70",
-    "codigo_postal": "58030",
+    "codigoPostal": "58030",
     "telefono": "4437896541",
     "correo_electronico": "jose.garcia@gmail.com",
     "rfc": "GAMJ8504305B3",
@@ -111,7 +111,7 @@ let empleados = [
     "estado": "Guanajuato",
     "ciudad": "León",
     "domicilio": "Zaragoza #150",
-    "codigo_postal": "37000",
+    "codigoPostal": "37000",
     "telefono": "4771234567",
     "correo_electronico": "ana.rodriguez@example.com",
     "rfc": "ROLA9807125A0",
@@ -131,7 +131,7 @@ let empleados = [
     "estado": "Guanajuato",
     "ciudad": "León",
     "domicilio": "Paseo de los Insurgentes #123",
-    "codigo_postal": "37040",
+    "codigoPostal": "37040",
     "telefono": "4779876543",
     "correo_electronico": "pedro.hernandez@example.com",
     "rfc": "HEGP920320A1",
@@ -151,7 +151,7 @@ let empleados = [
     "estado": "Guanajuato",
     "ciudad": "León",
     "domicilio": "Calle Reforma #456",
-    "codigo_postal": "37210",
+    "codigoPostal": "37210",
     "telefono": "4774567890",
     "correo_electronico": "elena.gomez@example.com",
     "rfc": "GOEL8910155B2",
@@ -171,7 +171,7 @@ let empleados = [
     "estado": "Guanajuato",
     "ciudad": "León",
     "domicilio": "Avenida Revolución #789",
-    "codigo_postal": "37230",
+    "codigoPostal": "37230",
     "telefono": "4772345678",
     "correo_electronico": "miguel.lopez@example.com",
     "rfc": "LORM9609284A1",
@@ -191,7 +191,7 @@ let empleados = [
     "estado": "Guanajuato",
     "ciudad": "León",
     "domicilio": "Calle Hidalgo #567",
-    "codigo_postal": "37100",
+    "codigoPostal": "37100",
     "telefono": "4773456789",
     "correo_electronico": "isabel.hernandez@example.com",
     "rfc": "HEGI9405105A0",
@@ -263,18 +263,16 @@ function addEmpleado() {
             generoSelected,
             estado,
             ciudad,
-            domicilo,
+            domicilio,
             codigoPostal,
             telefono,
             correo_electronico,
-            sucursal,
+            // sucursal,
             // sucursalSelected,
             fechaIngreso,
             puesto,
             puestoSelected,
-            salario,
             noEmpleado;
-            fechaIngreso,
 
 
     nombre = document.getElementById("nombreEmpleado").value;
@@ -295,7 +293,7 @@ function addEmpleado() {
 
     estado = document.getElementById("estado").value;
     ciudad = document.getElementById("ciudad").value;
-    domicilo = document.getElementById("domicilio").value;
+    domicilio = document.getElementById("domicilio").value;
     codigoPostal = document.getElementById("codigoPostal").value;
     telefono = document.getElementById("telefono").value;
     correo_electronico = document.getElementById("email").value;
@@ -324,7 +322,6 @@ function addEmpleado() {
     }
 
     noEmpleado = document.getElementById("noEmp").value;
-    salario = document.getElementById("salario").value;
     
 
     ;
@@ -338,7 +335,7 @@ function addEmpleado() {
     empleado.genero = genero;
     empleado.estado = estado;
     empleado.ciudad = ciudad;
-    empleado.domicilio = domicilo;
+    empleado.domicilio = domicilio;
     empleado.codigoPostal = codigoPostal;
     empleado.telefono = telefono;
     empleado.correo_electronico = correo_electronico;
@@ -374,14 +371,14 @@ function loadTabla() {
 function selectEmpleado(index) {
     document.getElementById("nombreEmpleado").value = empleados[index].nombre;
     document.getElementById("apellidoPaterno").value = empleados[index].apellidoPaterno;
-    document.getElementById("apellidoPaterno").value = empleados[index].apellidoPaterno;
+    document.getElementById("apellidoMaterno").value = empleados[index].apellidoMaterno;
     document.getElementById("fechaNacimiento").value = empleados[index].fecha_nacimiento;
     document.getElementById("curp").value = empleados[index].curp;
     document.getElementById("rfc").value = empleados[index].rfc;
     document.getElementById("genero").value = empleados[index].genero;
     document.getElementById("estado").value = empleados[index].estado;
     document.getElementById("ciudad").value = empleados[index].ciudad;
-    document.getElementById("domicilio").value = empleados[index].domicilo;
+    document.getElementById("domicilio").value = empleados[index].domicilio;
     document.getElementById("codigoPostal").value = empleados[index].codigoPostal;
     document.getElementById("telefono").value = empleados[index].telefono;
     document.getElementById("email").value = empleados[index].correo_electronico;
@@ -399,7 +396,7 @@ function selectEmpleado(index) {
 function clean() {
     document.getElementById("nombreEmpleado").value = "";
     document.getElementById("apellidoPaterno").value = "";
-    document.getElementById("apellidoPaterno").value = "";
+    document.getElementById("apellidoMaterno").value = "";
     document.getElementById("fechaNacimiento").value = "";
     document.getElementById("curp").value = "";
     document.getElementById("rfc").value = "";
@@ -433,18 +430,16 @@ function updateEmpleado() {
     generoSelected,
     estado,
     ciudad,
-    domicilo,
+    domicilio,
     codigoPostal,
     telefono,
     correo_electronico,
     // sucursal,
     // sucursalSelected,
-    fecha,
+    fechaIngreso,
     puesto,
     puestoSelected,
-    salario,
     noEmpleado;
-    foto,
     fechaIngreso,
 
 
@@ -466,8 +461,8 @@ function updateEmpleado() {
 
     estado = document.getElementById("estado").value;
     ciudad = document.getElementById("ciudad").value;
-    domicilo = document.getElementById("domicilio").value;
-    codigoPostal = document.getElementById("codigo_postal").value;
+    domicilio = document.getElementById("domicilio").value;
+    codigoPostal = document.getElementById("codigoPostal").value;
     telefono = document.getElementById("telefono").value;
     correo_electronico = document.getElementById("email").value;
     rfc = document.getElementById("rfc").value;
@@ -495,8 +490,6 @@ function updateEmpleado() {
     }
 
     noEmpleado = document.getElementById("noEmp").value;
-    salario = document.getElementById("salario").value;
-
 
     ;
 
@@ -510,7 +503,7 @@ function updateEmpleado() {
     empleado.genero = genero;
     empleado.estado = estado;
     empleado.ciudad = ciudad;
-    empleado.domicilo = domicilo;
+    empleado.domicilio = domicilio;
     empleado.codigoPostal = codigoPostal;
     empleado.telefono = telefono;
     empleado.correo_electronico = correo_electronico;
@@ -519,7 +512,7 @@ function updateEmpleado() {
     empleado.fechaIngreso = fechaIngreso;
     empleado.puesto = puesto;
     empleado.estatus = "Activo";
-    empleado.codigo = noEmpleado;
+    empleado.noEmpleado = noEmpleado;
     empleados[indexEmpleadoSeleccionado] = empleado;
     clean();
     loadTabla();
@@ -568,6 +561,13 @@ function loadTablas(empleadosData) {
     tablaBody.innerHTML = cuerpo;
 }
 
-
+function alternarFormulario() {
+    let formulario = document.getElementById("formularioGestion");
+    if (formulario.style.display === "none") {
+      formulario.style.display = "block";
+    } else {
+      formulario.style.display = "none";
+    }
+  }
 
 

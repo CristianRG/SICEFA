@@ -1,0 +1,110 @@
+.tabP{
+    width: auto;
+    height: 5rem;
+}
+/* Estilo para los bordes de las celdas */
+table.table {
+    border: 2px solid #000;
+}
+
+table.table th, table.table td {
+    border: 1px solid #000;
+}
+
+/* Estilo para el borde grueso y color de fondo de los th */
+table.table th {
+    border: 2px solid #000;
+    background-color: #d8d8d8; /* Color gris claro */
+}
+/* Estilo para ocultar los divs con clase "sucursal" */
+.sucursal {
+    display: none;
+    border: 2px solid black;
+    padding: 10px; /* Ajusta este valor para cambiar el espacio entre el borde y el contenido */
+}
+.sucursal table {
+    width: 100%;
+}
+.sucursal th {
+    text-align: left;
+}
+
+/* Estilo para mostrar el primer div */
+#sucursal1 {
+    display: none;
+}
+
+/* Estilo para cambiar el color de fondo de la fila seleccionada a azul */
+.table-info {
+    background-color: #1F90F1; /* Color azul */
+    color: white; /* Cambiar el color del texto a blanco para mejor contraste */
+}
+.mi-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.mi-tabla th, .mi-tabla td {
+    padding: 12px;
+}
+
+/* Agrega este estilo para personalizar el tamaño de la barra de búsqueda */
+#buscarEmpleado {
+    width: 80%; /* Puedes ajustar este valor según tus preferencias */
+    max-width: 400px; /* Para limitar el ancho máximo */
+}
+
+.small-input {
+    width: 30%; /* Puedes ajustar este valor según tus preferencias */
+    max-width: 400px; /* Para limitar el ancho máximo */
+    font-size: 0.875rem; /* Ajusta el tamaño de la fuente según tus necesidades */
+}
+
+.small-form-control {
+    width: 50%; /* Ajusta el ancho según tus necesidades */
+    padding: 0.25rem 0.5rem; /* Ajusta el espaciado interior según tus necesidades */
+    font-size: 0.875rem; /* Ajusta el tamaño de la fuente según tus necesidades */
+}
+
+.circular-photo {
+    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    height: 100px; /* Ajusta el tamaño según tus necesidades */
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Escala la imagen para cubrir completamente el contenedor */
+    border: 2px solid #ccc; /* Agrega un borde opcional */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que la página ocupe al menos el 100% de la altura visible */
+}
+/* Estilos para el contenido */
+.content {
+    flex: 1; /* Permite que el contenido ocupe el espacio restante */
+    padding: 20px;
+}
+/* Estilos para el footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+/* Estilos para los enlaces en el footer */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.table {
+    width: 150%; /* Cambia este valor según tus necesidades */
+    margin:  0 auto; /* Centra la tabla en el contenedor */
+  }
+
+  .table th, .table td {
+    padding: 15px; /* Añade espacio interno en las celdas */
+  }
