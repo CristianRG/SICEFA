@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SICEFA CENTRAL - HOME</title>
+    <link rel="stylesheet" href="styles/bootstrap-5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/brands.min.css">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/solid.min.css">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="styles/package/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="styles/css/styles-sistem.css">
+    <link href="styles/css/adInventario.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <header>
+        <div class="logo-vision">
+            <div class="logo">
+                <img src="img/SICEFA_LOGO.png" alt="SICEFA_LOGO">
+            </div>
+            <div class="vision">
+                <div class="elements">
+                    <a href="">Misión</a>
+                    <a href="">Visión</a>
+                    <a href="">Valores</a>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav" id="navbar-elements">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="sucursal.html">Sucursales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="productosHTML.html">Productos</a>
+                           
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="perfil">
+            <div class="icon-perfil">
+                <i class="fa-solid fa-user fa-sm"></i>
+            </div>
+            <div class="info-perfil">
+                <p id="perfil-username">name user</p>
+                <button onclick="logOut()">Log out</button>
+            </div>
+        </div>
+    </header>
+    <section>
+        <!-- SLIDER -->
+
+                <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
+
+                <div class="container-fluid mt-4">
+                    <form class="form-inline w-100 justify-content-center">
+                        <div class="form-group">
+                            <p>Buscar:
+                                <input type="text" class="form-control" id="searchInput" placeholder="Ingrese su búsqueda">
+                            </p>
+                        </div>
+                        <button type="submit" class="btn btn-primary ml-2">Buscar</button>
+                    </form>
+                   <div class="container mt-4">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div data-bs-spy="scroll" >
+                                    <table class="table table-hover" id="tablaproductos" >
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Nombre generico</th>
+                                                <th>Forma farmaceutica</th>
+                                                <th>Medida</th>
+                                                <th>Presentación</th>
+                                                <th>Concentración</th>
+                                                <th>Unidades en envase</th>
+                                                <th>Precio</th>
+                                                <th>Cantidad</th>    
+                                                <th>Estatus</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="productos">
+                                            <tr onclick="mostrarInformacion(0)">
+
+                                                <td>Pain Relief plus</td>
+                                                <td>Analgesinol</td>
+                                                <td>Tabletas</td>
+                                                <td>500 mg</td>
+                                                <td>Caja de 20 tabletas</td>
+                                                <td>250 mg por tableta</td>
+                                                <td>20 tabletas</td>
+                                                <td>$12.99</td>
+                                                <td>56</td>
+                                                <td>Activo</td>
+                                            </tr>
+                                            <tr onclick="mostrarInformacion(1)">
+                                                <td>AllerGuard Syrup </td>
+                                                <td>Antihistaminol</td>
+                                                <td>Jarabe</td>
+                                                <td>120 ml</td>
+                                                <td>Botella de 120 ml</td>
+                                                <td>5 mg por 5 ml</td>
+                                                <td>1 botella</td>
+                                                <td>$8.49</td>
+                                                  <td>87</td>
+                                                <td>Activo</td>
+                                            </tr>
+                                            <tr onclick="mostrarInformacion(2)">
+                                                <td>VitaC Boost</td>
+                                                <td>Vitamina C</td>
+                                                <td>Cápsulas</td>
+                                                <td>1000 mg</td>
+                                                <td>Frasco de 60 cápsulas</td>
+                                                <td>500 mg por cápsula</td>
+                                                <td>60 cápsulas</td>
+                                                <td>$15.75</td>
+                                                  <td>54</td>
+                                                <td>Activo</td>
+                                            </tr>
+                                            <tr onclick="mostrarInformacion(3)">
+                                                <td>SleepEase Tablets</td>
+                                                <td>Somniol</td>
+                                                <td>Tabletas</td>
+                                                <td>5 mg</td>
+                                                <td>Caja de 30 tabletas</td>
+                                                <td> 5 mg por tableta</td>
+                                                <td>30 tabletas</td>
+                                                <td>$9.99</td>
+                                                  <td>34</td>
+                                                <td>Activo</td>
+                                            </tr>
+                                            <tr onclick="mostrarInformacion(4)">
+                                                <td>DigestiPro Capsules</td>
+                                                <td>Digestinol</td>
+                                                <td>Cápsulas</td>
+                                                <td>300 mg</td>
+                                                <td>Frasco de 90 cápsulas</td>
+                                                <td>150 mg por cápsula</td>
+                                                <td>90 cápsulas</td>
+                                                <td>$18.50</td>
+                                                  <td>89</td>
+                                                <td>Activo</td>
+                                            </tr>
+                                            <tr onclick="mostrarInformacion(5)">
+                                                <td>ImmunoGuard Plus</td>
+                                                <td>Inmunol</td>
+                                                <td>Tabletas</td>
+                                                <td>750 mg</td>
+                                                <td>Caja de 60 tabletas</td>
+                                                <td> 250 mg por tableta</td>
+                                                <td>60 tabletas</td>
+                                                <td>$22.99</td>
+                                                  <td>56</td>
+                                                <td>Activo</td>
+                                            </tr>
+                                            <tr onclick="mostrarInformacion(6)">
+                                                <td>RelaxiCalm Drops</td>
+                                                <td>Calmex</td>
+                                                <td>Gotas</td>
+                                                <td>10 ml</td>
+                                                <td>Frasco de 10 ml</td>
+                                                <td>5 mg por ml</td>
+                                                <td>1 frasco</td>
+                                                <td>$11.25</td>
+                                                  <td>85</td>
+                                                <td>Activo</td>
+                                            </tr>
+                                            <tr onclick="mostrarInformacion(7)">
+                                                <td>SkinCare Cream</td>
+                                                <td>Dermatol</td>
+                                                <td>Crema</td>
+                                                <td>30 g</td>
+                                                <td>Tubo de 30 g</td>
+                                                <td>1%</td>
+                                                <td>1 tubo</td>
+                                                <td>$14.75</td>
+                                                  <td>64</td>
+                                                <td>Activo</td>
+                                            </tr>
+                                            <tr onclick="mostrarInformacion(8)">
+                                                <td>JointFlex Gel</td>
+                                                <td>Flexijoint</td>
+                                                <td>Gel</td>
+                                                <td>50 g</td>
+                                                <td>Tubo de 50 g</td>
+                                                <td>2%</td>
+                                                <td>1 tubo</td>
+                                                <td>$16.99</td>
+                                                  <td>76</td>
+                                                <td>Activo</td>
+                                            </tr>
+                                            <tr onclick="mostrarInformacion(9)">
+                                                <td>EyeClear Drops</td>
+                                                <td>VisiClear</td>
+                                                <td>Gotas</td>
+                                                <td>15 ml</td>
+                                                <td>Frasco de 15 ml</td>
+                                                <td>2 mg por ml</td>
+                                                <td>1 frasco</td>
+                                                <td>$9.95</td>
+                                                  <td>15</td>
+                                                <td>Activo</td>
+                                            </tr>
+                                            <tr onclick="mostrarInformacion(10)">
+                                                <td>SleepEase Tablets</td>
+                                                <td>Somniol</td>
+                                                <td>Tabletas</td>
+                                                <td>5 mg</td>
+                                                <td>Caja de 30 tabletas</td>
+                                                <td> 5 mg por tableta</td>
+                                                <td>30 tabletas</td>
+                                                <td>$9.99</td>
+                                                  <td>78</td>
+                                                <td>Activo</td>
+                                            </tr>
+                                      
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    </section>
+    <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="styles/package/dist/sweetalert2.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/changeModule.js"></script>
+    <script src="js/adSucursal.js" type="text/javascript"></script>
+    <link href="styles/css/adSucursal.css" rel="stylesheet" type="text/css"/>
+</body>
+</html>
