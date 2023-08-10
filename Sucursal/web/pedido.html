@@ -1,9 +1,9 @@
 <div class="side-bar">
-    <div class="options">
-        <!-- Para agregar los elementos que iran en la barra lateral solo crear un div con la clase 'option'
+  <div class="options">
+    <!-- Para agregar los elementos que iran en la barra lateral solo crear un div con la clase 'option'
         y dentro el boton con el texto que deseas agregar -->
 
-        <!-- ejemplo
+    <!-- ejemplo
 
             <div class="option">
                 <button>Agregar</button>
@@ -15,74 +15,87 @@
                 <button>Eliminar</button>
             </div> -->
 
-            <div class="option">
-                <button onclick="agregarPedido()">Agregar pedido</button>
-            </div>
-
+    <div class="option">
+      <button onclick="agregarPedido()">Agregar pedido</button>
     </div>
+
+  </div>
 </div>
 <div class="content-modulo" id="content-modulo">
-  <div class="form-check form-switch">
+  <div class="form-check form-switch" id="switch">
     <input class="form-check-input" type="checkbox" id="switchPendientes">
     <label class="form-check-label" for="switchPendientes">Pendientes</label>
   </div>
-    <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
+  <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
+  <div class="consulta-pedido" id="consulta-pedido">
     <div class="consulta" id="consulta">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                  <th scope="col">id compra</th>
-                  <th scope="col">fecha</th>
-                  <th scope="col">sucursal</th>
-                  <th scope="col">nombre empleado</th>
-                  <th scope="col">código postal</th>
-                  <th scope="col">ciudad</th>
-                  <th scope="col">estado</th>
-                  <th scope="col">total</th>
-                  <th scope="col">status</th>
-                </tr>
-              </thead>
-              <tbody id="contenido-tabla">
-              </tbody>
-          </table>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">id compra</th>
+            <th scope="col">fecha</th>
+            <th scope="col">sucursal</th>
+            <th scope="col">nombre empleado</th>
+            <th scope="col">código postal</th>
+            <th scope="col">ciudad</th>
+            <th scope="col">estado</th>
+            <th scope="col">total</th>
+            <th scope="col">status</th>
+          </tr>
+        </thead>
+        <tbody id="contenido-tabla">
+        </tbody>
+      </table>
     </div>
-    <div class="registrar" id="registrar">
-      <div class="formulario">
-          <h3>Realizar pedido</h3>
-          <label for="empleado">Empleado</label>
-          <input type="text" id="empleado" disabled>
-          <br><br>
-          <!-- <label for="cliente">Cliente</label>
+  </div>
+  <div class="consulta-edicion" id="consulta-edicion">
+      
+  </div>
+  <div class="registrar" id="registrar">
+    <div class="formulario">
+      <h3>Realizar pedido</h3>
+      <label for="empleado">Empleado</label>
+      <input type="text" id="empleado" disabled>
+      <br><br>
+      <!-- <label for="cliente">Cliente</label>
           <input type="text" id="cliente">
           <br><br> -->
-          <label for="producto">Producto</label>
-          <select name="producto" id="producto">
-            <option value="Paracetamol">Paracetamol</option>
-            <option value="Aspirina">Aspirina</option>
-          </select>
-          <input type="number" id="cantidad">
-          <button id="agregar" onclick="agregarListaPedido()">Agregar</button>
-      </div>
-      <div class="consulta-pedido">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">producto</th>
-              <th scope="col">cantidad</th>
-              <th scope="col">precio</th>
-              <th scope="col">total</th>
-            </tr>
-          </thead>
-          <tbody id="contenido-pedido">
-              
-          </tbody>
-        </table>
-        <table class="table">
-          <tr>
-            <td colspan="3" id="total-pedido">Total $0</td>
-            <td><button onclick="finalizarPedido()">Finalizar</button></td>
-          </tr>
-        </table>
-      </div>
+      <label for="producto">Producto</label>
+      <select name="producto" id="producto">
+        <option value="Pain Relief plus">Pain Relief plus</option>
+        <option value="AllerGuard Syrup">AllerGuard Syrup</option>
+        <option value="VitaC Boost">VitaC Boost</option>
+        <option value="SleepEase Tablets">SleepEase Tablets</option>
+        <option value="DigestiPro Capsules">DigestiPro Capsules</option>
+        <option value="ImmunoGuard Plus">ImmunoGuard Plus</option>
+        <option value="RelaxiCalm Drops">RelaxiCalm Drops</option>
+        <option value="SkinCare Cream">SkinCare Cream</option>
+        <option value="JointFlex Gel">JointFlex Gel</option>
+        <option value="EyeClear Drops">EyeClear Drops</option>
+      </select>
+      <input type="number" id="cantidad">
+      <button type="button" class="btn btn-success" id="agregar">Agregar</button>
     </div>
+    <div class="consulta-pedido">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">producto</th>
+            <th scope="col">cantidad</th>
+            <th scope="col">precio</th>
+            <th scope="col">total</th>
+          </tr>
+        </thead>
+        <tbody id="contenido-pedido">
+
+        </tbody>
+      </table>
+      <table class="table">
+        <tr>
+          <td colspan="3" id="total-pedido">Total $0</td>
+          <td><button type="button" class="btn btn-primary" onclick="finalizarPedido()">Finalizar</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
