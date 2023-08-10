@@ -1,6 +1,6 @@
         .tabP{
-            border: 2px solid black;
-            padding: 10px;
+            width: auto;
+            height: 5rem;
         }
         /* Estilo para los bordes de las celdas */
         table.table {
@@ -17,14 +17,15 @@
             background-color: #d8d8d8; /* Color gris claro */
         }
     /* Estilo para ocultar los divs con clase "sucursal" */
-        .sucursal {
+        .cliente {
+            display: none;
             border: 2px solid black;
             padding: 10px; /* Ajusta este valor para cambiar el espacio entre el borde y el contenido */
         }
-        .sucursal table {
+        .cliente table {
             width: 100%;
         }
-        .sucursal th {
+        .cliente th {
             text-align: left;
         }
 
@@ -78,7 +79,4 @@
         padding: 8px 16px;
         border-radius: 4px;
         cursor: pointer;
-    }
-    .ocl {
-        display: none;
     }

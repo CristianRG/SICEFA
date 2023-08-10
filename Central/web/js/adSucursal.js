@@ -15,6 +15,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+        const botonMostrarActivas = document.getElementById("botonMostrarActivas");
+        const botonMostrarInactivas = document.getElementById("botonMostrarInactivas");
+        const tablaActivas = document.getElementById("tablaSucursales");
+        const tablaInactivas = document.getElementById("tablaSucursales2");
+        const contenedorFormulario = document.getElementById("formulario");
+        const botonMostrarTabla = document.getElementById("botonMostrarTabla");
+
+        botonMostrarActivas.addEventListener("click", function() {
+            tablaActivas.style.display = "block";
+            tablaInactivas.style.display = "none";
+            contenedorFormulario.style.display = "none"; // Ocultar el formulario
+            botonMostrarTabla.style.display = "none"; // Ocultar el botón
+        });
+
+        botonMostrarInactivas.addEventListener("click", function() {
+            tablaActivas.style.display = "none";
+            tablaInactivas.style.display = "block";
+            contenedorFormulario.style.display = "none"; // Ocultar el formulario
+            botonMostrarTabla.style.display = "none"; // Ocultar el botón
+        });
+    });
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const contenedorFormulario = document.getElementById("formulario");
     const contenedorTabla = document.getElementById("tablaSucursales");
@@ -42,6 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
     botonMostrarFormulario.addEventListener("click", mostrarFormulario);
     botonMostrarTabla.addEventListener("click", mostrarTabla);
 });
+
+
 
 const data = [
             {
@@ -315,8 +341,8 @@ const data = [
             <td>Telefono sucursal:</td>
             <td>${item.telefonoSucursal}</td>
         </tr>
-                <button class="btn-editar">Editar</button>
-                <button class="btn-eliminar">Eliminar</button>
+            <button class="btn-editar">Editar</button>
+            <button class="btn-eliminar" onclick="moveRow(this)">Eliminar</button>
     `;
 
     infoTables[0].innerHTML = detallesTitular;
@@ -324,17 +350,21 @@ const data = [
 }
         
         
-        
+   document.addEventListener("DOMContentLoaded", function () {
+    // ...
+
+    const agregarBtn = document.getElementById("botonMostrarTabla");
+    agregarBtn.addEventListener("click", agregarRegistroATabla);
+});     
         
 function agregarRegistroATabla(registro) {
     const tableBody = document.getElementById("tableBody1");
     
-    const newRow = document.createElement("tr");
-    newRow.addEventListener("click", function () {
-        // Tu código para manejar el clic en la fila aquí
-    });
+    // Generar el atributo data-index para identificar la fila
+    //newRow.setAttribute("data-index", tableBody.children.length);
 
-    newRow.innerHTML = `
+    tableBody.innerHTML +=
+    `<tr onclick="mostrarInformacion(${data.length-1})">
         <td>${registro.nombreSucursal}</td>
         <td>${registro.idSucursal}</td>
         <td>${registro.nombreTitular}</td>
@@ -343,11 +373,62 @@ function agregarRegistroATabla(registro) {
         <td>${registro.curpTitular}</td>
         <td>${registro.rfcTitular}</td>
         <td>${registro.telefonoSucursal}</td>
-    `;
-
-    tableBody.appendChild(newRow);
-
-
+    </tr>
+    `;  
+    
     // Limpiar el formulario después de agregar el registro
     limpiarFormulario();
 }
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchButton = document.getElementById("searchButton");
+    searchButton.addEventListener("click", buscarEnTabla);
+});
+
+function buscarEnTabla() {
+    const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    const tableRows = document.querySelectorAll("#tableBody1 tr");
+
+    tableRows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        if (rowText.includes(searchInput)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchButton = document.getElementById("searchButton2");
+    searchButton.addEventListener("click", buscarEnTabla2);
+});
+function buscarEnTabla2() {
+    const searchInput = document.getElementById("searchInput2").value.toLowerCase();
+    const tableRows = document.querySelectorAll("#tableBody2 tr");
+
+    tableRows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        if (rowText.includes(searchInput)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
+
+function moveRow(button) {
+            const row = button.parentNode.parentNode;
+            const table1 = document.getElementById('myTable');
+            const table2 = document.getElementById('myTable2');
+
+            // Remove row from table1
+            table1.querySelector('tbody').removeChild(row);
+
+            // Add row to table2
+            table2.querySelector('tbody').appendChild(row);
+        }
