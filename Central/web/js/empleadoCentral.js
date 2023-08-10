@@ -267,8 +267,8 @@ function addEmpleado() {
             codigoPostal,
             telefono,
             correo_electronico,
-            // sucursal,
-            // sucursalSelected,
+            sucursal,
+            sucursalSelected,
             fechaIngreso,
             puesto,
             puestoSelected,
@@ -299,15 +299,15 @@ function addEmpleado() {
     correo_electronico = document.getElementById("email").value;
     rfc = document.getElementById("rfc").value;
 
-    // sucursal = document.getElementById("txtSucursal").value;
-    // sucursalSelected = "";
+    sucursal = document.getElementById("txtSucursal").value;
+    sucursalSelected = "";
 
-    // for (let i = 0; i < sucursal.length; i++) {
-    //     if (sucursal[i].checked) {
-    //         sucursalSelected = sucursal[i].value;
-    //         break;
-    //     }
-    // }
+    for (let i = 0; i < sucursal.length; i++) {
+        if (sucursal[i].checked) {
+            sucursalSelected = sucursal[i].value;
+            break;
+        }
+    }
 
     fechaIngreso = document.getElementById("fechaIngreso").value;
 
@@ -340,7 +340,7 @@ function addEmpleado() {
     empleado.telefono = telefono;
     empleado.correo_electronico = correo_electronico;
     empleado.rfc = rfc;
-    // empleado.sucursal = sucursal;
+    empleado.sucursal = sucursal;
     empleado.fechaIngreso = fechaIngreso;
     empleado.puesto = puesto;
     empleado.estatus = "Activo";
@@ -382,10 +382,11 @@ function selectEmpleado(index) {
     document.getElementById("codigoPostal").value = empleados[index].codigoPostal;
     document.getElementById("telefono").value = empleados[index].telefono;
     document.getElementById("email").value = empleados[index].correo_electronico;
-    // document.getElementById("estado").value = empleados[index].sucursal;
+    document.getElementById("estado").value = empleados[index].sucursal;
     document.getElementById("fechaIngreso").value = empleados[index].fechaIngreso;
     document.getElementById("puesto").value = empleados[index].puesto;
     document.getElementById("noEmp").value = empleados[index].noEmpleado;
+    document.getElementById("txtSucursal").value = empleados[index].sucursal;
     document.getElementById("btnUpdate").classList.remove("disabled");
     document.getElementById("btnDelete").classList.remove("disabled");
     document.getElementById("btnAdd").classList.add("disabled");
@@ -411,9 +412,10 @@ function clean() {
     document.getElementById("fechaIngreso").value = "";
     document.getElementById("puesto").value = "";
     document.getElementById("noEmp").value = "";
+    document.getElementById("txtSucursal").value = "";
     document.getElementById("nombreEmpleado").focus();
-    // document.getElementById("btnUpdate").classList.add("disabled");
-    // document.getElementById("btnDelete").classList.add("disabled");
+    document.getElementById("btnUpdate").classList.add("disabled");
+    document.getElementById("btnDelete").classList.add("disabled");
     document.getElementById("btnAdd").classList.remove("disabled");
     indexEmpleadoSeleccionado = 0;
 }
@@ -434,8 +436,8 @@ function updateEmpleado() {
     codigoPostal,
     telefono,
     correo_electronico,
-    // sucursal,
-    // sucursalSelected,
+    sucursal,
+    sucursalSelected,
     fechaIngreso,
     puesto,
     puestoSelected,
@@ -467,15 +469,15 @@ function updateEmpleado() {
     correo_electronico = document.getElementById("email").value;
     rfc = document.getElementById("rfc").value;
 
-    // sucursal = document.getElementById("txtSucursal").value;
-    // sucursalSelected = "";
+    sucursal = document.getElementById("txtSucursal").value;
+    sucursalSelected = "";
 
-    // for (let i = 0; i < sucursal.length; i++) {
-    //     if (sucursal[i].checked) {
-    //         sucursalSelected = sucursal[i].value;
-    //         break;
-    //     }
-    // }
+    for (let i = 0; i < sucursal.length; i++) {
+        if (sucursal[i].checked) {
+            sucursalSelected = sucursal[i].value;
+            break;
+        }
+    }
 
     fechaIngreso = document.getElementById("fechaIngreso").value;
 
@@ -508,7 +510,7 @@ function updateEmpleado() {
     empleado.telefono = telefono;
     empleado.correo_electronico = correo_electronico;
     empleado.rfc = rfc;
-    // empleado.sucursal = sucursal;
+    empleado.sucursal = sucursal;
     empleado.fechaIngreso = fechaIngreso;
     empleado.puesto = puesto;
     empleado.estatus = "Activo";
@@ -534,7 +536,7 @@ function searchEmpleado() {
                 empleado.nombre.toLowerCase().includes(searchEmp) ||
                 empleado.apellidoPaterno.toLowerCase().includes(searchEmp) ||
                 empleado.apellidoMaterno.toLowerCase().includes(searchEmp) ||
-                // empleado.sucursal.toLowerCase().includes(searchEmp) ||
+                empleado.sucursal.toLowerCase().includes(searchEmp) ||
                 empleado.puesto.toLowerCase().includes(searchEmp) ||
                 empleado.estatus.toLowerCase().includes(searchEmp)    );
 
@@ -560,5 +562,3 @@ function loadTablas(empleadosData) {
 
     tablaBody.innerHTML = cuerpo;
 }
-
-
