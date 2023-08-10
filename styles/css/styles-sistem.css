@@ -186,7 +186,6 @@ section{
 .content-modulo{
     width: 85%;
     height: calc(100vh - 5rem);
-    float: right;
     /* background: yellow; */
     padding: 1rem;
     display: flex;

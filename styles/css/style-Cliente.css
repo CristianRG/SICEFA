@@ -1,0 +1,74 @@
+.content-modulo .consulta {
+    width: 90%;
+    height: 90%;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+.content-modulo .consulta table {
+    width: 100%;
+}
+
+table.table {
+    border: 2px solid #000;
+}
+
+table.table th,
+table.table td {
+    border: 1px solid #000;
+}
+
+/* Estilo para el borde grueso y color de fondo de los th */
+table.table th {
+    border: 2px solid #000;
+    background-color: #d8d8d8;
+    /* Color gris claro */
+}
+
+.registrar {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.formulario{
+    grid-column: 1;
+    width: 100%;
+    height: auto;
+}
+
+.formulario h3{
+    margin-bottom: 1rem;
+}
+
+.formulario label{
+    display: block;
+}
+
+.formulario select {
+    width: 9rem;
+}
+
+.formulario #cantidad {
+    width: 2rem;
+}
+
+#agregar{
+    width: 5rem;
+    display: block;
+    border: none;
+    background: green;
+    padding: 3px;
+    position: relative;
+    left: 20%;
+    transform: translate(-20%);
+    margin-top: 1rem;
+}
+
+.consulta-pedido{
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+}
+

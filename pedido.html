@@ -1,20 +1,106 @@
-<div class="side-bar">
-    <div class="options">
-        <!-- Para agregar los elementos que iran en la barra lateral solo crear un div con la clase 'option'
-        y dentro el boton con el texto que deseas agregar -->
+<!DOCTYPE html>
+<html lang="en">
 
-        <!-- ejemplo
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SICEFA SUCURSAL - HOME</title>
+    <link rel="stylesheet" href="styles/bootstrap-5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/brands.min.css">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/solid.min.css">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="styles/package/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="styles/css/styles-sistem.css">
+    <link rel="stylesheet" href="styles/css/styles-pedido.css">
+</head>
 
-            <div class="option">
-                <button>Agregar</button>
+<body>
+    <header>
+        <div class="logo-vision">
+            <div class="logo">
+                <img src="img/SICEFA_LOGO.png" alt="SICEFA_LOGO">
             </div>
-            <div class="option">
-                <button>Editar</button>
+            <div class="vision">
+                <div class="elements">
+                    <a href="">Misión</a>
+                    <a href="">Visión</a>
+                    <a href="">Valores</a>
+                </div>
             </div>
-            <div class="option">
-                <button>Eliminar</button>
-            </div> -->
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="empleado.html">Empleado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Cliente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Venta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Producto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="getModuleOrder()" id="pedido">Pedido</a>
+                        </li>
+                        </ul>
+                        <!-- <form class="d-flex" role="search"> -->
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" onclick="buscarPedido()">
+                        <button class="btn btn-outline-success">Search</button>
+                        <!-- </form> -->
+                    </div>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+        <!-- <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav" id="navbar-elements">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="empleado.html">Empleados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="cliente.html">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Ventas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" onclick="getModuleOrder()" id="pedido">Pedidos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> -->
+        <div class="perfil">
+            <div class="icon-perfil">
+                <i class="fa-solid fa-user fa-sm"></i>
+            </div>
+            <div class="info-perfil">
+                <p id="perfil-username">name user</p>
+                <button onclick="logOut()">Log out</button>
+            </div>
+        </div>
+    </header>
+    <section>
+        <!-- SLIDER -->
+        <div class="content" id="content">
+           
             <div class="option">
                 <button onclick="agregarPedido()">Agregar pedido</button>
             </div>
@@ -86,3 +172,16 @@
       </div>
     </div>
 </div>
+            <!-- </div> -->
+        </div>
+    </section>
+    <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="styles/package/dist/sweetalert2.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/obtenerModulos.js"></script>
+    <script src="js/pedido.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+
+</html>
