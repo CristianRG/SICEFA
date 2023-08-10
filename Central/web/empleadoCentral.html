@@ -1,10 +1,11 @@
     <!DOCTYPE html>
     <html lang="en">
 
+<<<<<<< HEAD
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SICEFA CENTRAL - EMPLEADOS </title>
+        <title>SICEFA SUCURSAL - EMPLEADOS</title>
         <link rel="stylesheet" href="styles/bootstrap-5.3.0/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/brands.min.css">
         <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/solid.min.css">
@@ -13,6 +14,20 @@
         <link rel="stylesheet" href="styles/css/styles-sistem.css">
         <link rel="stylesheet" href="styles\css\stylesEmpleadoCentral.css">
     </head>
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SICEFA CENTRAL - EMPLEADOS </title>
+    <link rel="stylesheet" href="styles/bootstrap-5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/brands.min.css">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/solid.min.css">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.4.0-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="styles/package/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="styles/css/styles-sistem.css">
+    <link rel="stylesheet" href="styles\css\stylesEmpleadoCentral.css">
+</head>
+>>>>>>> 011e4d9c880440fefa707c2a0db1ff7bc2730d8e
 
     <body onload="loadTabla()">
         <header>
@@ -29,247 +44,247 @@
                 </div>
             </div>
 
-            <nav class="navbar navbar-expand-lg navbar-light ">
-                <div class="container-fluid">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                        <div class="container-fluid"><b>Empleados</b>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="">Clientes</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Ventas</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Pedidos</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-
-
-                </div>
-            </nav>
-            <div class="perfil">
-                <div class="icon-perfil">
-                    <i class="fa-solid fa-user fa-sm"></i>
-                </div>
-                <div class="info-perfil">
-                    <p id="perfil-username">name user</p>
-                    <button onclick="logOut()">Log out</button>
-                </div>
-            </div>
-        </header>
-        <section>
-            <!-- SLIDER -->
-            <div class="content">
-                <div class="side-bar">
-                    <div class="options">
-                        <h3>Empleados</h3>
-                        <div class="option">
-                            <button onclick="alternarFormulario()">Gestionar</button>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid"><b>Empleados</b>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">Clientes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Ventas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Pedidos</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </div>
+                </nav>
 
-                <div class="container-fluid mt-4">
-                    <form class="d-flex" role="search">
-                        <input id="buscarEmpleado" class="form-control me-2" type="search" placeholder="Buscar Empleado"
-                            aria-label="Search">
-                        <button id=btnBuscar class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form><br>
-                    <div class="d-flex justify-content-start">
-                        <div class="justify-content-center align-content-center pt-4">
-                            <h2>Consultar Empleado</h2>
-                            <table class="table table-hover ">
-                                <thead class="text-black text-center">
-                                    <tr>
-                                        <th>No. Empleado</th>
-                                        <th>Nombre</th>
-                                        <th>Apellido Paterno</th>
-                                        <th>Apellido Materno</th>
-                                        <th>Sucursal</th>
-                                        <th>Puesto</th>
-                                        <th>Estatus</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tblEmpleados" class="text-center">
-                                </tbody>
-                            </table>
-                        </div>
+
+            </div>
+        </nav>
+        <div class="perfil">
+            <div class="icon-perfil">
+                <i class="fa-solid fa-user fa-sm"></i>
+            </div>
+            <div class="info-perfil">
+                <p id="perfil-username">name user</p>
+                <button onclick="logOut()">Log out</button>
+            </div>
+        </div>
+    </header>
+    <section>
+        <!-- SLIDER -->
+        <div class="content">
+            <div class="side-bar">
+                <div class="options">
+                    <h3>Empleados</h3>
+                    <div class="option">
+                        <button onclick="alternarFormulario()">Gestionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid mt-4">
+                <form class="d-flex" role="search">
+                    <input id="buscarEmpleado" class="form-control me-2" type="search" placeholder="Buscar Empleado"
+                        aria-label="Search">
+                    <button id=btnBuscar class="btn btn-outline-success" type="submit">Buscar</button>
+                </form><br>
+                <div class="d-flex justify-content-start">
+                    <div class="justify-content-center align-content-center pt-4">
+                        <h2>Consultar Empleado</h2>
+                        <table class="table table-hover ">
+                            <thead class="text-black text-center">
+                                <tr>
+                                    <th>No. Empleado</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido Paterno</th>
+                                    <th>Apellido Materno</th>
+                                    <th>Sucursal</th>
+                                    <th>Puesto</th>
+                                    <th>Estatus</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblEmpleados" class="text-center">
+                            </tbody>
+                        </table>
+                    </div>
 
 
                     </div><br>
 
-                    <div id="formularioGestion" style="display: none;">
-                        <h2>Gestionar Empleado</h2>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mi-tabla">
-                                    <div class="form-group row">
-                                        <div class="col">
-                                            <label for="nombreEmpleado">Nombre:</label>
-                                            <input type="text" id="nombreEmpleado" name="nombreEmpleado"
-                                                class="form-control" placeholder="Nombre">
-                                        </div>
-                                        <div class="col">
-                                            <label for="apellidoPaterno">Apellido paterno:</label>
-                                            <input type="text" id="apellidoPaterno" name="apellidoPaterno"
-                                                class="form-control" placeholder="Apellido paterno">
-                                        </div>
-                                        <div class="col">
-                                            <label for="apellidoMaterno">Apellido materno:</label>
-                                            <input type="text" id="apellidoMaterno" name="apellidoMaterno"
-                                                class="form-control" placeholder="Apellido materno">
-                                        </div>
-                                    </div><br>
-                                    <div class="form-group">
-                                        <label for="genero">Genero:</label>
-                                        <select id="genero" name="genero"><br>
-                                            <option value="" disabled selected>Selecciona genero</option>
-                                            <option value="Masculino"> Masculino
-                                            <option value="Femenino"> Femenino
-                                            <option value="otro"> Otro
+                <div id="formularioGestion" style="display: none;">
+                    <h2>Gestionar Empleado</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mi-tabla">
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="nombreEmpleado">Nombre:</label>
+                                        <input type="text" id="nombreEmpleado" name="nombreEmpleado"
+                                            class="form-control" placeholder="Nombre">
+                                    </div>
+                                    <div class="col">
+                                        <label for="apellidoPaterno">Apellido paterno:</label>
+                                        <input type="text" id="apellidoPaterno" name="apellidoPaterno"
+                                            class="form-control" placeholder="Apellido paterno">
+                                    </div>
+                                    <div class="col">
+                                        <label for="apellidoMaterno">Apellido materno:</label>
+                                        <input type="text" id="apellidoMaterno" name="apellidoMaterno"
+                                            class="form-control" placeholder="Apellido materno">
+                                    </div>
+                                </div><br>
+                                <div class="form-group">
+                                    <label for="genero">Genero:</label>
+                                    <select id="genero" name="genero"><br>
+                                        <option value="" disabled selected>Selecciona genero</option>
+                                        <option value="Masculino"> Masculino
+                                        <option value="Femenino"> Femenino
+                                        <option value="otro"> Otro
+                                    </select>
+                                </div><br>
+                                <div class="form-group" id="fechaNacimientoGroup">
+                                    <label for="fechaNacimiento">Fecha de Nacimiento:</label><br>
+                                    <input type="date" id="fechaNacimiento" name="fechaNacimiento"
+                                        class="form-control small-input">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="curp">CURP:</label>
+                                        <input type="text" id="curp" name="curp" class="form-control"
+                                            placeholder="CURP">
+                                    </div>
+                                    <div class="col">
+                                        <label for="rfc">RFC:</label>
+                                        <input type="text" id="rfc" name="rfc" class="form-control" placeholder="RFC">
+                                    </div>
+                                </div>
+                                <div class="form-group row" id="estadoCiudadGroup">
+                                    <div class="col">
+                                        <label for="estado">Estado:</label>
+                                        <select id="estado" name="estado" class="form-control">
+                                            <option value="" disabled selected>Selecciona Estado</option>
+                                            <option value="Guanajuato">Guanajuato</option>
+                                            <!-- Agrega más opciones de estados si es necesario -->
                                         </select>
-                                    </div><br>
-                                    <div class="form-group" id="fechaNacimientoGroup">
-                                        <label for="fechaNacimiento">Fecha de Nacimiento:</label><br>
-                                        <input type="date" id="fechaNacimiento" name="fechaNacimiento"
-                                            class="form-control small-input">
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col">
-                                            <label for="curp">CURP:</label>
-                                            <input type="text" id="curp" name="curp" class="form-control"
-                                                placeholder="CURP">
-                                        </div>
-                                        <div class="col">
-                                            <label for="rfc">RFC:</label>
-                                            <input type="text" id="rfc" name="rfc" class="form-control" placeholder="RFC">
-                                        </div>
+                                    <div class="col">
+                                        <label for="ciudad">Ciudad:</label>
+                                        <select id="ciudad" name="ciudad" class="form-control">
+                                            <option value="" disabled selected>Selecciona ciudad</option>
+                                            <option value="Acámbaro">Acámbaro</option>
+                                            <option value="Celaya">Celaya</option>
+                                            <option value="Cortazar">Cortazar</option>
+                                            <option value="Dolores Hidalgo">Dolores Hidalgo</option>
+                                            <option value="Guanajuato">Guanajuato</option>
+                                            <option value="Irapuato">Irapuato</option>
+                                            <option value="León">León</option>
+                                            <option value="Salamanca">Salamanca</option>
+                                            <option value="San Miguel de Allende">San Miguel de Allende</option>
+                                            <option value="Silao">Silao</option>
+                                            <!-- Agrega más opciones de ciudades de Guanajuato si es necesario -->
+                                        </select>
                                     </div>
-                                    <div class="form-group row" id="estadoCiudadGroup">
-                                        <div class="col">
-                                            <label for="estado">Estado:</label>
-                                            <select id="estado" name="estado" class="form-control">
-                                                <option value="" disabled selected>Selecciona Estado</option>
-                                                <option value="Guanajuato">Guanajuato</option>
-                                                <!-- Agrega más opciones de estados si es necesario -->
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label for="ciudad">Ciudad:</label>
-                                            <select id="ciudad" name="ciudad" class="form-control">
-                                                <option value="" disabled selected>Selecciona ciudad</option>
-                                                <option value="Acámbaro">Acámbaro</option>
-                                                <option value="Celaya">Celaya</option>
-                                                <option value="Cortazar">Cortazar</option>
-                                                <option value="Dolores Hidalgo">Dolores Hidalgo</option>
-                                                <option value="Guanajuato">Guanajuato</option>
-                                                <option value="Irapuato">Irapuato</option>
-                                                <option value="León">León</option>
-                                                <option value="Salamanca">Salamanca</option>
-                                                <option value="San Miguel de Allende">San Miguel de Allende</option>
-                                                <option value="Silao">Silao</option>
-                                                <!-- Agrega más opciones de ciudades de Guanajuato si es necesario -->
-                                            </select>
-                                        </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="domicilio">Domicilio:</label>
+                                        <input type="text" id="domicilio" name="domicilio" class="form-control"
+                                            placeholder="Domicilio">
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col">
-                                            <label for="domicilio">Domicilio:</label>
-                                            <input type="text" id="domicilio" name="domicilio" class="form-control"
-                                                placeholder="Domicilio">
-                                        </div>
-                                        <div class="col">
-                                            <label for="codigoPostal">Codigo Postal:</label>
-                                            <input type="text" id="codigoPostal" name="codigo_postal" class="form-control"
-                                                placeholder="Codigo Postal">
-                                        </div>
+                                    <div class="col">
+                                        <label for="codigoPostal">Codigo Postal:</label>
+                                        <input type="text" id="codigoPostal" name="codigo_postal" class="form-control"
+                                            placeholder="Codigo Postal">
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col">
-                                            <label for="telefono">Telefono:</label>
-                                            <input type="tel" id="telefono" name="telefono" class="form-control"
-                                                placeholder="10 digitos">
-                                        </div>
-                                        <div class="col">
-                                            <label for="email">E-mail:</label>
-                                            <input type="email" id="email" name="email" class="form-control"
-                                                placeholder="example@email.com">
-                                        </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="telefono">Telefono:</label>
+                                        <input type="tel" id="telefono" name="telefono" class="form-control"
+                                            placeholder="10 digitos">
+                                    </div>
+                                    <div class="col">
+                                        <label for="email">E-mail:</label>
+                                        <input type="email" id="email" name="email" class="form-control"
+                                            placeholder="example@email.com">
                                     </div>
                                 </div>
                             </div>
-                            <!-- Lado derecho -->
-                            <div class="col-md-6">
-                                <div class="mi-tabla">
-                                    <div class="form-group">
-                                        <label for="noEmp">No. Empleado:</label>
-                                        <input type="text" id="noEmp" name="email" class="form-control small-form-control"
-                                            disabled="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Sucursal:</label><br>
-                                        <select required id="txtSucursal" class="form-control small-form-control">
-                                            <option value="" disabled selected>Selecciona Sucursal</option>
-                                            <option value="Centro">Centro</option>
-                                            <option value="Centro Max">Centro Max</option>
-                                            <option value="Futurama Monterrey">Futurama Monterrey</option>
-                                            <option value="Plaza Mayor">Plaza Mayor</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="puesto">Puesto:</label>
-                                        <select id="puesto" name="puesto" class="form-control small-form-control">
-                                            <option value="" disabled selected>Selecciona un puesto</option>
-                                            <option value="Vendedor">EMPS</option>
-                                            <option value="Administrador">ADMS</option>
-                                            <!-- Agrega más opciones de puestos según sea necesario -->
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="fechaIngreso">Fecha de Ingreso:</label><br>
-                                        <input type="date" id="fechaIngreso" name="fechaIngreso"
-                                            class="form-control small-input">
-                                    </div><br>
-                                    <div class="form-group">
-                                        <label for="fotoInput">
-                                            <i class="fas fa-camera"></i> Foto:
-                                        </label>
-                                        <img id="fotoPreview" class="circular-photo" src="#" alt="Vista previa de la foto"
-                                            style="display: none;"><br>
-                                        <input type="file" id="fotoInput" name="foto" class="form-control-file">
-                                    </div><br>
-                                    <div class="form-group">
-                                        <button class="btn btn-success m-3" onclick="addEmpleado()"
-                                            id="btnAdd">Registrar</button>
-                                        <button class="btn btn-secondary m-3" onclick="clean()"
-                                            id="btnClean">Limpiar</button>
-                                        <button class="btn btn-danger m-3" onclick="deleteEmpleado()"
-                                            id="btnDelete">Eliminar</button>
-                                        <button class="btn btn-warning m-3" onclick="updateEmpleado()"
-                                            id="btnUpdate">Actualizar</button>
-                                    </div>
+                        </div>
+                        <!-- Lado derecho -->
+                        <div class="col-md-6">
+                            <div class="mi-tabla">
+                                <div class="form-group">
+                                    <label for="noEmp">No. Empleado:</label>
+                                    <input type="text" id="noEmp" name="email" class="form-control small-form-control"
+                                        disabled="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Sucursal:</label><br>
+                                    <select required id="txtSucursal" class="form-control small-form-control">
+                                        <option value="" disabled selected>Selecciona Sucursal</option>
+                                        <option value="Centro">Centro</option>
+                                        <option value="Centro Max">Centro Max</option>
+                                        <option value="Futurama Monterrey">Futurama Monterrey</option>
+                                        <option value="Plaza Mayor">Plaza Mayor</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="puesto">Puesto:</label>
+                                    <select id="puesto" name="puesto" class="form-control small-form-control">
+                                        <option value="" disabled selected>Selecciona un puesto</option>
+                                        <option value="Vendedor">EMPS</option>
+                                        <option value="Administrador">ADMS</option>
+                                        <!-- Agrega más opciones de puestos según sea necesario -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fechaIngreso">Fecha de Ingreso:</label><br>
+                                    <input type="date" id="fechaIngreso" name="fechaIngreso"
+                                        class="form-control small-input">
+                                </div><br>
+                                <div class="form-group">
+                                    <label for="fotoInput">
+                                        <i class="fas fa-camera"></i> Foto:
+                                    </label>
+                                    <img id="fotoPreview" class="circular-photo" src="#" alt="Vista previa de la foto"
+                                        style="display: none;"><br>
+                                    <input type="file" id="fotoInput" name="foto" class="form-control-file">
+                                </div><br>
+                                <div class="form-group">
+                                    <button class="btn btn-success m-3" onclick="addEmpleado()"
+                                        id="btnAdd">Registrar</button>
+                                    <button class="btn btn-secondary m-3" onclick="clean()"
+                                        id="btnClean">Limpiar</button>
+                                    <button class="btn btn-danger m-3" onclick="deleteEmpleado()"
+                                        id="btnDelete">Eliminar</button>
+                                    <button class="btn btn-warning m-3" onclick="updateEmpleado()"
+                                        id="btnUpdate">Actualizar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
+            </div>
+            <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
 
-            </div>
-            </div>
+        </div>
+        </div>
 
 
             <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js"></script>
