@@ -99,3 +99,12 @@ footer a {
     text-decoration: none;
     margin: 0 10px;
 }
+
+.table {
+    width: 150%; /* Cambia este valor según tus necesidades */
+    margin:  0 auto; /* Centra la tabla en el contenedor */
+  }
+
+  .table th, .table td {
+    padding: 15px; /* Añade espacio interno en las celdas */
+  }

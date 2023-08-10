@@ -2,6 +2,7 @@ let indexEmpleadoSeleccionado;
 let empleados = [
     {
     "noEmpleado": 1,
+    "sucursal": "Plaza Mayor",
     "nombre": "Homero",
     "apellidoPaterno": "Simpson",
     "apellidoMaterno": "Ramirez",
@@ -22,6 +23,7 @@ let empleados = [
 ,
 {
     "noEmpleado": 2,
+    "sucursal": "Plaza Mayor",
     "nombre": "Anahi",
     "apellidoPaterno": "Mojica",
     "apellidoMaterno": "Fernandez",
@@ -42,6 +44,7 @@ let empleados = [
 ,
 {
     "noEmpleado": 3,
+    "sucursal": "Plaza Mayor",
     "nombre": "Naruto",
     "apellidoPaterno": "Martínez",
     "apellidoMaterno": "Sánchez",
@@ -62,6 +65,7 @@ let empleados = [
 ,
 {
     "noEmpleado": 4,
+    "sucursal": "Plaza Mayor",
     "nombre": "Laura",
     "apellidoPaterno": "Ramírez",
     "apellidoMaterno": "Pérez",
@@ -82,6 +86,7 @@ let empleados = [
 ,
 {
     "noEmpleado": 5,
+    "sucursal": "Plaza Mayor",
     "nombre": "José",
     "apellidoPaterno": "García",
     "apellidoMaterno": "Martínez",
@@ -102,6 +107,7 @@ let empleados = [
 ,
 {
     "noEmpleado": 6,
+    "sucursal": "Plaza Mayor",
     "nombre": "Ana",
     "apellidoPaterno": "Rodríguez",
     "apellidoMaterno": "López",
@@ -122,6 +128,7 @@ let empleados = [
 ,
 {
     "noEmpleado": 7,
+    "sucursal": "Plaza Mayor",
     "nombre": "Pedro",
     "apellidoPaterno": "Hernández",
     "apellidoMaterno": "García",
@@ -142,6 +149,7 @@ let empleados = [
 ,
 {
     "noEmpleado": 8,
+    "sucursal": "Centro Max",
     "nombre": "Elena",
     "apellidoPaterno": "Gómez",
     "apellidoMaterno": "López",
@@ -162,6 +170,7 @@ let empleados = [
 ,
 {
     "noEmpleado": 9,
+    "sucursal": "Centro Max",
     "nombre": "Miguel",
     "apellidoPaterno": "López",
     "apellidoMaterno": "Rodríguez",
@@ -182,6 +191,7 @@ let empleados = [
 ,
 {
     "noEmpleado": 10,
+    "sucursal": "Centro",
     "nombre": "Isabel",
     "apellidoPaterno": "Hernández",
     "apellidoMaterno": "González",
@@ -359,6 +369,7 @@ function loadTabla() {
                 '<td>' + empleado.nombre + '</td>' +
                 '<td>' + empleado.apellidoPaterno + '</td>' +
                 '<td>' + empleado.apellidoMaterno + '</td>' +
+                '<td>' + empleado.sucursal + '</td>' +
                 '<td>' + empleado.puesto + '</td>' +
                 '<td>' + empleado.estatus + '</td></tr>';
         cuerpo += registro;
@@ -397,7 +408,7 @@ function selectEmpleado(index) {
 function clean() {
     document.getElementById("nombreEmpleado").value = "";
     document.getElementById("apellidoPaterno").value = "";
-    document.getElementById("apellidoPaterno").value = "";
+    document.getElementById("apellidoMaterno").value = "";
     document.getElementById("fechaNacimiento").value = "";
     document.getElementById("curp").value = "";
     document.getElementById("rfc").value = "";
@@ -554,6 +565,7 @@ function loadTablas(empleadosData) {
                 <td>${empleado.nombre}</td>
                 <td>${empleado.apellidoPaterno}</td>
                 <td>${empleado.apellidoMaterno}</td>
+                <td>${empleado.sucursal}</td>
                 <td>${empleado.puesto}</td>
                 <td>${empleado.estatus}</td>
             </tr>`;
@@ -562,3 +574,12 @@ function loadTablas(empleadosData) {
 
     tablaBody.innerHTML = cuerpo;
 }
+
+function alternarFormulario() {
+    let formulario = document.getElementById("formularioGestion");
+    if (formulario.style.display === "none") {
+      formulario.style.display = "block";
+    } else {
+      formulario.style.display = "none";
+    }
+  }
