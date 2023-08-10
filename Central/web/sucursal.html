@@ -14,7 +14,7 @@
 
     </head>
 
-    <body onload="loadTabla()">
+    <body onload="loadTabla();">
         <header>
             <div class="logo-vision">
                 <div class="logo">
@@ -66,7 +66,7 @@
                     <div class="options">
                         <h3>Sucursal</h3>
                         <div class="option">
-                            <button id="botonMostrarFormulario">Agregar</button>
+                            <button id="botonMostrarFormulario" onclick="mostrarFormulario()">Agregar</button>
                         </div>
                         <div class="option">
                             <button id="botonMostrarActivas">Ver Activas</button>
@@ -89,19 +89,28 @@
     <button type="button" class="btn btn-primary ml-2" id="searchButton">Buscar</button>
 </form>
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <div data-bs-spy="scroll">
                     <table class="table table-hover " id="myTable">
                         <thead>
                             <tr>
+                                <th colspan="7">Datos Sucursal</th>
+                                <th colspan="5">Datos Sucursal</th>
+                                <th> </th>
+                            </tr>
+                            <tr>
                                 <th>Nombre Sucursal</th>
                                 <th>Id sucursal</th>
+                                <th>Estado</th>
+                                <th>Ciudad</th>
+                                <th>Domicilio</th>
+                                <th>Codigo Postal</th>
+                                <th>Telefono sucursal</th>
                                 <th>Nombre titular</th>
                                 <th>Apellido paterno titular</th>
                                 <th>Apellido materno titular</th>
                                 <th>Titular CURP</th>
                                 <th>Titular RFC</th>
-                                <th>Telefono sucursal</th>
                                 <th>Eliminar</th>
                             </tr>
                         </thead>
@@ -111,17 +120,138 @@
                     </table>
                 </div>
             </div>
-             <div class="col-md-10">
-        <div id="infoDiv" class="">
-            <!-- Aquí se mostrará la información -->  
-        </div>
+        <div id="formularioContainer"></div>
                  </div>
-            </div>
         </div>
         <div id="formularioRegistrar" class="container mt-4">
             <div class="row">
                 <div id="formulario" class="col-md-6">
         <div id="nuevoFormulario" class="mi-tabla" >
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Datos Titular</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Nombre titular:<br>
+                            <input type="text" id="nombreTitularAgregar" placeholder="Nombre titular">
+                        </td>
+                        <td>
+                            Apellido paterno titular:<br>
+                            <input type="text" id="apellidoPaternoTitularAgregar" placeholder="Apellido paterno titular">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Apellido materno titular:<br>
+                            <input type="text" id="apellidoMaternoTitularAgregar" placeholder="Apellido materno titular">
+                        </td>
+                        <td>
+                            Titular CURP:<br>
+                            <input type="text" id="curpTitularAgregar" placeholder="Titular CURP">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Titular RFC:<br>
+                            <input type="text" id="rfcTitularAgregar" placeholder="Titular RFC">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+                     </div>
+            <div class="col-md-6">
+                <table class="mi-tabla">
+                <thead>
+                    <tr>
+                        <th colspan="2">Datos Sucursal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Nombre de la sucursal:<br>
+                            <input type="text" id="nombreSucursalAgregar" placeholder="Nombre de la sucursal">
+                        </td>
+                        <td>
+                            Id sucursal:<br>
+                            <input type="text" id="idSucursalAgregar" placeholder="Id sucursal">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Estado:<br>
+                            <input type="text" id="estadoAgregar" placeholder="Estado">
+                        </td>
+                        <td>
+                            Ciudad:<br>
+                            <input type="text" id="ciudadAgregar" placeholder="Ciudad">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Domicilio:<br>
+                            <input type="text" id="domicilioAgregar" placeholder="Domicilio">
+                        </td>
+                        <td>
+                            Codigo Postal:<br>
+                            <input type="text" id="codigoPostalAgregar" placeholder="Codigo Postal">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Telefono sucursal:<br>
+                            <input type="text" id="telefonoSucursalAgregar" placeholder="Telefono sucursal">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+                <button type="button" id="botonMostrarTabla" class="custom-button">Agregar</button>
+        </div>
+            </div>
+    </div>
+</div>
+                <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
+<div id="tablaSucursales2" class="container mt-4 ocl">
+        <form class="form-inline w-100 justify-content-center">
+    <div class="form-group">
+             <p>Buscar:
+                <input type="text" class="form-control" id="searchInput2" placeholder="Ingrese su búsqueda">
+             </p>
+    </div>
+        <button type="button" class="btn btn-primary ml-2" id="searchButton2" >Buscar</button>
+        </form>
+    <div class="row">
+        <div class="col-md-9">
+            <div data-bs-spy="scroll">    
+                <table id="myTable2" class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nombre Sucursal</th>
+                <th>Id sucursal</th>
+                <th>Nombre titular</th>
+                <th>Apellido paterno titular</th>
+                <th>Apellido materno titular</th>
+                <th>Titular CURP</th>
+                <th>Titular RFC</th>
+                <th>Telefono sucursal</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody2">
+            <!-- Empty table, rows will be moved here -->
+        </tbody>
+    </table>
+     </div>
+            </div>
+    </div>
+</div>        
+    <div id="formularioRegistrarEd" class="container mt-4">
+            <div class="row">
+                <div id="formularioEd" class="col-md-6 ocl">
+        <div id="formularioContainer" class="mi-tabla" >
             <table>
                 <thead>
                     <tr>
@@ -209,40 +339,6 @@
             </div>
     </div>
 </div>
-                <!-- Aqui irá el contenido del modulo, como formularios y tablas. Todo el contenido irá aqui -->
-<div id="tablaSucursales2" class="container mt-4 ocl">
-        <form class="form-inline w-100 justify-content-center">
-    <div class="form-group">
-             <p>Buscar:
-                <input type="text" class="form-control" id="searchInput2" placeholder="Ingrese su búsqueda">
-             </p>
-    </div>
-        <button type="button" class="btn btn-primary ml-2" id="searchButton2">Buscar</button>
-        </form>
-    <div class="row">
-        <div class="col-md-9">
-            <div data-bs-spy="scroll">    
-                <table id="myTable2" class="table table-hover">
-        <thead>
-            <tr>
-                <th>Nombre Sucursal</th>
-                <th>Id sucursal</th>
-                <th>Nombre titular</th>
-                <th>Apellido paterno titular</th>
-                <th>Apellido materno titular</th>
-                <th>Titular CURP</th>
-                <th>Titular RFC</th>
-                <th>Telefono sucursal</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody2">
-            <!-- Empty table, rows will be moved here -->
-        </tbody>
-    </table>
-     </div>
-            </div>
-    </div>
-</div>           
     </section>
     <script src="styles/bootstrap-5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="styles/package/dist/sweetalert2.min.js"></script>
